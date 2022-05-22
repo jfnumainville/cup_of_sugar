@@ -1,5 +1,4 @@
 class Review < ApplicationRecord
-  belongs_to :request
-
-  validates :rating, :description, presence: true
+  belongs_to :user
+  belongs_to :item
 end
