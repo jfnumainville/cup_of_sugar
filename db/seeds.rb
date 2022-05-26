@@ -45,10 +45,10 @@ user_ids_list = User.all.pluck(:id)
 puts "Creating items..."
 
 p party_equipment = Item.new(name: "Party Equipment",
-                                description: "Many plates, cups, utensils and a birthday banner.",
-                                category: "Party",
-                                picture: "https://source.unsplash.com/random",
-                                user_id: user_ids_list.sample)
+                             description: "Many plates, cups, utensils and a birthday banner.",
+                             category: "Party",
+                             picture: "https://source.unsplash.com/random",
+                             user_id: user_ids_list.sample)
 party_equipment.save!
 
 p table_saw = Item.new(name: "Table Saw",
@@ -84,7 +84,7 @@ item_ids_list = Item.all.pluck(:id)
 puts "Creating requests..."
 
 5.times do
- p request = Request.new(user_id: user_ids_list.sample, item_id: item_ids_list.sample, start_date:
+  p request = Request.new(user_id: user_ids_list.sample, item_id: item_ids_list.sample, start_date:
                  Faker::Date.in_date_period(year: 2022, month: 5),
                  end_date: Faker::Date.in_date_period(year: 2022, month: rand(6..7)), status: rand(0..2))
 request.save!
