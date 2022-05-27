@@ -25,19 +25,19 @@ p admin = User.new(name: 'Andrii',
                    address: MILE_END_ADDRESSES[0])
 admin.save!
 p admin2 = User.new(name: 'Mark',
-                       email: 'mark@gmail.com',
-                       password: 'password',
-                       address: MILE_END_ADDRESSES[1])
+                    email: 'mark@gmail.com',
+                    password: 'password',
+                    address: MILE_END_ADDRESSES[1])
 admin2.save!
 p admin3 = User.new(name: 'Suzanne',
-                       email: 'suzanne@gmail.com',
-                       password: 'password',
-                       address: MILE_END_ADDRESSES[2])
+                    email: 'suzanne@gmail.com',
+                    password: 'password',
+                    address: MILE_END_ADDRESSES[2])
 admin3.save!
 p admin4 = User.new(name: 'Jean-Francois',
-                       email: 'jf@gmail.com',
-                       password: 'password',
-                       address: MILE_END_ADDRESSES[3])
+                    email: 'jf@gmail.com',
+                    password: 'password',
+                    address: MILE_END_ADDRESSES[3])
 admin4.save!
 
 user_ids_list = User.all.pluck(:id)
@@ -85,9 +85,9 @@ puts "Creating requests..."
 
 5.times do
   p request = Request.new(user_id: user_ids_list.sample, item_id: item_ids_list.sample, start_date:
-                 Faker::Date.in_date_period(year: 2022, month: 5),
-                 end_date: Faker::Date.in_date_period(year: 2022, month: rand(6..7)), status: rand(0..2))
-request.save!
+                          Faker::Date.in_date_period(year: 2022, month: 5),
+                          end_date: Faker::Date.in_date_period(year: 2022, month: rand(6..7)), status: rand(0..2))
+  request.save!
 end
 
 request_ids_list = Request.all.pluck(:id)
