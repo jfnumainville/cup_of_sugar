@@ -1,0 +1,16 @@
+<div class="container">
+<div class="row">
+<% @items.each do |item| %>
+<div class="col-6">
+<div class="row"><%= item.name  %></div>
+<div class="row"><%= item.description  %></div>
+<div class="row"><%= item.picture  %></div>
+<br>
+</div>
+<div class="col-6">
+<div class="row"><%= item.category  %></div>
+<div class="row"><%= item.average_rating %></div>
+</div>
+<% end %>
+</div>
+</div>
