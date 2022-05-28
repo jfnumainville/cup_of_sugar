@@ -1,2 +1,6 @@
-<h2><%= @items.name %></h2>
-<p><%= @user.address %></p>
+<h4><%= user.name %></h4>
+<% user.items.each do |item| %>
+<%= item.name  %>
+<br>
+<%= user.address  %>
+<% end  %>
