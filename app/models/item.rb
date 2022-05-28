@@ -8,7 +8,7 @@ class Item < ApplicationRecord
 
   def average_rating
     if self.reviews.size == 0
-        return 1
+        return "Be the first to leave a review!"
     else
         return self.reviews.inject(0.0) { |sum, review| sum + review.rating }/self.reviews.size
     end
