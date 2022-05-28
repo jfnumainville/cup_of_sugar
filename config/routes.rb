@@ -1,5 +1,23 @@
 Rails.application.routes.draw do
-  devise_for :users
-  root to: 'pages#home'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+    root to: 'pages#home'
+
+    devise_for :users do
+        resources :requests, only: [:index, :show]
+        resources :items
+        resources :reviews
+    end
+
+
+    resources :items do
+        resources :requests, only: [:new, :create]
+        resources :reviews
+    end
+
+    resources :requests do
+        resources :messages, only: [:new, :create]
+    end
+
+#   patch "cancel_request/:id", to: "request#cancel", as: :cancel_request
+#   patch "approved_request/:id", to: "request#approved", as: :approved_request
+
 end
