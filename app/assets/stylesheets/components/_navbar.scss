@@ -6,11 +6,6 @@
   padding: 8px 18px;
   height: 64px;
 
- // height: 109px;
-  //left: calc(50% - 1512px/2);
- // top: calc(50% - 109px/2 - 442px);
-
-  /* light pink jf */
   img {
     height: 50px;
     width: 50px;
@@ -23,14 +18,9 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-
     gap: 17px;
-
     flex: none;
     order: 1;
     flex-grow: 0;
     font-size: 16px;
-
-
-
   }
