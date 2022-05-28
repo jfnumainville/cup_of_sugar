@@ -1,7 +1,23 @@
+
+
+<div style="width: 100%; height: 400px;"
+  data-controller="mapbox"
+  data-mapbox-markers-value="<%= @markers.to_json %>"
+  data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+</div>
+
 <div class="container">
 <div class="row">
+<%= form_tag items_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "What are you looking for?" %>
+  <%= submit_tag "Search" %>
+  <% end %>
 <% @items.each do |item| %>
 <div class="container"><%= item.name  %></div>
 <% end %>
+</div>
 </div>
 </div>

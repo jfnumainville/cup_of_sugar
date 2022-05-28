@@ -13,11 +13,11 @@ puts "Initiating seeding process"
 puts "Adding users..."
 
 MILE_END_ADDRESSES = [
-  "359 Rue Bernard O, Montréal, QC H2V 1T6",
-  "5333 Av. Casgrain Suite 102, Montréal, QC H2T 1X3",
+  "359 Rue Bernard, Montréal, QC H2V 1T6",
+  "5333 Av. Casgrain, Montréal, QC H2T 1X3",
   "4869 Av du Parc, Montréal, QC H2V 4E7",
-  "74 Av. Fairmount O, Montréal, QC H2T 2M2",
-  "23 Rue Bernard O, Montréal, QC H2T 2J6"
+  "74 Av. Fairmount, Montréal, QC H2T 2M2",
+  "23 Rue Bernard, Montréal, QC H2T 2J6"
 ]
 p admin = User.new(name: 'Andrii',
                    email: 'andrii@gmail.com',

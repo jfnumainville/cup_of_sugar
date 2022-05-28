@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;700&family=Pacifico&display=swap');
+.footer {
+  background: $jf-pink;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 35px;
+  padding: 0px 25px;
+  font-family: "Pacifico";
+  color: $cherry;
+  font-size: 14px;
+  margin-top: 12px;
+
+}
+.footer-links {
+  display: flex;
+  align-items: center;
+}
+.footer-links a {
+
+  opacity: 0.85;
+  text-decoration: none;
+  font-size: 24px;
+  padding: 0px 10px;
+}
+.footer-links a:hover {
+  opacity: 1;
+}
+.footer .fa-heart {
+  color: #D23333;
+}
