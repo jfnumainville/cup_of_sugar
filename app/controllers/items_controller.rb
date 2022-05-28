@@ -4,6 +4,16 @@ class ItemsController < ApplicationController
 
   def index
     @items = Item.all
+    @users = User.all
+
+    @markers = @users.geocoded.map do |user|
+        {
+            lat: user.latitude,
+            lng: user.longitude,
+            info_window: render_to_string(partial: "info_window", locals: { user: user })
+            # image_url: @item.images.first.present? ? @item.images.first.url : helpers.asset_url("unicorn.jpg")
+          }
+      end
   end
 
   def show
@@ -51,7 +61,7 @@ class ItemsController < ApplicationController
   end
 
   def item_params
-    params.require(:item).permit(:name, :description, :picture)
+    params.require(:item).permit(:name, :description, :picture, :user_id)
   end
 
   def set_item
