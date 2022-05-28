@@ -1,16 +1,23 @@
 <div class="container">
-  <div class="row">
-    <% @items.each do |item| %>
-    <div class="col-6">
-    <div class="row"><%= item.name  %></div>
-    <div class="row"><%= item.description  %></div>
-    <div class="row"><%= item.picture  %></div>
-    <br>
-  </div>
-  <div class="col-6">
-    <div class="row"><%= item.category  %></div>
-    <div class="row"><%= item.average_rating %></div>
-  </div>
-    <% end %>
+  <div class="card-item">
+    <%= image_tag("bosch.jpg")%>
+    <div class="item-info">
+      <div class="item-frame">
+        <h2>Item name</h2>
+        <div class="rating">
+          <p>4</p>
+          <span class="iconify" data-icon="charm:cube" style="color: #d68b8b;"></span>
+        </div>
+      </div>
+      <p class="description" >description</p>
+      <div class="item-frame">
+        <h2>Reserve me</h2>
+        <span class="iconify" data-icon="bx:calendar" style="color: #d68b8b;"></span>
+      </div>
+      <div class="calendar">
+        <p>start date</p>
+        <p>end date</p>
+      </div>
+    </div>
   </div>
 </div>
