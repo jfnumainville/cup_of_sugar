@@ -8,6 +8,13 @@
   padding: 16px;
 }
 
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
+
+
 .card-product > img {
   width: 100%;
   min-height:170px;

@@ -14,6 +14,7 @@ class ItemsController < ApplicationController
             # image_url: @item.images.first.present? ? @item.images.first.url : helpers.asset_url("unicorn.jpg")
           }
       end
+    params[:query].present? ? @items = Item.search_n_d_a(params[:query]) : @items = Item.all
   end
 
   def show
