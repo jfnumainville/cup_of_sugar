@@ -4,7 +4,7 @@
   background: $jf-pink;
   width: 100%;
   padding: 8px 18px;
-  //height: 90px;
+  height: 64px;
 
  // height: 109px;
   //left: calc(50% - 1512px/2);
@@ -12,8 +12,8 @@
 
   /* light pink jf */
   img {
-    height: 60px;
-    width: 60px;
+    height: 50px;
+    width: 50px;
   }
 }
 
@@ -21,13 +21,11 @@
   .nav-menu {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
 
     gap: 17px;
-   // width: 806px;
-   // height: 90px;
-   /* Inside auto layout */
+
     flex: none;
     order: 1;
     flex-grow: 0;
