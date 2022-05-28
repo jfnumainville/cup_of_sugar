@@ -3,7 +3,7 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :update, :edit, :destroy]
 
   def index
-    @items = Item.all
+    params[:query].present? ? @items = Item.search_n_d_a(params[:query]) : @items = Item.all
   end
 
   def show
