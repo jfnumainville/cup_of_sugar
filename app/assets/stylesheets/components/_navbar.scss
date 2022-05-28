@@ -1,12 +1,38 @@
-.navbar-lewagon {
+.nav-header {
+  display: flex;
   justify-content: space-between;
-  background: white;
+  background: $jf-pink;
+  width: 100%;
+  padding: 8px 18px;
+  //height: 90px;
+
+ // height: 109px;
+  //left: calc(50% - 1512px/2);
+ // top: calc(50% - 109px/2 - 442px);
+
+  /* light pink jf */
+  img {
+    height: 60px;
+    width: 60px;
+  }
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-}
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
-}
+  .nav-menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 17px;
+   // width: 806px;
+   // height: 90px;
+   /* Inside auto layout */
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    font-size: 16px;
+
+
+
+  }
