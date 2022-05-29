@@ -10,11 +10,11 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
     <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
   </head>
-
   <body>
+    <head>
     <%= render 'shared/navbar' %>
+    </head>
     <%= render 'shared/flashes' %>
-
     <%= yield %>
   </body>
   <footer>

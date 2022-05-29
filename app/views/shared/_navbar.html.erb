@@ -1,13 +1,16 @@
-<div class="nav-header">
-  <div >
-    <%= link_to root_path  do  %>
-      <%= image_tag "logo.jpg" %>
-    <% end %>
+  <div class="nav-header">
+    <div >
+      <%= link_to root_path  do  %>
+        <%= image_tag "logo.jpg" %>
+      <% end %>
+    </div>
+    <div class= "nav-menu">
+      <p><%= link_to "Have something to lend?", new_item_path %></p>
+      <p><%= link_to "My Dashboard", "#" %></p>
+      <% if  user_signed_in? %>
+        <%= image_tag "jfnumainville" , class: "avatar"%>
+      <% else %>
+      <p><%= link_to "Log in", new_user_session_path %></p>
+      <% end %>
+    </div>
   </div>
-  <div class= "nav-menu">
-    <p><%= link_to "Have something to lend?", new_item_path %></p>
-    <p><%= link_to "My Dashboard", "#" %></p>
-    <p><%= link_to "Log in", new_user_session_path %></p>
-      <%= image_tag "jfnumainville" , class: "avatar"%>
-  </div>
-</div>
