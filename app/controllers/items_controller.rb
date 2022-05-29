@@ -2,19 +2,10 @@ class ItemsController < ApplicationController
   before_action :set_user
   before_action :set_item, only: [:show, :update, :edit, :destroy]
 
+  def home; end
+
   def index
     @items = Item.all
-    @users = User.all
-
-    @markers = @users.geocoded.map do |user|
-        {
-            lat: user.latitude,
-            lng: user.longitude,
-            info_window: render_to_string(partial: "info_window", locals: { user: user })
-            # image_url: @item.images.first.present? ? @item.images.first.url : helpers.asset_url("unicorn.jpg")
-          }
-      end
-    params[:query].present? ? @items = Item.search_n_d_a(params[:query]) : @items = Item.all
   end
 
   def show
