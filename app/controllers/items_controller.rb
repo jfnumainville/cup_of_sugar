@@ -18,13 +18,13 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
-    @category = Category.new
+    # @category = Category.new
   end
 
   def create
     @item = Item.new(item_params)
-    @category = Category.find(params[:category])
-    @item.category = @category
+    # @category = Category.find(params[:category])
+    # @item.category = @category
     @item.user = current_user
 
     if @item.save
