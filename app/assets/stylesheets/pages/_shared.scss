@@ -10,11 +10,12 @@ html{
 }
 
 body{
-  margin-top: 64px;
+  margin-top: 84px;
   margin-bottom: 42px;
 }
 
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  }
+}
