@@ -1,10 +1,11 @@
 .card-item {
   display:flex;
   background-color: $light-gray;
-  padding: 10px;
+  padding: 16px;
   width: 888px;
   height: 464px;
   gap: 24px;
+  border-radius: 16px;
 }
 
 .card-item > img {
@@ -13,7 +14,6 @@
   border-radius: 16px;
 }
 .item-info {
-  padding-left: 10px;
   width: 472px;
 }
 
@@ -21,23 +21,30 @@
   background-color: $white;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 10px;
+  border-radius: 8px;
 }
 
 .rating {
   display:flex;
+  border: solid 1px $cherry;
+  padding: 8px;
+  border-radius: 16px;
+  align-items: center;
 }
 
 .item-info h2 {
   font-size: 24px;
   font-weight: 500;
   margin: 0;
-  color: $cherry;
+  color: $light-cherry;
 
 }
 
 .item-info p {
   font-size: 18px;
+  font-weight: regular;
   line-height: 1.4;
   opacity: .7;
   margin-bottom: 0;
@@ -47,6 +54,7 @@
 .description {
   width: 409px;
   height: 161px;
+  padding: 10px;
 }
 
 .calendar {
