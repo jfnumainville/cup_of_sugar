@@ -1,15 +1,13 @@
 <div class="container">
-  <h1>Lend and borrow from your neighbours  </h1>
+  <h1>Lend to and borrow from your neighbours  </h1>
 <%# search-bar %>
 <div class="search-bar">
-  <%= simple_form_for :search,
-      url: root_path,
-      method: :get do |f| %>
-  <div class="search-form-control form-group">
-    <input class="form-control string required" type="text" name="search[query]" id="search_query" />
+    <div class="search-form-control form-group">
+  <%=  form_tag root_path, method: :get do%>
+   <%= text_field_tag :query, params[:query], class: "form-control string required", placeholder: "Find a costume" %>
+    <%# <input class="form-control string required" type="text" name="search[query]" id="search_query" /> %>
     <button name="button" type="submit" class="btn btn-flat">
-      <i class="fas fa-search"></i> Search
-    </button>
+      <i class="fas fa-search"></i></button>
   </div>
  <% end %>
   </div>
@@ -18,12 +16,12 @@
   <div class="categories">
       <%= link_to "Books", "#", class: "button-gold" %>
       <%= link_to "Holidays", "#", class: "button-gold" %>
+      <%= link_to "Furnitures", "#", class: "button-gold" %>
       <%= link_to "Garden", "#", class: "button-gold" %>
-      <%= link_to "Tools", "#", class: "button-gold" %>
-      <%= link_to "Toys", "#", class: "button-gold" %>
-      <%= link_to "Books", "#", class: "button-gold" %>
-      <%= link_to "Holidays", "#", class: "button-gold" %>
-      <%= link_to "Garden", "#", class: "button-gold" %>
+      <%= link_to "Home decoration", "#", class: "button-gold" %>
+      <%= link_to "Kitchen", "#", class: "button-gold" %>
+      <%= link_to "Special events", "#", class: "button-gold" %>
+      <%= link_to "Sports", "#", class: "button-gold" %>
       <%= link_to "Tools", "#", class: "button-gold" %>
       <%= link_to "Toys", "#", class: "button-gold" %>
   </div>
@@ -41,7 +39,7 @@
   <div class="card-product">
       <%= image_tag("bosch.jpg")%>
     <div class="card-product-infos">
-        <h2><%= item.name %> </h2>
+        <h2><%= link_to item.name,item_path(item) %> </h2>
         <p><%= item.description %></p>
       </div>
     </div>

@@ -1,4 +1,14 @@
 // Specific CSS for your home-page
+
+h1 {
+  font-family: Pacifico;
+  font-size: 32px;
+  font-weight: regular;
+  color: $cherry;
+  text-align: center;
+  padding: 16px;
+}
+
 .search-form-control {
   position: relative;
 }
@@ -14,8 +24,10 @@
   height: 3.5rem;
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
   border: 1px solid $light-cherry;
-  border-radius: 15px;
+  border-radius: 16px;
+  background-color: white;
 }
+
 
 .search-form-control .form-control:focus {
   border: 1px solid $red;

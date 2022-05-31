@@ -1,0 +1,12 @@
+.form {
+  width: 500px;
+  background-color: $light-gray;
+  padding: 16px;
+  text-align: center;
+  border-radius: 8px;
+}
+
+.form-control, .form-select{
+  background-color: $light-cherry;
+  border-radius:8px;
+ }
