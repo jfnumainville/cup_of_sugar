@@ -1,0 +1,54 @@
+.card-product-update {
+  width: 200px;
+  height: 350px;
+  background-color: $light-gray;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+}
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
+
+
+.card-product-update > img {
+  width: 100%;
+  min-height:170px;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.card-product-update h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+  color: $cherry;
+
+}
+
+.card-product-update p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-product-update .card-product-infos {
+  background-color: $white;
+  border-radius: 8px;
+  margin: 16px auto 0;
+  padding: 4px;
+  height: 30%;
+  width: 100%;
+}
+
+
+.update-delete {
+  display:flex;
+  padding: 24px 0 0 0;
+  justify-content: space-around;
+}

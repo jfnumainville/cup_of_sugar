@@ -9,7 +9,7 @@ class RequestsController < ApplicationController
     @my_requests_array = []
 
     my_item_ids.each do |id|
-      matching_requests = Reservation.where(item_id: id).where.not(status: 2)
+      matching_requests = Request.where(item_id: id).where.not(status: 2)
       matching_requests.each do |result|
         @my_requests_array << result
       end
