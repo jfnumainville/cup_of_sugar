@@ -59,5 +59,12 @@
 
 .calendar {
   display:flex;
-  justify-content: space-between;;
+  justify-content: space-between;
+  padding: 10px;
+  margin-top: 0 10px;
+}
+
+.neonderthaw {
+  font-family: Neonderthaw;
+  color: $cherry;
 }
