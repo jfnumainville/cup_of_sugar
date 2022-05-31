@@ -15,10 +15,18 @@
           <h2>Reserve me</h2>
           <span class="iconify" data-icon="bx:calendar" style="color: #d68b8b;"></span>
         </div>
-        <div class="calendar">
-          <p>Start date</p>
-          <p>End date</p>
-        </div>
+
+        <% if current_user != @owner  && !current_user.nil?%>
+          <%= simple_form_for [@item, @request] do |f| %>
+          <div class="calendar">
+            <div class="calendar-dates">
+            <%= f.input :start_date, as: :date , html5: true %>
+            <%= f.input :end_date, as: :date, html5: true%>
+            </div>
+            <%= f.submit "Reserve", class: "button-gold" %>
+          <% end %>
+        <% end %>
+          </div>
       </div>
     </div>
     <div class="chatbox">
