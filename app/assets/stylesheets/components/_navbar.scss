@@ -10,13 +10,17 @@
   top: 0px;
   left: 0;
   z-index:1;
+}
 
-
-  img {
-    height: 50px;
-    width: 50px;
+.logo{
+  img{
+    height: 56px;
+    object-fit: cover;
+    width: 224px;
   }
 }
+
+
 
 
   .nav-menu {

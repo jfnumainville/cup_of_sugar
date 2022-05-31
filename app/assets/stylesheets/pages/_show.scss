@@ -57,7 +57,12 @@
   padding: 10px;
 }
 
-.calendar {
+.calendar-dates {
   display:flex;
-  justify-content: space-between;;
+  justify-content: space-between;
+}
+
+.calendar {
+  padding: 10px;
+  color: $gray;
 }

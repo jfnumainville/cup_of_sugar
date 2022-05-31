@@ -4,9 +4,11 @@
   padding: 8px 24px;
   border-radius: 50px;
   text-align: center;
+  border: none;
+  transition: all .5s;
  }
 
-.button-gold:hover {
-  color: $gold;
-  background-color: $gray;
+.button-gold:hover{
+	color:
+  $light-gray;
 }
