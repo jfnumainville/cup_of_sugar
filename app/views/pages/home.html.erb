@@ -18,12 +18,12 @@
   <div class="categories">
       <%= link_to "Books", "#", class: "button-gold" %>
       <%= link_to "Holidays", "#", class: "button-gold" %>
+      <%= link_to "Furnitures", "#", class: "button-gold" %>
       <%= link_to "Garden", "#", class: "button-gold" %>
-      <%= link_to "Tools", "#", class: "button-gold" %>
-      <%= link_to "Toys", "#", class: "button-gold" %>
-      <%= link_to "Books", "#", class: "button-gold" %>
-      <%= link_to "Holidays", "#", class: "button-gold" %>
-      <%= link_to "Garden", "#", class: "button-gold" %>
+      <%= link_to "Home decoration", "#", class: "button-gold" %>
+      <%= link_to "Kitchen", "#", class: "button-gold" %>
+      <%= link_to "Special events", "#", class: "button-gold" %>
+      <%= link_to "Sports", "#", class: "button-gold" %>
       <%= link_to "Tools", "#", class: "button-gold" %>
       <%= link_to "Toys", "#", class: "button-gold" %>
   </div>
@@ -59,7 +59,7 @@
   <div class="card-product">
       <%= image_tag("bosch.jpg")%>
     <div class="card-product-infos">
-        <h2><%= item.name %> </h2>
+        <h2><%= link_to item.name,item_path(item) %> </h2>
         <p><%= item.description %></p>
       </div>
     </div>
