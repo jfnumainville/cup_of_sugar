@@ -57,14 +57,12 @@
   padding: 10px;
 }
 
-.calendar {
+.calendar-dates {
   display:flex;
   justify-content: space-between;
-  padding: 10px;
-  margin-top: 0 10px;
 }
 
-.neonderthaw {
-  font-family: Neonderthaw;
-  color: $cherry;
+.calendar {
+  padding: 10px;
+  color: $gray;
 }

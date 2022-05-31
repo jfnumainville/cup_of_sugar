@@ -16,17 +16,17 @@
           <span class="iconify" data-icon="bx:calendar" style="color: #d68b8b;"></span>
         </div>
 
-          <% if current_user != @owner  && !current_user.nil?%>
+        <% if current_user != @owner  && !current_user.nil?%>
           <%= simple_form_for [@item, @request] do |f| %>
           <div class="calendar">
+            <div class="calendar-dates">
             <%= f.input :start_date, as: :date , html5: true %>
             <%= f.input :end_date, as: :date, html5: true%>
-          </div>
+            </div>
             <%= f.submit "Reserve", class: "button-gold" %>
           <% end %>
-
-          <% end %>
-
+        <% end %>
+          </div>
       </div>
     </div>
     <div class="chatbox">
@@ -64,25 +64,5 @@
         </div>
       </div>
     </div>
-  </div>
-</div>
-
-
-<div class="container">
-
-  <div class="card-grid mt-5">
-      <% @items.each do |item| %>
-      <div class="card-product">
-        <%= image_tag("bosch.jpg")%>
-        <div class="card-product-infos">
-            <h2><%= link_to item.name,item_path(item) %> </h2>
-            <p><%= item.description %></p>
-        </div>
-         <div class="update-delete d-flex justify-content-around p-2">
-            <i class="fas fa-trash-alt"></i>
-            <i class="fas fa-edit"></i>
-        </div>
-      </div>
-        <% end %>
   </div>
 </div>
