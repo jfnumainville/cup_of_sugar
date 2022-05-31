@@ -1,14 +1,14 @@
   <div class="nav-header">
     <div class="logo">
       <%= link_to root_path  do  %>
-        <%= image_tag "logo.png" %>
+        <%= image_tag "logo.jpg" %>
       <% end %>
     </div>
     <div class= "nav-menu">
       <p><%= link_to "Have something to lend?", new_item_path %></p>
       <p><%= link_to "My Dashboard", "#" %></p>
       <% if  user_signed_in? %>
-        <%= image_tag "jfnumainville" , class: "avatar"%>
+        <%= image_tag "jfnumainville.jpg" , class: "avatar"%>
       <% else %>
       <p><%= link_to "Log in", new_user_session_path %></p>
       <% end %>
