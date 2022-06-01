@@ -5,13 +5,13 @@ class RequestsController < ApplicationController
 
   def index
     @my_requests = Request.where(user_id: current_user).where.not(status: 2)
-    my_item_ids = Item.where(user_id: current_user).pluck(:id)
-    @my_requests_array = []
+    @my_items = Item.where(user_id: current_user)
+    @my_lendings = []
 
-    my_item_ids.each do |id|
+    @my_items.pluck(:id).each do |id|
       matching_requests = Request.where(item_id: id).where.not(status: 2)
       matching_requests.each do |result|
-        @my_requests_array << result
+        @my_lendings << result
       end
     end
   end
