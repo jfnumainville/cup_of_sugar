@@ -1,6 +1,6 @@
-.card-product-update {
+.card-product-borrowing-lending {
   width: 200px;
-  height: 350px;
+  height: 600px;
   background-color: $light-gray;
   border-radius: 8px;
   display: flex;
@@ -14,14 +14,14 @@
 }
 
 
-.card-product-update > img {
+.card-product-borrowing-lending > img {
   width: 100%;
   min-height:170px;
   object-fit: cover;
   border-radius: 16px;
 }
 
-.card-product-update h2 {
+.card-product-borrowing-lending h2 {
   font-size: 16px;
   font-weight: bold;
   margin: 0;
@@ -29,7 +29,7 @@
 
 }
 
-.card-product-update p {
+.card-product-borrowing-lending p {
   font-size: 12px;
   line-height: 1.4;
   opacity: .7;
@@ -37,7 +37,7 @@
   margin-top: 8px;
 }
 
-.card-product-update .card-product-infos {
+.card-product-borrowing-lending .card-product-infos {
   background-color: $white;
   border-radius: 8px;
   margin: 16px auto 0;
@@ -46,9 +46,23 @@
   width: 100%;
 }
 
+.request-infos {
+  background-color: $white;
+  border-radius: 8px;
+  margin: 16px auto 0;
+  padding: 4px;
+  height: 30%;
+  width: 100%;
+}
 
-.update-delete {
+.status {
   display:flex;
-  padding: 24px 0 0 0;
-  justify-content: space-around;
+  height: 100px;
+  justify-content: center;
+  align-items:center;
+}
+
+.status p {
+  color:green;
+  font-size: 24px;;
 }
