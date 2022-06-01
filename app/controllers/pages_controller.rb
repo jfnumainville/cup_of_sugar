@@ -2,10 +2,17 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :home ]
 
   def home
-    @items = Item.all
+    @all_items = Item.all
     @users = User.all
-
-    @markers = @users.geocoded.map do |user|
+    params[:query].present? ? @items = Item.search_n_d_a(params[:query]) : @items = @all_items
+    @users_with_items = []
+    @items.each do |item|
+        unless @users_with_items.include?(item.user)
+            @users_with_items << item.user
+        end
+    end
+    @relation_users_with_items = User.where(id: @users_with_items.map(&:id))
+    @markers = @relation_users_with_items.geocoded.map do |user|
         {
             lat: user.latitude,
             lng: user.longitude,
@@ -13,6 +20,5 @@ class PagesController < ApplicationController
             # image_url: @item.images.first.present? ? @item.images.first.url : helpers.asset_url("unicorn.jpg")
           }
       end
-    params[:query].present? ? @items = Item.search_n_d_a(params[:query]) : @items = Item.all
   end
 end
