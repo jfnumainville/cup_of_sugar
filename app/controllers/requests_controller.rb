@@ -27,7 +27,7 @@ class RequestsController < ApplicationController
     @request.user = current_user
     @request.item = @item
     if @request.save
-      redirect_to item_requests_path(@user)
+      redirect_to requests_path
     else
       render 'items/show'
     end
