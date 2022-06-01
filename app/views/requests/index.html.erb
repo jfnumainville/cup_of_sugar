@@ -8,49 +8,57 @@
   <div class="tab-content bg-info p-4">
     <div class="tab-pane fade in show active" id="lending" role="tabpanel">
       <div class="card-grid mt-5">
-        <div class="card-product-update">
-          <%= image_tag("bosch.jpg")%>
-          <div class="card-product-infos">
-            <h2>Item name </h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.  </p>
-          </div>
-          <div class="update-delete">
-            <i class="far fa-edit"></i>
-            <i class="far fa-trash-alt"></i>
-          </div>
-        </div>
+        <% @my_lendings.each do |r| %>
+          <p>Lending to <%=r.user.name %> from <%=r.start_date %> to <%= r.end_date%></p>
+            <div class="card-product-update">
+              <img src=<%= r.item.picture%>>
+                <div class="card-product-infos">
+                  <h2><%=r.item.name%> </h2>
+                  <p><%=r.item.description%></p>
+                </div>
+              <div class="update-delete">
+                <i class="far fa-edit"></i>
+                <i class="far fa-trash-alt"></i>
+              </div>
+            </div>
+        <% end %>
       </div>
-    </div>
+     </div>
     <div class="tab-pane fade show" id="borrowing" role="tabpanel">
       <div class="card-grid mt-5">
-        <div class="card-product-update">
-          <%= image_tag("bosch.jpg")%>
-          <div class="card-product-infos">
-            <h2>Item name </h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.  </p>
-          </div>
-          <div class="update-delete">
-            <i class="far fa-edit"></i>
-            <i class="far fa-trash-alt"></i>
-          </div>
-        </div>
+          <% @my_requests.each do |r| %>
+            <p>Borrowing from <%=r.item.user.name %> from <%=r.start_date %> to <%= r.end_date%></p>
+              <div class="card-product-update">
+                <img src=<%= r.item.picture%>>
+                  <div class="card-product-infos">
+                    <h2><%=r.item.name%> </h2>
+                    <p><%=r.item.description%></p>
+                  </div>
+                  <div class="update-delete">
+                    <i class="far fa-edit"></i>
+                    <i class="far fa-trash-alt"></i>
+                  </div>
+              </div>
+        <% end %>
       </div>
     </div>
     <div class="tab-pane fade" id="items" role="tabpanel">
       <div class="card-grid mt-5">
-        <div class="card-product-update">
-          <%= image_tag("bosch.jpg")%>
-          <div class="card-product-infos">
-            <h2>Item name </h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.  </p>
+        <% @my_items.each do |r| %>
+          <div class="card-product-update">
+          <img src=<%= r.picture%>>
+            <div class="card-product-infos">
+              <h2><%=r.name%> </h2>
+              <p><%=r.description%></p>
+            </div>
+            <div class="update-delete">
+              <i class="far fa-edit"></i>
+              <i class="far fa-trash-alt"></i>
+            </div>
           </div>
-          <div class="update-delete">
-            <i class="far fa-edit"></i>
-            <i class="far fa-trash-alt"></i>
-          </div>
-        </div>
+        <% end %>
       </div>
+
     </div>
   </div>
-
 </div>
