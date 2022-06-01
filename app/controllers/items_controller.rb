@@ -9,11 +9,9 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @items = Item.all
     @request = Request.new
-
-    # @owner = @item.user
-    # @other_items_by_owner =  @owner.items - [@item]
+    @owner = @item.user
+    @other_items_by_owner =  @owner.items - [@item]
   end
 
   def new
