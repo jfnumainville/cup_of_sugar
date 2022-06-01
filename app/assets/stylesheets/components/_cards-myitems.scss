@@ -1,6 +1,6 @@
-.card-product-dates {
+.card-product-myitems {
   width: 200px;
-  height: 500px;
+  height: 350px;
   background-color: $light-gray;
   border-radius: 8px;
   display: flex;
@@ -14,14 +14,14 @@
 }
 
 
-.card-product-dates > img {
+.card-product-myitems > img {
   width: 100%;
   min-height:170px;
   object-fit: cover;
   border-radius: 16px;
 }
 
-.card-product-dates h2 {
+.card-product-myitems h2 {
   font-size: 16px;
   font-weight: bold;
   margin: 0;
@@ -29,7 +29,7 @@
 
 }
 
-.card-product-dates p {
+.card-product-myitems p {
   font-size: 12px;
   line-height: 1.4;
   opacity: .7;
@@ -37,7 +37,7 @@
   margin-top: 8px;
 }
 
-.card-product-dates .card-product-infos {
+.card-product-myitems .card-product-infos {
   background-color: $white;
   border-radius: 8px;
   margin: 16px auto 0;
@@ -46,16 +46,8 @@
   width: 100%;
 }
 
-.request-infos {
-  background-color: $white;
-  border-radius: 8px;
-  margin: 16px auto 0;
-  padding: 4px;
-  height: 30%;
-  width: 100%;
-}
-
-.dates {
+.update-delete {
   display:flex;
+  padding: 24px 0 0 0;
   justify-content: space-around;
 }
