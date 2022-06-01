@@ -10,7 +10,6 @@
     <div class="tab-pane fade in show active" id="lending" role="tabpanel">
       <div class="card-grid mt-5">
         <% @my_lendings.each do |r| %>
-          <p>Lending to <%=r.user.name %> from <%=r.start_date %> to <%= r.end_date%></p>
             <div class="card-product-borrowing-lending">
               <%= image_tag(r.item.picture) %>
               <div class="card-product-infos">
@@ -36,9 +35,8 @@
     <div class="tab-pane fade show" id="borrowing" role="tabpanel">
       <div class="card-grid mt-5">
         <% @my_requests.each do |r| %>
-          <p>Borrowing from <%=r.item.user.name %> from <%=r.start_date %> to <%= r.end_date%></p>
             <div class="card-product-borrowing-lending">
-             <%= image_tag(r.item.picture) %>
+               <%= image_tag(r.item.picture) %>
               <div class="card-product-infos">
                 <h2><%=r.item.name %> </h2>
                 <p><%=r.item.description %></p>
@@ -62,9 +60,9 @@
     <div class="tab-pane fade" id="items" role="tabpanel">
       <div class="card-grid mt-5">
         <% @my_items.each do |r| %>
-          <div class="card-product-myitems data-controller="edit-item">
-         <%= image_tag(r.picture) %>
-            <div class="card-product-infos data-edit-item-target="infos">
+          <div class="card-product-myitems">
+           <%= image_tag(r.picture) %>
+            <div class="card-product-infos">
               <h2><%=r.name %> </h2>
               <p><%=r.description %></p>
             </div>
