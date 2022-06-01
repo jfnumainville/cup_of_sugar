@@ -3,10 +3,12 @@ require "securerandom"
 require "date"
 
 puts "Destroying previous seeds..."
-User.destroy_all
 Request.destroy_all
-Item.destroy_all
 Review.destroy_all
+Message.destroy_all
+User.destroy_all
+Item.destroy_all
+
 
 puts "Initiating seeding process"
 
@@ -47,35 +49,35 @@ puts "Creating items..."
 p party_equipment = Item.new(name: "Party Equipment",
                              description: "Many plates, cups, utensils and a birthday banner.",
                              category: "Party",
-                             picture: "https://source.unsplash.com/random",
+                             picture: "happybirthday.jpg",
                              user_id: User.first.id)
 party_equipment.save!
 
 p table_saw = Item.new(name: "Table Saw",
                        description: "Great for your DIY construction projects! Decent condition.",
                        category: "Construction",
-                       picture: "https://source.unsplash.com/random",
+                       picture: "tablesaw.jpg",
                        user_id: User.first.id)
 table_saw.save!
 
 p smoke_machine = Item.new(name: "Smoke Machine",
                            description: "Awesome machine to have on stage at your next show! Excellent condition",
-                           category: "Event",
-                           picture: "https://source.unsplash.com/random",
+                           category: "Special event",
+                           picture: "smokemachine.jpg",
                            user_id: User.second.id)
 smoke_machine.save!
 
-p projector = Item.new(name: "Projector with Screen ",
-                       description: '100" projector with 1080p quality! Great for movie night.',
-                       category: "Home-theatre",
-                       picture: "https://source.unsplash.com/random",
+p projector = Item.new(name: "Outdoor screen for projector",
+                       description: 'Great for movie night',
+                       category: "Special event",
+                       picture: "outdoorscreen.jpg",
                        user_id: User.third.id)
 projector.save!
 
 p backpack = Item.new(name: "Hiking/Travel Backpack",
                       description: "Unisex. Padded straps. Can fit alot of things (65 litres). Great for trips.",
-                      category: "Travel",
-                      picture: "https://source.unsplash.com/random",
+                      category: "Holidays",
+                      picture: "backpack.jpg",
                       user_id: User.fourth.id)
 backpack.save!
 
