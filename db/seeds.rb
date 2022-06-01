@@ -3,9 +3,9 @@ require "securerandom"
 require "date"
 
 puts "Destroying previous seeds..."
-Request.destroy_all
-Review.destroy_all
 Message.destroy_all
+Review.destroy_all
+Request.destroy_all
 User.destroy_all
 Item.destroy_all
 
