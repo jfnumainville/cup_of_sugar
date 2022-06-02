@@ -57,7 +57,7 @@ p table_saw2 = Item.new(name: "Table Saw",
                        description: "Great for your DIY construction projects! Decent condition.",
                        category: "Construction",
                        picture: "tablesaw.jpg",
-                       user_id: User.first.id)
+                       user_id: User.third.id)
 table_saw2.save!
 
 p party3 = Item.new(name: "Party decoration",
