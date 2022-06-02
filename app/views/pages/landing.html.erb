@@ -1,12 +1,13 @@
 <% content_for(:navbar_class, "navbar-landing") %>
 <% content_for(:footer_class, "footer-landing") %>
-
 <div class="banner">
-    <div class="banner-content">
-        <div class="banner-text">
+  <div class="banner-content">
+    <div class="banner-text">
       <h1>Cup of Sugar</h1>
-      <h2>Why buy or rent when you can borrow from your neightbors?</h2>
-      </div>
-         <%= link_to "Start now", new_user_session_path, class: "btn btn-lg btn-primary"  %>
+      <h2>Why buy or rent when you can borrow <br> from your neightbors?</h2>
     </div>
- </div>
+    <div class= "m-5">
+      <%= link_to "Start now", new_user_session_path, class: "button-gold p-4"  %>
+    </div>
+  </div>
+</div>

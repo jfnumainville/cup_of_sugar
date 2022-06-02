@@ -1,27 +1,30 @@
 .banner {
   height: 100vh;
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  justify-content: center;
+  padding: 48px;
   background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), image-url("landing-photo.jpg");
   background-size: cover;
   background-position: center;
-  h2 {
-    font-family: Pacifico;
-    font-size: 24 px;
-    color: $cherry;
-  }
-  p {
-    color: white;
-    opacity: .8;
-    font-size: 25px;
-    font-weight: lighter;
-    margin-bottom: 30px;
-  }
-  .btn {
-    padding: 15px 50px;
-  }
 }
+
+.banner-content {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 0px;
+  gap: 48px;
+
+}
+
+.banner-content a {
+  font-size: 24px;
+}
+
+h2 {
+  font-size: 24 px;
+  color: $jf-pink;
+ }
 
 .navbar-landing, .footer-landing {
   display: none;
@@ -31,15 +34,4 @@
 body{
   margin-top:0px;
   margin-bottom: 0px;
-}
-
-.banner-content{
-display: flex;
-flex-direction: column;
-align-items: center;
-padding: 0px;
-gap: 34px;
-a{
-  margin-top: 150px;
-}
 }
