@@ -33,15 +33,16 @@ class ItemsController < ApplicationController
   end
 
   def update
+    @item = Item.find(params[:id])
     @item.update(item_params)
-    redirect_to item_path(@item)
+    render partial: "item_infos", locals: { item: @items }, notice: "Updated!"
   end
 
   def edit; end
 
   def destroy
     @item.destroy
-    redirect_to items_path
+    redirect_to requests_path
   end
 
   private
@@ -51,7 +52,7 @@ class ItemsController < ApplicationController
   end
 
   def item_params
-    params.require(:item).permit(:name, :description, :picture, :user_id)
+    params.require(:item).permit(:name, :description)
   end
 
   def set_item

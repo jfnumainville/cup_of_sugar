@@ -46,40 +46,88 @@ user_ids_list = User.all.pluck(:id)
 
 puts "Creating items..."
 
-p party_equipment = Item.new(name: "Party Equipment",
+p party_equipment1 = Item.new(name: "Party Equipment",
                              description: "Many plates, cups, utensils and a birthday banner.",
                              category: "Party",
                              picture: "happybirthday.jpg",
                              user_id: User.first.id)
-party_equipment.save!
+party_equipment1.save!
 
-p table_saw = Item.new(name: "Table Saw",
+p table_saw2 = Item.new(name: "Table Saw",
                        description: "Great for your DIY construction projects! Decent condition.",
                        category: "Construction",
                        picture: "tablesaw.jpg",
                        user_id: User.first.id)
-table_saw.save!
+table_saw2.save!
 
-p smoke_machine = Item.new(name: "Smoke Machine",
-                           description: "Awesome machine to have on stage at your next show! Excellent condition",
-                           category: "Special event",
-                           picture: "smokemachine.jpg",
-                           user_id: User.second.id)
-smoke_machine.save!
+p party3 = Item.new(name: "Party decoration",
+  description: "Disco mirro ball and very long colorful banner",
+  category: "Books",
+  picture: "party.jpg",
+  user_id: User.third.id)
 
-p projector = Item.new(name: "Outdoor screen for projector",
+party3.save
+
+
+p projector4 = Item.new(name: "Outdoor screen for projector",
                        description: 'Great for movie night',
                        category: "Special event",
                        picture: "outdoorscreen.jpg",
                        user_id: User.third.id)
-projector.save!
+projector4.save!
 
-p backpack = Item.new(name: "Hiking/Travel Backpack",
-                      description: "Unisex. Padded straps. Can fit alot of things (65 litres). Great for trips.",
+p lugage5 = Item.new(name: "Luggage big and very resistant",
+                      description: "unbreackable, 4 wheels",
                       category: "Holidays",
-                      picture: "backpack.jpg",
+                      picture: "luggage.jpg",
                       user_id: User.fourth.id)
-backpack.save!
+lugage5.save!
+
+p campingchair6 = Item.new(name: "Camping chair",
+                      description: "2 chairs, color blue",
+                      category: "Holidays",
+                      picture: "campingchair.jpg",
+                      user_id: User.fourth.id)
+campingchair6.save!
+
+p ladder7 = Item.new(name: "Ladder",
+            description: "Big ladder, stable. I have used it a lot to paint.",
+            category: "Tools",
+            picture: "ladder.jpg",
+            user_id: User.fourth.id)
+
+ladder7.save!
+
+p game8 = Item.new(name: "Game 4 connect",
+  description: "Fun game. A classic. for children above 6 years old.",
+  category: "Toys",
+  picture: "game4connect.jpg",
+  user_id: User.fourth.id)
+
+  game8.save!
+
+p game9 = Item.new(name: "Monopoly edition India",
+  description: "Fun game, for long evening",
+  category: "Toys",
+  picture: "monopolyindia.jpg",
+  user_id: User.third.id)
+
+game9.save
+
+p magazines10 = Item.new(name: "Magazines Spirou",
+  description: "Cartoons in French",
+  category: "Books",
+  picture: "spirou.jpg",
+  user_id: User.third.id)
+
+magazines10.save
+
+p smoke_machine11 = Item.new(name: "Smoke Machine",
+  description: "Awesome machine to have on stage at your next show! Excellent condition",
+  category: "Special event",
+  picture: "smokemachine.jpg",
+  user_id: User.second.id)
+smoke_machine11.save!
 
 item_ids_list = Item.all.pluck(:id)
 
@@ -90,7 +138,6 @@ request.save!
 
 p request = Request.new(user_id: User.first.id, item_id: Item.fourth.id, start_date: Date.parse("2022-06-25"), end_date: Date.parse("2022-06-27"), status: 1)
 request.save!
-
 
 request_ids_list = Request.all.pluck(:id)
 
