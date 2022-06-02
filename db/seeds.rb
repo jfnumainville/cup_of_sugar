@@ -85,12 +85,12 @@ item_ids_list = Item.all.pluck(:id)
 
 puts "Creating requests..."
 
-5.times do
-  p request = Request.new(user_id: user_ids_list.sample, item_id: item_ids_list.sample, start_date:
-                          Faker::Date.in_date_period(year: 2022, month: 6),
-                          end_date: Faker::Date.in_date_period(year: 2022, month: rand(7..8)), status: rand(0..2))
-  request.save!
-end
+p request = Request.new(user_id: User.third.id, item_id: Item.first.id, start_date: Date.parse("2022-06-18"), end_date: Date.parse("2022-06-24"), status: 1)
+request.save!
+
+p request = Request.new(user_id: User.first.id, item_id: Item.fourth.id, start_date: Date.parse("2022-06-25"), end_date: Date.parse("2022-06-27"), status: 1)
+request.save!
+
 
 request_ids_list = Request.all.pluck(:id)
 
