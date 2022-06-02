@@ -21,4 +21,7 @@ class PagesController < ApplicationController
           }
       end
   end
+
+  def landing
+  end
 end
