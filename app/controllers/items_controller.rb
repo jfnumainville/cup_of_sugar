@@ -11,7 +11,7 @@ class ItemsController < ApplicationController
   def show
     @request = Request.new
     @owner = @item.user
-    @other_items_by_owner =  @owner.items - [@item]
+    @other_items_by_owner = @owner.items - [@item]
   end
 
   def new
@@ -52,7 +52,7 @@ class ItemsController < ApplicationController
   end
 
   def item_params
-    params.require(:item).permit(:name, :description)
+    params.require(:item).permit(:name, :description, :category)
   end
 
   def set_item
