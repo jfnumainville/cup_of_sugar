@@ -66,11 +66,17 @@
               <h2><%=r.name %> </h2>
               <p><%=r.description %></p>
             </div>
-            <div class="update-delete">
+            <div class="update-delete" >
               <i class="far fa-edit"></i>
               <i class="far fa-trash-alt"></i>
             </div>
+            <%= simple_form_for r, html: { class: "d-none", data: { edit_item_target: "form" } } do |f| %>
+            <%= f.input :name %>
+            <%= f.input :description %>
+            <%= f.submit "Update item", class: "button-gold" %>
+          <% end %>
           </div>
+
         <% end %>
       </div>
     </div>
