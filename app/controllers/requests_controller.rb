@@ -14,7 +14,7 @@ class RequestsController < ApplicationController
         @my_lendings << result
       end
     end
-  end
+ end
 
   def show; end
 

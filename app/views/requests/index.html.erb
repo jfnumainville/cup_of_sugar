@@ -58,28 +58,7 @@
     </div>
 
     <div class="tab-pane fade" id="items" role="tabpanel">
-      <div class="card-grid mt-5">
-        <% @my_items.each do |r| %>
-          <div class="card-product-myitems">
-           <%= image_tag(r.picture) %>
-            <div class="card-product-infos">
-              <h2><%=r.name %> </h2>
-              <p><%=r.description %></p>
-            </div>
-            <div class="update-delete" >
-              <i class="far fa-edit"></i>
-              <i class="far fa-trash-alt"></i>
-            </div>
-            <%= simple_form_for r, html: { class: "d-none", data: { edit_item_target: "form" } } do |f| %>
-            <%= f.input :name %>
-            <%= f.input :description %>
-            <%= f.submit "Update item", class: "button-gold" %>
-          <% end %>
-          </div>
-
-        <% end %>
-      </div>
+      <%= render "items/item_infos" %>
     </div>
-
   </div>
 </div>
