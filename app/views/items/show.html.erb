@@ -1,7 +1,7 @@
 <div class="container">
   <div class="container d-flex p-2">
     <div class="card-item">
-      <%= image_tag(@item.picture)%>
+      <%= image_tag(@item.picture) unless @item.picture.nil? %>
       <div class="item-info">
         <div class="item-frame">
           <h2><%= @item.name %></h2>
@@ -54,7 +54,7 @@
     <% @other_items_by_owner.each do |item| %>
       <%=  link_to item_path(item) do%>
         <div class="card-product">
-          <%= image_tag(item.picture) %>
+          <%= image_tag(item.picture) unless item.picture.nil?%>
           <div class="card-product-infos">
             <h2><%= item.name %></h2>
             <p><%= item.description %></p>

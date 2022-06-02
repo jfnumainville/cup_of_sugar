@@ -3,7 +3,6 @@ class Item < ApplicationRecord
 
   has_many :requests, dependent: :destroy
   has_many :reviews, dependent: :destroy
-
   validates :name, :description, :category, presence: true
 
   def average_rating
