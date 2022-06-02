@@ -80,21 +80,21 @@ p lugage5 = Item.new(name: "Luggage big and very resistant",
                       description: "unbreackable, 4 wheels",
                       category: "Holidays",
                       picture: "luggage.jpg",
-                      user_id: User.fourth.id)
+                      user_id: User.first.id)
 lugage5.save!
 
 p campingchair6 = Item.new(name: "Camping chair",
                       description: "2 chairs, color blue",
                       category: "Holidays",
                       picture: "campingchair.jpg",
-                      user_id: User.fourth.id)
+                      user_id: User.second.id)
 campingchair6.save!
 
 p ladder7 = Item.new(name: "Ladder",
             description: "Big ladder, stable. I have used it a lot to paint.",
             category: "Tools",
             picture: "ladder.jpg",
-            user_id: User.fourth.id)
+            user_id: User.third.id)
 
 ladder7.save!
 
@@ -102,7 +102,7 @@ p game8 = Item.new(name: "Game 4 connect",
   description: "Fun game. A classic. for children above 6 years old.",
   category: "Toys",
   picture: "game4connect.jpg",
-  user_id: User.fourth.id)
+  user_id: User.second.id)
 
   game8.save!
 
