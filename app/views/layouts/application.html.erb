@@ -10,7 +10,7 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
     <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
   </head>
-  <body>
+  <body class=<%= yield(:body_class)%> >
     <head>
     <%= render 'shared/navbar' %>
     </head>
