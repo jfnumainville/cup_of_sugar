@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
     root to: 'pages#home'
+    get '/landing' => 'pages#landing'
 
     devise_for :users do
         resources :requests, only: [:index, :show]
