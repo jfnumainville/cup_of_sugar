@@ -1,32 +1,45 @@
-.custom-shape-divider-bottom-1654114227 {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  overflow: hidden;
-  line-height: 0;
-  height: 75vh;
-  h1  {
-    vertical-align: top;
-
- }
-
+.banner {
+  height: 100vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), image-url("landing-photo.jpg");
+  background-size: cover;
+  background-position: center;
+  h2 {
+    font-family: Pacifico;
+    font-size: 24 px;
+    color: $cherry;
+  }
+  p {
+    color: white;
+    opacity: .8;
+    font-size: 25px;
+    font-weight: lighter;
+    margin-bottom: 30px;
+  }
+  .btn {
+    padding: 15px 50px;
+  }
 }
 
-.custom-shape-divider-bottom-1654114227 svg {
-  position: relative;
-  display: block;
-  width: calc(100% + 1.3px);
-  height: 225px;
+.navbar-landing, .footer-landing {
+  display: none;
+  visibility: hidden;
 }
 
-.custom-shape-divider-bottom-1654114227 .shape-fill {
-  fill: $cherry;
+body{
+  margin-top:0px;
+  margin-bottom: 0px;
 }
 
-h2 {
-  font-family: Pacifico;
-  font-size: 24px;
-  color: #D45959;
-  text-align: center;
+.banner-content{
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 0px;
+gap: 34px;
+a{
+  margin-top: 150px;
+}
 }

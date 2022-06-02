@@ -1,15 +1,12 @@
-<div>
-    <h1>Cup of Sugar</h1>
-    <h2>Why buy or rent when you can borrow from your neightbors?</h2>
-</div>
+<% content_for(:navbar_class, "navbar-landing") %>
+<% content_for(:footer_class, "footer-landing") %>
 
-  <div class="custom-shape-divider-bottom-1654114227 text-center">
-   <div class="text-center">
-      <%= image_tag ("illustration.jpg")%>
-     <%= link_to "Start!", root_path, class: "button-gold"%>
-   </div>
-      <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-          <path d="M598.97 114.72L0 0 0 120 1200 120 1200 0 598.97 114.72z" class="shape-fill"></path>
-      </svg>
-
-  </div>
+<div class="banner">
+    <div class="banner-content">
+        <div class="banner-text">
+      <h1>Cup of Sugar</h1>
+      <h2>Why buy or rent when you can borrow from your neightbors?</h2>
+      </div>
+         <%= link_to "Start now", new_user_session_path, class: "btn btn-lg btn-primary"  %>
+    </div>
+ </div>
