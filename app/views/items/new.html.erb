@@ -3,7 +3,7 @@
   <div class="form">
     <%= simple_form_for (@item) do |f|%>
       <%= f.input :name, :label => "What item will you lend ?" %>
-      <%= f.input :category, :collection => %w[Books Holidays Furnitures Garden Home decoration Kitchen Special events Sports Tools Toys],:label => 'Select a Category'%>
+      <%= f.input :category, :collection => %w[Books Holidays Furnitures Garden Home Kitchen Special_events Sports Tools Toys],:label => 'Select a Category'%>
       <%= f.input :description, :label => 'Description', :hint => 'Hint: write an original description to stand out' %>
       <%= f.input :pictures, as: :file, input_html: { multiple: true}, :hint => 'Hint: Good quality pictures attract greater attention' %>
       <%= f.submit "Submit", class: "button-gold" %>
