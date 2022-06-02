@@ -1,0 +1,32 @@
+.custom-shape-divider-bottom-1654114227 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  height: 75vh;
+  h1  {
+    vertical-align: top;
+
+ }
+
+}
+
+.custom-shape-divider-bottom-1654114227 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 225px;
+}
+
+.custom-shape-divider-bottom-1654114227 .shape-fill {
+  fill: $cherry;
+}
+
+h2 {
+  font-family: Pacifico;
+  font-size: 24px;
+  color: #D45959;
+  text-align: center;
+}
