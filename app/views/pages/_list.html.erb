@@ -6,7 +6,7 @@
     <% end %>
 <div class="card-grid mt-5">
     <% @items.each do |item| %>
-      <%=  link_to item_path(item) do%>
+      <%= link_to item_path(item) do%>
         <div class="card-product">
           <%= cl_image_tag item.picture.key %>
           <div class="card-product-infos">
