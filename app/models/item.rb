@@ -17,9 +17,7 @@ class Item < ApplicationRecord
 
   # pg search
   include PgSearch::Model
-  pg_search_scope :search_n_d_a, against: { name: 'A', description: 'B' }, associated_against: {
-    user: [:address]
-  }, using: {
-    tsearch: { prefix: true }
-  }
+  pg_search_scope :search_n_d_a,
+                  against: { name: 'A', category: 'B', description: 'C' },
+                  using: { tsearch: { prefix: true } }
 end
