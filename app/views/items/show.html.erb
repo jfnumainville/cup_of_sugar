@@ -1,13 +1,16 @@
 <div class="container">
   <div class="container d-flex p-2">
     <div class="card-item">
-      <%= image_tag(@item.picture) unless @item.picture.nil? %>
+      <%# <%= image_tag(@item.picture) unless @item.picture.nil? %>
+      <%= cl_image_tag @item.picture.key unless @item.picture.nil?  %>
       <div class="item-info">
         <div class="item-frame">
           <h2><%= @item.name %></h2>
           <div class="rating">
-            <p>4</p>
-            <span class="iconify" data-icon="charm:cube" style="color: #d68b8b;"></span>
+            <i class="fab fa-gratipay cherry"></i>
+            <i class="fab fa-gratipay cherry"></i>
+            <i class="fab fa-gratipay cherry"></i>
+            <i class="fab fa-gratipay light-gray"></i>
           </div>
         </div>
         <p class="description" > <%= @item.description %> </p>
@@ -54,7 +57,7 @@
     <% @other_items_by_owner.each do |item| %>
       <%=  link_to item_path(item) do%>
         <div class="card-product">
-          <%= image_tag(item.picture) unless item.picture.nil?%>
+          <%= cl_image_tag item.picture.key unless item.picture.nil?%>
           <div class="card-product-infos">
             <h2><%= item.name %></h2>
             <p><%= item.description %></p>

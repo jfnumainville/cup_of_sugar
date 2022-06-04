@@ -1,7 +1,5 @@
-<div class="card-grid mt-5">
-  <% @my_items.each do |my_item| %>
   <div class="card-product-myitems" data-controller="edit-item" data-edit-item-target="card" >
-    <%= image_tag(my_item.picture) %>
+    <%= cl_image_tag my_item.picture.key %>
     <div class="card-product-infos" data-edit-item-target="infos">
       <h2><%=my_item.name %> </h2>
       <p><%=my_item.description %></p>
@@ -20,7 +18,4 @@
         <%= f.submit "Update", class: "button-gold" %>
          </div>
       <% end %>
-
   </div>
-  <% end %>
-      </div>

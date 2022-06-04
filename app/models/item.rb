@@ -5,6 +5,8 @@ class Item < ApplicationRecord
   has_many :reviews, dependent: :destroy
   validates :name, :description, :category, presence: true
 
+  has_one_attached :picture
+
   def average_rating
     if self.reviews.size.zero?
       return "Be the first to leave a review!"

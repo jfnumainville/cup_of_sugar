@@ -1,0 +1,15 @@
+.rating {
+  display:flex;
+  border: solid 1px $cherry;
+  padding: 8px;
+  border-radius: 4px;
+  align-items: center;
+}
+
+.cherry {
+  color:$cherry;
+ }
+
+ .light-gray {
+   color: $light-cherry-50;
+ }
