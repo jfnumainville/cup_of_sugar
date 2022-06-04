@@ -15,7 +15,7 @@
 }
 
 
-.card-product > img {
+.card-product img {
   width: 100%;
   min-height:170px;
   object-fit: cover;
@@ -45,4 +45,9 @@
   padding: 4px;
   height: 30%;
   width: 100%;
+}
+
+.truncate {
+  font-size: 10px;
+  color: gainsboro;
 }
