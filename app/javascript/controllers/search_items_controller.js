@@ -10,13 +10,23 @@ export default class extends Controller {
   update(e) {
     e.preventDefault();
     const category = e.target;
+    const categories = category.parentElement.children;
+    // looping through categories to ensure that only one category can be selected at a given time
+    Object.keys(categories).forEach(function (key){
+      if (categories[key].classList.contains('button-gold-clicked')) {
+        categories[key].classList.remove('button-gold-clicked');
+      }
+    })
+    // adding toggle to select & remove selection
     category.classList.toggle('button-gold-clicked');
+    // fetching url through catgory name and outputting index
     const url = `${this.formTarget.action}?query=${category.innerHTML}`
     fetch(url, { headers: { "Accept": "text/plain" } })
       .then(response => response.text())
       .then((data) => {
         this.listTarget.outerHTML = data
       })
+      // scrolling down to see results when category is selected
     this.listTarget.scrollIntoView();
   }
 }
