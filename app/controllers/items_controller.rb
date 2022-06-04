@@ -12,6 +12,8 @@ class ItemsController < ApplicationController
     @request = Request.new
     @owner = @item.user
     @other_items_by_owner = @owner.items - [@item]
+
+    mark_notifications_as_read
   end
 
   def new
@@ -58,4 +60,12 @@ class ItemsController < ApplicationController
   def set_item
     @item = Item.find(params[:id])
   end
+
+  def mark_notifications_as_read
+    if current_user
+      notifications_to_mark_as_read = @item.notifications_as_item.where(recipient: current_user)
+      notifications_to_mark_as_read.update_all(read_at: Time.zone.now)
+    end
+  end
+
 end
