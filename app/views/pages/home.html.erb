@@ -39,7 +39,9 @@
     <% @items.each do |item| %>
       <%=  link_to item_path(item) do%>
         <div class="card-product">
-          <%= image_tag(item.picture)%>
+          <% unless item.picture.nil? %>
+            <%= cl_image_tag item.picture.key %>
+          <% end %>
           <div class="card-product-infos">
               <h2><%= item.name%> </h2>
               <p><%= item.description %></p>

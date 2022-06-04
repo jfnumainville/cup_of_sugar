@@ -10,7 +10,7 @@
       <div class="card-grid mt-5">
         <% @my_requests.each do |r| %>
             <div class="card-product-borrowing-lending">
-               <%= image_tag(r.item.picture) %>
+              <%= cl_image_tag r.item.picture.key %>
               <div class="card-product-infos">
                 <h2><%=r.item.name %> </h2>
                 <p><%=r.item.description %></p>
@@ -34,7 +34,7 @@
       <div class="card-grid mt-5">
         <% @my_lendings.each do |r| %>
             <div class="card-product-borrowing-lending">
-              <%= image_tag(r.item.picture) %>
+               <%= cl_image_tag r.item.picture.key %>
               <div class="card-product-infos">
                 <h2><%=r.item.name%> </h2>
                 <p><%=r.item.description%></p>
@@ -47,7 +47,13 @@
                   <p>to <%= r.end_date%></p>
                 </div>
                 <div class="status">
-                  <p><i class="far fa-check-circle"></i></p>
+                <% if r.status == 'approved' %>
+                  <p><i class="far fa-check-circle"></i> <em>Approved</em></p>
+                  <% elsif r.status == 'pending' %>
+                  <p><i class="fas fa-spinner"> <em>Pending</em> </i></p>
+                  <% else %>
+                  <p><i class="far fa-x"><em>declined</em></i></p>
+                  <% end %>
                 </div>
               </div>
             </div>
