@@ -1,0 +1,21 @@
+<div data-search-items-target="list">
+    <% unless params[:query].blank? %>
+    <h3>
+      <%= pluralize(@items.count, 'result') %> for '<%= params[:query] %>'
+    </h3>
+    <% end %>
+<div class="card-grid mt-5">
+    <% @items.each do |item| %>
+      <%= link_to item_path(item) do%>
+        <div class="card-product">
+          <%= cl_image_tag item.picture.key %>
+          <div class="card-product-infos">
+            <h2><%= item.name %></h2>
+            <p><%= item.description %></p>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+
+</div>

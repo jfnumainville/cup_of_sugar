@@ -12,3 +12,12 @@
 	color:
   $light-gray;
 }
+.button-gold-clicked {
+  color: $gray;
+  background-color: $gold;
+  padding: 8px 24px;
+  border-radius: 50px;
+  text-align: center;
+  border: 2px solid $gray;
+  box-shadow: 1px 1px 3px $gray;
+}
