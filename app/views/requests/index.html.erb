@@ -64,7 +64,11 @@
     </div>
 
     <div class="tab-pane fade" id="items" role="tabpanel">
-      <%= render "items/item_infos" %>
+      <div class="card-grid mt-5">
+        <% @my_items.each do |my_item| %>
+        <%= render partial: "items/item_infos", locals: {my_item: my_item} %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
