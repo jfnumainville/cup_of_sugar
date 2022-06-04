@@ -35,24 +35,26 @@ MILE_END_ADDRESSES = [
     '5333 Avenue Casgrain, Montreal QC'
 ]
 p admin = User.create!(name: 'Andrii',
-                   email: 'andrii@gmail.com',
-                   password: 'password',
-                   address: MILE_END_ADDRESSES[0])
+                       email: 'andrii@gmail.com',
+                       password: 'password',
+                       address: MILE_END_ADDRESSES[0])
 admin.save!
 p admin2 = User.create!(name: 'Mark',
-                    email: 'mark@gmail.com',
-                    password: 'password',
-                    address: MILE_END_ADDRESSES[1])
+                        email: 'mark@gmail.com',
+                        password: 'password',
+                        address: MILE_END_ADDRESSES[1])
 admin2.save!
 p admin3 = User.create!(name: 'Suzanne',
-                    email: 'suzanne@gmail.com',
-                    password: 'password',
-                    address: MILE_END_ADDRESSES[2])
+                        email: 'suzanne@gmail.com',
+                        password: 'password',
+                        address: MILE_END_ADDRESSES[2])
 admin3.save!
 p admin4 = User.create!(name: 'Jean-Francois',
-                    email: 'jf@gmail.com',
-                    password: 'password',
-                    address: MILE_END_ADDRESSES[6])
+                        email: 'jf@gmail.com',
+                        password: 'password',
+                        address: MILE_END_ADDRESSES[6])
+file = URI.open('https://res.cloudinary.com/degm2tmrv/image/upload/v1654364893/development/cup%20of%20sugar/tablesaw_vjvofk.jpg')
+admin4.picture.attach(io: file, filename: 'party_equipment.jpg', content_type: 'image/jpg')
 admin4.save!
 
 user_ids_list = User.all.pluck(:id)
