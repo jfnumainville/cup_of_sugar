@@ -40,7 +40,7 @@
       <%=  link_to item_path(item) do%>
         <div class="card-product">
           <% unless item.picture.nil? %>
-            <%= image_tag(item.picture)%>
+            <%= cl_image_tag item.picture.key %>
           <% end %>
           <div class="card-product-infos">
               <h2><%= item.name%> </h2>
