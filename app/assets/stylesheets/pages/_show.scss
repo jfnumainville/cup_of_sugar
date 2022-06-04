@@ -26,6 +26,15 @@
   border-radius: 8px;
 }
 
+.item-frame-user {
+  background-color: $white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-radius: 8px;
+  width: 200px;
+}
 
 
 .item-info h2 {

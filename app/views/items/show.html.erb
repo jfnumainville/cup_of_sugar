@@ -4,14 +4,18 @@
       <%# <%= image_tag(@item.picture) unless @item.picture.nil? %>
       <%= cl_image_tag @item.picture.key%>
       <div class="item-info">
-        <div class="item-frame">
+        <div class="item-frame-user">
+            <h2> <%= @item.user.name %> </h2>
+            <%= cl_image_tag @item.user.picture.key, class: "avatar" %>
+              <div class="rating">
+              <i class="fab fa-gratipay cherry"></i>
+              <i class="fab fa-gratipay cherry"></i>
+              <i class="fab fa-gratipay cherry"></i>
+              <i class="fab fa-gratipay light-gray"></i>
+            </div>
+        </div>
+        <div class="item-frame m-2">
           <h2><%= @item.name %></h2>
-          <div class="rating">
-            <i class="fab fa-gratipay cherry"></i>
-            <i class="fab fa-gratipay cherry"></i>
-            <i class="fab fa-gratipay cherry"></i>
-            <i class="fab fa-gratipay light-gray"></i>
-          </div>
         </div>
         <p class="description" > <%= @item.description %> </p>
         <div class="item-frame">

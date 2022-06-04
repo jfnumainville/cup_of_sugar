@@ -12,7 +12,7 @@
     </div>
 
       <%= simple_form_for my_item, html: { class: "d-none", data: { edit_item_target: "form", action: "submit->edit-item#update"  } } do |f| %>
-        <div class="form-update bg-warning p-2 rounded ">
+        <div class="form-update bg-warning p-2">
         <%= f.input :name %>
         <%= f.input :description %>
         <%= f.submit "Update", class: "button-gold" %>
