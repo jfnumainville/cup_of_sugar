@@ -1,4 +1,7 @@
+require "open-uri"
+
 class Item < ApplicationRecord
+  before_save :default_picture
   belongs_to :user
 
   has_many :requests, dependent: :destroy
@@ -20,4 +23,9 @@ class Item < ApplicationRecord
   pg_search_scope :search_n_d_a,
                   against: { name: 'A', category: 'B', description: 'C' },
                   using: { tsearch: { prefix: true } }
+
+def default_picture
+    file = URI.open('https://res.cloudinary.com/degm2tmrv/image/upload/v1652275241/development/rowdy.jpg')
+    self.picture.attach(io: file, filename: 'rowdy.jpg', content_type: 'image/jpg') if self.picture.key.nil?
+end
 end
