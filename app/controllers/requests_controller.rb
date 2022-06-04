@@ -27,7 +27,7 @@ class RequestsController < ApplicationController
     @request.user = current_user
     @request.item = @item
     if @request.save
-      redirect_to requests_path
+      redirect_to requests_path(active_tab: "borrowing")
     else
       render 'items/show'
     end

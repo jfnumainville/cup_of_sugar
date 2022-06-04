@@ -1,12 +1,12 @@
 <div class="container">
   <nav class="nav nav-pills nav-fill" id="nav-tab" role="tablist">
-    <button class="nav-link active" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#borrowing" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">I am borrowing</button>
-    <button class="nav-link" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#lending" type="button" role="tab" aria-controls="nav-home" aria-selected="true">I am lending</button>
-    <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#items" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">My items</button>
+    <button class="<%= params[:active_tab]== "borrowing"?  "nav-link active" : "nav-link"%>" id="borrowing" data-bs-toggle="tab" data-bs-target="#borrowing" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">I am borrowing</button>
+    <button class="<%= params[:active_tab]== "lending"?  "nav-link active" : "nav-link"%>" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#lending" type="button" role="tab" aria-controls="nav-home" aria-selected="true">I am lending</button>
+    <button class="<%= params[:active_tab]== "items"?  "nav-link active" : "nav-link" %>" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#items" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">My items</button>
   </nav>
 
   <div class="tab-content bg-info p-4">
-    <div class="tab-pane fade in show active" id="borrowing" role="tabpanel">
+    <div class="<%= params[:active_tab]== "borrowing"?  "tab-pane fade in show active" : "tab-pane fade" %>" id="borrowing" role="tabpanel">
       <div class="card-grid mt-5">
         <% @my_requests.each do |r| %>
             <div class="card-product-borrowing-lending">
@@ -30,7 +30,7 @@
         <% end %>
       </div>
     </div>
-    <div class="tab-pane fade show" id="lending" role="tabpanel">
+    <div class="<%= params[:active_tab]== "lending"?  "tab-pane fade in show active" : "tab-pane fade" %>" id="lending" role="tabpanel">
       <div class="card-grid mt-5">
         <% @my_lendings.each do |r| %>
             <div class="card-product-borrowing-lending">
@@ -60,7 +60,7 @@
         <% end %>
       </div>
      </div>
-    <div class="tab-pane fade" id="items" role="tabpanel">
+    <div class="<%= params[:active_tab]== "items"?  "tab-pane fade in show active" : "tab-pane fade" %>" id="items" role="tabpanel">
       <div class="card-grid mt-5">
         <% @my_items.each do |my_item| %>
         <%= render partial: "items/item_infos", locals: {my_item: my_item} %>
