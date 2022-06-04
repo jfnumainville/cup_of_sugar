@@ -26,7 +26,7 @@ class ItemsController < ApplicationController
     @item.user = current_user
 
     if @item.save
-      redirect_to item_path(@item)
+      redirect_to requests_path(active_tab: "items")
     else
       render :new
     end
