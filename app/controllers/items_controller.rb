@@ -12,7 +12,6 @@ class ItemsController < ApplicationController
     @request = Request.new
     @owner = @item.user
     @other_items_by_owner = @owner.items - [@item]
-
     mark_notifications_as_read
   end
 
