@@ -10,7 +10,7 @@ class Item < ApplicationRecord
 
   has_one_attached :picture
   has_noticed_notifications model_name: 'Notification'
-  has_many :notifications
+  has_many :notifications, through: :user, dependent: :destroy
 
   def average_rating
     if self.reviews.size.zero?
