@@ -14,6 +14,7 @@ class RequestsController < ApplicationController
         @my_lendings << result
       end
     end
+    mark_notifications_as_read
  end
 
   def show; end
@@ -61,5 +62,9 @@ class RequestsController < ApplicationController
 
   def find_item
     @item = Item.find(params[:item_id])
+  end
+
+  def mark_notifications_as_read
+    @user.notifications.mark_as_read!
   end
 end
