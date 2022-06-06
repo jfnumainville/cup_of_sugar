@@ -1,6 +1,12 @@
-<h4><%= user.name %></h4>
+<div class="avatar-name-map" >
+  <%= cl_image_tag user.picture.key, class: "avatar" %>
+  <div>
+  <% if current_user != user %>
+    <p><%= user.name %></p>
+    <p><%= user.address %></p>
+  </div>
+</div>
+  <% end %>
 <% user.items.each do |item| %>
-<%= item.name  %>
-<br>
-<%= user.address  %>
-<% end  %>
+  <p> <%= link_to (item.name), item_path(item)  %>, </p>
+<% end %>

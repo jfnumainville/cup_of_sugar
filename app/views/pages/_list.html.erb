@@ -4,7 +4,7 @@
       <%= pluralize(@items.count, 'result') %> for '<%= params[:query] %>'
     </h3>
     <% end %>
-<div class="card-grid mt-5">
+<div class="card-grid">
     <% @items.each do |item| %>
       <div class="card-product">
         <%= link_to item_path(item) do%>

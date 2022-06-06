@@ -1,11 +1,25 @@
+.mapboxgl-canvas {
+  border-radius: 16px;
+}
+
+
 .mapboxgl-popup {
-    max-width: 150px;
-  }
+   width: 500px;
+   height: 25px;
+}
+
+
 
 .mapboxgl-popup-content {
     text-align: center;
-    z-index:1000;
+    border-radius: 8px;
+    background-color: $jf-pink;
+    position:relative;
+  }
 
+.mapboxgl-popup-content h4 {
+  font-size: 16px;
+  color: $cherry;
   }
 
 .mapboxgl-ctrl-geocoder {
@@ -14,3 +28,13 @@
     border: 1px solid lightgrey;
     box-shadow: none;
   }
+
+
+.mapboxgl-ctrl-attrib-inner .mapboxgl-ctrl-logo .mapboxgl-ctrl-bottom-right {
+  visibility:hidden;
+  }
+
+.avatar-name-map {
+  display:flex;
+  gap: 4px;
+}
