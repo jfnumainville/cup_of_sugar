@@ -35,15 +35,16 @@ class RequestsController < ApplicationController
   end
 
   def update
-    @request.update(request_params)
-    redirect_to resquests_path
+    @request.status = 1
+    @request.save
+    redirect_to requests_path(active_tab: "lending")
   end
 
   def edit; end
 
   def destroy
     @request.destroy
-    redirect_to requests_path
+    redirect_to requests_path(active_tab: "borrowing")
   end
 
   private
