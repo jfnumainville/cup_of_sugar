@@ -3,10 +3,10 @@ import { Controller } from "stimulus"
 export default class extends Controller {
   static targets = [ "form", 'list' ]
 
-  connect() {
-    console.log(this.formTarget);
-    console.log(this.listTarget);
-  }
+  // connect() {
+  //   console.log(this.formTarget);
+  //   console.log(this.listTarget);
+  // }
   update(e) {
     e.preventDefault();
     const category = e.target;
