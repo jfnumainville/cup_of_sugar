@@ -16,8 +16,8 @@ class PagesController < ApplicationController
       {
         lat: user.latitude,
         lng: user.longitude,
-        info_window: render_to_string(partial: "items/info_window", formats: [:html], locals: { user: user })
-        # image_url: @item.images.first.present? ? @item.images.first.url : helpers.asset_url("unicorn.jpg")
+        info_window: render_to_string(partial: "items/info_window", formats: [:html], locals: { user: user }),
+        image_url: user == current_user ? helpers.asset_url("home.png") : helpers.asset_url("coffee.png")
       }
     end
     respond_to do |format|

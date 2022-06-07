@@ -9,6 +9,8 @@ class Item < ApplicationRecord
   validates :name, :description, :category, presence: true
 
   has_one_attached :picture
+  has_noticed_notifications model_name: 'Notification'
+  has_many :notifications, through: :user, dependent: :destroy
 
   def average_rating
     if self.reviews.size.zero?
