@@ -17,8 +17,54 @@ import "bootstrap"
 
 import { initSweetalert } from '../plugins/init_sweetalert';
 
-initSweetalert('#sweet-alert-demo', {
-  title: "A nice alert",
-  text: "This is a great alert, isn't it?",
+initSweetalert('#sweet-alert-delete', {
+  title: "Are you sure?",
+  text: "This action cannot be reversed",
+  icon: "warning"
+}, (value) => {
+  if (value) {
+    const link = document.querySelector('#delete-link');
+    link.click();
+  }
+}
+
+);
+
+initSweetalert('#sweet-alert-create', {
+  title: "Thank you !!!",
+  text: "Your item has been added to Cup of Sugar",
   icon: "success"
-});
+}, (value) => {
+  if (value) {
+    const submit = document.querySelector('#create-link');
+    form.submit();
+  }
+}
+
+);
+
+initSweetalert('#sweet-alert-update', {
+  title: "Hello !",
+  text: "Your item has been updated.",
+  icon: "success"
+}, (value) => {
+  if (value) {
+    const link = document.querySelector('#update-link');
+    link.click();
+  }
+}
+
+);
+
+initSweetalert('#sweet-alert-reservation', {
+  title: "Thank you !",
+  text: "Your reservation has been send",
+  icon: "success"
+}, (value) => {
+  if (value) {
+    const link = document.querySelector('#reservation-link');
+    link.click();
+  }
+}
+
+);
