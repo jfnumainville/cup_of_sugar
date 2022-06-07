@@ -6,25 +6,10 @@
       <%= f.input :category, :collection => ["Books", "Holidays", "Furnitures", "Garden", "Home decoration", "Kitchen", "Special events", "Sports", "Tools", "Toys"], :label => 'Select a Category'%>
       <%= f.input :description, :label => 'Description', :hint => 'Hint: write an original description to stand out' %>
       <%= f.input :picture, as: :file, :hint => 'Hint: Good quality pictures attract greater attention' %>
-      <%= f.submit "Submit", id: "#myModal", class:"button-gold", data: { toggle:"modal", target:"#myModal"} %>
+      <%= f.submit "Submit", id:"sweet-alert-create", class:"button-gold", data: { toggle:"modal", target:"#myModal"}%>
     <% end %>
   </div>
 </div>
-<button id="sweet-alert-demo" class="btn btn-primary">Click me!</button>
 
-<!-- Modal HTML -->
-  <div id="myModal" class="modal fade">
-    <div class="modal-dialog modal-confirm">
-      <div class="modal-content">
-        <div class="modal-header justify-content-center">
-          <div class="icon-box">
-            <i class="material-icons">&#xE876;</i>
-          </div>
-        </div>
-        <div class="modal-body text-center">
-          <h4>Wow!</h4>
-          <p>You've successfully added an item.</p>
-        </div>
-      </div>
-    </div>
-  </div>
+
+<%= link_to "", requests_path(active_tab: "items"),  id: "create-link", class: "hidden" %>
