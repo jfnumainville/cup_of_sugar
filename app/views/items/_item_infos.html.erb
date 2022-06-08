@@ -6,8 +6,8 @@
     </div>
     <div class="update-delete" >
       <i class="far fa-edit" data-action="click->edit-item#displayForm"></i>
-      <%= link_to item_path(my_item), method: :delete, id: "delete-link", class: "hidden" do %>
-      <i class="far fa-trash-alt" id="sweet-alert-demo"> </i>
+      <%= link_to item_path(my_item), method: :delete, id:"delete-link", class: "hidden" do %>
+      <i class="far fa-trash-alt" id="sweet-alert-delete"> </i>
       <% end %>
     </div>
 

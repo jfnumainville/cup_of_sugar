@@ -22,6 +22,7 @@ initSweetalert('#sweet-alert-delete', {
   text: "This action cannot be reversed",
   icon: "warning"
 }, (value) => {
+  console.log("We got: ",value)
   if (value) {
     const link = document.querySelector('#delete-link');
     link.click();
