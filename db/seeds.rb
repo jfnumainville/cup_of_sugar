@@ -4,6 +4,7 @@ require "date"
 
 puts "Destroying previous seeds..."
 Message.destroy_all
+Chatroom.destroy_all
 Review.destroy_all
 Request.destroy_all
 User.destroy_all
@@ -174,20 +175,4 @@ puts "Creating Reviews..."
   p review = Review.create!(rating: rand(1.0..5.0), description: Faker::Food.description,
                         item_id: item_ids_list.sample, user_id: user_ids_list.sample)
   review.save!
-end
-
-puts "Creating chatrooms"
-5.times do
-  p chatroom = Chatroom.create!(name: Faker::Food.dish)
-  chatroom.save!
-end
-
-chatroom_ids_list = Chatroom.all.pluck(:id)
-
-puts "Creating messages..."
-
-5.times do
-  p message = Message.create!(message: Faker::Food.description,
-                          user_id: user_ids_list.sample, chatroom_id: chatroom_ids_list.sample)
-  message.save!
 end
