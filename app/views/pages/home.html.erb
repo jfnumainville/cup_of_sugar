@@ -1,42 +1,54 @@
-<div class="container" data-controller="search-items">
-  <h1>Lend to and borrow from your neighbours</h1>
+<div class="container home" data-controller="search-items">
 
-  <div class="search-bar">
-    <div class="search-form-control form-group">
-      <%= form_tag root_path, method: :get, data: { search_items_target: 'form' } do %>
-      <%= text_field_tag :query,
-                      params[:query],
-                      class: "form-control string required",
-                      placeholder: "What do you want to borrow?"
-                      %>
-      <%# <input class="form-control string required" type="text" name="search[query]" id="search_query" /> %>
-      <button name="button" type="submit" class="btn btn-flat">
-        <i class="fas fa-search"></i>
-      </button>
-      <% end %>
+  <div class="home-title">
+    <h1>Lend to and borrow from your neighbours</h1>
+  </div>
+
+  <div class= "home-search">
+    <div class="search-bar">
+      <div class="search-form-control form-group">
+        <%= form_tag root_path, method: :get, data: { search_items_target: 'form' } do %>
+        <%= text_field_tag :query,
+                        params[:query],
+                        class: "form-control string required",
+                        placeholder: "What do you want to borrow?"
+                        %>
+        <%# <input class="form-control string required" type="text" name="search[query]" id="search_query" /> %>
+        <button name="button" type="submit" class="btn btn-flat">
+          <i class="fas fa-search"></i>
+        </button>
+        <% end %>
+      </div>
     </div>
   </div>
-  <div class= "categories-search-frame">
-    <div class="categories">
-        <%= link_to "Baby", "#", class: "button-categories-gold", data: { action: 'search-items#update'} %>
-        <%= link_to "Books", "#", class: "button-categories-gold", data: { action: 'search-items#update'} %>
-        <%= link_to "Holidays", "#", class: "button-categories-gold", data: { action: 'search-items#update'} %>
-        <%= link_to "Furnitures", "#", class: "button-categories-gold", data: { action: 'search-items#update'} %>
-        <%= link_to "Garden", "#", class: "button-categories-gold", data: { action: 'search-items#update'} %>
-        <%= link_to "Home decoration", "#", class: "button-categories-gold", data: { action: 'search-items#update'} %>
-        <%= link_to "Kitchen", "#", class: "button-categories-gold", data: { action: 'search-items#update'} %>
-        <%= link_to "Party", "#", class: "button-categories-gold", data: { action: 'search-items#update'} %>
-        <%= link_to "Special events", "#", class: "button-categories-gold", data: { action: 'search-items#update'} %>
-        <%= link_to "Sports", "#", class: "button-categories-gold", data: { action: 'search-items#update'} %>
-        <%= link_to "Tools", "#", class: "button-categories-gold", data: { action: 'search-items#update'} %>
-        <%= link_to "Toys", "#", class: "button-categories-gold", data: { action: 'search-items#update'} %>
-    </div>
-    <div style="width: 70%; height: 400px;"
-      data-controller="mapbox"
-      data-mapbox-markers-value="<%= @markers.to_json %>"
-      data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+
+  <div class="home-categories-map">
+    <div class= "categories-search-frame">
+      <div class="categories">
+          <%= link_to "Baby", "#", class: "button-categories-gold", data: { action: 'search-items#update'} %>
+          <%= link_to "Books", "#", class: "button-categories-gold", data: { action: 'search-items#update'} %>
+          <%= link_to "Holidays", "#", class: "button-categories-gold", data: { action: 'search-items#update'} %>
+          <%= link_to "Furnitures", "#", class: "button-categories-gold", data: { action: 'search-items#update'} %>
+          <%= link_to "Garden", "#", class: "button-categories-gold", data: { action: 'search-items#update'} %>
+          <%= link_to "Home decoration", "#", class: "button-categories-gold", data: { action: 'search-items#update'} %>
+          <%= link_to "Kitchen", "#", class: "button-categories-gold", data: { action: 'search-items#update'} %>
+          <%= link_to "Party", "#", class: "button-categories-gold", data: { action: 'search-items#update'} %>
+          <%= link_to "Special events", "#", class: "button-categories-gold", data: { action: 'search-items#update'} %>
+          <%= link_to "Sports", "#", class: "button-categories-gold", data: { action: 'search-items#update'} %>
+          <%= link_to "Tools", "#", class: "button-categories-gold", data: { action: 'search-items#update'} %>
+          <%= link_to "Toys", "#", class: "button-categories-gold", data: { action: 'search-items#update'} %>
+      </div>
+      <div style="width: 70%; height: 400px;"
+        data-controller="mapbox"
+        data-mapbox-markers-value="<%= @markers.to_json %>"
+        data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
     </div>
   </div>
-  <h1 class="m-2">Borrow near you </h1>
-  <%= render 'list', items: @items %>
+
+  <div class="home-list">
+    <h1>Borrow near you </h1>
+    <%= render 'list', items: @items %>
+  </div>
+
 </div>

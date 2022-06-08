@@ -11,9 +11,26 @@
       <%= f.input :start_date, as: :date , html5: true %>
       <%= f.input :end_date, as: :date, html5: true%>
     </div>
-      <%= f.submit "Reserve", id: "#myModal", class:"button-gold", data: { toggle:"modal", target:"#myModal"} %>
+      <%= f.submit "Reserve", class:"button-gold", data: { toggle:"modal", target:"#myModal"} %>
   <% end %>
 <% else %>
   <p>You can't reserve your own stuff 😉 </p>
 <% end %>
+</div>
+
+
+<div id="myModal" class="modal">
+  <div class="modal-dialog modal-confirm">
+    <div class="modal-content">
+      <div class="modal-header justify-content-center">
+        <div class="icon-box">
+          <%= image_tag("coffee.png", width:50) %>
+        </div>
+      </div>
+      <div class="modal-body text-center">
+        <h4> Thank you, <%= current_user.name %></h4>
+        <p> Your reservation has been send </p>
+      </div>
+    </div>
+  </div>
 </div>

@@ -2,7 +2,7 @@ body {
 	font-family: 'Varela Round', sans-serif;
 }
 .modal-confirm {
-	color: #434e65;
+	color: $gray;
 	width: 525px;
 }
 .modal-confirm .modal-content {
@@ -12,7 +12,7 @@ body {
 	border: none;
 }
 .modal-confirm .modal-header {
-	background: $green;
+	background: $cherry;
 	border-bottom: none;
 	position: relative;
 	text-align: center;
@@ -21,7 +21,7 @@ body {
 	padding: 35px;
 }
 .modal-confirm h4 {
-  color: $green;
+  color: $cherry;
 	text-align: center;
 	font-size: 36px;
 	margin: 10px 0;

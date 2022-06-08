@@ -1,3 +1,5 @@
+<div class="card-grid my-items">
+<% @my_items.each do |my_item| %>
   <div class="card-product-myitems" data-controller="edit-item" data-edit-item-target="card" >
     <%= cl_image_tag my_item.picture.key %>
     <div class="card-product-infos" data-edit-item-target="infos">
@@ -19,3 +21,5 @@
          </div>
       <% end %>
   </div>
+<% end %>
+</div>

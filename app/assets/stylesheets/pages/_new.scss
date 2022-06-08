@@ -1,12 +1,24 @@
-.form {
-  width: 500px;
-  background-color: $jf-pink;
+.create-page {
+  display: flex;
+  margin-top: 80px;
+}
+
+.create-form {
+  width: 600px;
+  height: 500px;
+  background-color: rgba(253,245,245,0.6);
   padding: 16px;
   text-align: center;
   border-radius: 8px;
+  margin-left: -160px;
+  margin-top: 200px;
 }
 
 .form-control, .form-select{
-  background-color: $light-gray;
   border-radius:8px;
+ }
+
+ .form-text{
+  font-style: italic;
+  font-size: 11px;
  }
