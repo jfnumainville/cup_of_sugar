@@ -15,7 +15,7 @@ class RequestsController < ApplicationController
       end
     end
     mark_notifications_as_read
- end
+  end
 
   def show; end
 

@@ -168,8 +168,6 @@ request.save!
 p request = Request.create!(user_id: User.first.id, item_id: Item.fourth.id, start_date: Date.parse("2022-06-25"), end_date: Date.parse("2022-06-27"), status: 1)
 request.save!
 
-request_ids_list = Request.all.pluck(:id)
-
 puts "Creating Reviews..."
 
 5.times do
@@ -178,10 +176,18 @@ puts "Creating Reviews..."
   review.save!
 end
 
+puts "Creating chatrooms"
+5.times do
+  p chatroom = Chatroom.create!(name: Faker::Food.dish)
+  chatroom.save!
+end
+
+chatroom_ids_list = Chatroom.all.pluck(:id)
+
 puts "Creating messages..."
 
 5.times do
   p message = Message.create!(message: Faker::Food.description,
-                          user_id: user_ids_list.sample, request_id: request_ids_list.sample)
+                          user_id: user_ids_list.sample, chatroom_id: chatroom_ids_list.sample)
   message.save!
 end

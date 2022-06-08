@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_04_190535) do
+ActiveRecord::Schema.define(version: 2022_06_08_011309) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +43,12 @@ ActiveRecord::Schema.define(version: 2022_06_04_190535) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "chatrooms", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "items", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -56,11 +62,11 @@ ActiveRecord::Schema.define(version: 2022_06_04_190535) do
 
   create_table "messages", force: :cascade do |t|
     t.text "message"
-    t.bigint "request_id", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["request_id"], name: "index_messages_on_request_id"
+    t.bigint "chatroom_id", null: false
+    t.index ["chatroom_id"], name: "index_messages_on_chatroom_id"
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
@@ -119,7 +125,7 @@ ActiveRecord::Schema.define(version: 2022_06_04_190535) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "items", "users"
-  add_foreign_key "messages", "requests"
+  add_foreign_key "messages", "chatrooms"
   add_foreign_key "messages", "users"
   add_foreign_key "requests", "items"
   add_foreign_key "requests", "users"
