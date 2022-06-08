@@ -13,9 +13,9 @@ Rails.application.routes.draw do
     resources :reviews
   end
 
-  resources :requests do
-    resources :messages, only: :create
-  end
+  resources :requests
+
+  resources :chatrooms, only: :show
   #   patch "cancel_request/:id", to: "request#cancel", as: :cancel_request
   #   patch "approved_request/:id", to: "request#approved", as: :approved_request
 end
