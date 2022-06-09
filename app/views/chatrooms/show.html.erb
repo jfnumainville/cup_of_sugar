@@ -1,17 +1,22 @@
-<div class="container chatroom"  data-controller="chatroom-subscription" data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>">
+<div class="container chatroom"  data-controller="chatroom-subscription" data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>"
+data-chatroom-subscription-current-user-id-value="<%= current_user.id %>">
+
   <h1>#<%= @chatroom.name %></h1>
 
   <div class="messages" data-chatroom-subscription-target="messages">
+
     <% @chatroom.messages.each do |message| %>
-      <div id="message-<%= message.id %>">
-          <%= render "messages/message", message: message %>
+      <div class="message-row d-flex <%= message.sender?(current_user) ? 'justify-content-end' : 'justify-content-start' %>">
+        <div class="<%= message.sender?(current_user) ? 'sender-style' : 'receiver-style' %>">
+                <%= render "messages/message", message: message %>
+        </div>
       </div>
     <% end %>
   </div>
-  <div class="chat-input" data-controller="chatroom-enterkey"  data-action="keypress->chatroom-enterkey#submit" >
-    <%= simple_form_for [@chatroom, @message], remote: true, html: {class: "d-flex"} do |f| %>
-      <%= f.input :content, label: false, placeholder: "Message ##{@chatroom.name}", wrapper_html: {class: "flex-grow-1"}%>
-      <%= f.submit "Send", class: "btn btn-primary" %>
+  <div class="chat-input" data-controller="chatroom-enterkey" >
+    <%= simple_form_for [@chatroom, @message], remote: true, html: {class: "d-flex"},data: {target: "chatroom-enterkey.form", action: "keypress->chatroom-enterkey#submit"} do |f| %>
+      <%= f.input :content, label: false, placeholder: "Message #{@chatroom.name}", wrapper_html: {class: "flex-grow-1"}%>
+      <%= f.submit "Send", class: "button-gold ml-3" %>
     <% end %>
   </div>
 </div>
