@@ -16,7 +16,7 @@
       </div>
 
       <div class="<%= params[:active_tab]== "items"?  "tab-pane fade in show active" : "tab-pane fade" %>" id="items" role="tabpanel">
-        <%= render partial: "items/item_infos" %>
+        <%= render partial: "items/item_infos", locals: {my_item: @my_items}  %>
       </div>
 
     </div>
