@@ -30,7 +30,7 @@
       </div>
       <% if current_user != @owner  && !current_user.nil?%>
         <div class="item-frame">
-          <h2>Chat <%= @item.user.name %></h2>
+          <%= button_to "Chat with #{@owner.name}", chatrooms_path(id: @item.id), :method => :post, form: {target: '_blank'}, :class => "button-gold" %>
         </div>
       <% else %>
           <div class="item-frame">
