@@ -40,6 +40,27 @@
     </div>
   </div>
 </div>
+<!---Reviews Section------>
+<h2>
+  <%= pluralize @item.reviews.size, "review" %>
+</h2>
 
+<div id="reviews">
+  <% if @item.reviews.blank? %>
+    Be the first to leave a review for <%= @item.name %>
+  <% else %>
+    <% @item.reviews.each do |review| %>
+      <p><%= review.description %></p>
+      <i><small>by sugar-neighbour <strong><%=review.user.name %></strong></small></i>
+      <hr>
+    <% end %>
+  <% end %>
+</div>
+
+<%= simple_form_for([@item, @review], remote: true) do |f|  %>
+<%= f.input :description, :label => "Write a little review about neighbour's item -):" %>
+<%= f.button :submit, class:"button-gold"  %>
+<% end %>
+<!---Reviews Section------>
 
  <%# <%= image_tag(@item.picture) unless @item.picture.nil? %>

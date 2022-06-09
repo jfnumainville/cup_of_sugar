@@ -13,6 +13,8 @@ class ItemsController < ApplicationController
     @owner = @item.user
     @other_items_by_owner = @owner.items - [@item]
     # mark_notifications_as_read
+    @item = Item.find(params[:id])
+    @review = Review.new
   end
 
   def new
