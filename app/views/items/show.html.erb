@@ -41,26 +41,28 @@
   </div>
 </div>
 <!---Reviews Section------>
+<div class="container my-5">
 <h2>
-  <%= pluralize @item.reviews.size, "review" %>
+  <%# <%= pluralize @item.reviews.size, "review" %>
+  <strong>Reviews:</strong>
 </h2>
 
+<div data-controller="insert-in-list">
+  <div data-insert-in-list-target="items">
 <div id="reviews">
   <% if @item.reviews.blank? %>
     Be the first to leave a review for <%= @item.name %>
   <% else %>
     <% @item.reviews.order(id: :desc).each do |review| %>
-      <p id="review-<%= review.id %>"><%= review.description %></p>
-      <i><small>by sugar-neighbour <strong><%=review.user.name %></strong></small></i>
-      <hr>
+      <%= render 'review', review: review , remote: true %>
     <% end %>
   <% end %>
+    </div>
 </div>
-
-<%= simple_form_for([@item, @review], remote: true) do |f|  %>
-<%= f.input :description, :label => "Write a little review about neighbour's item -):" %>
-<%= f.button :submit, class:"button-gold"  %>
-<% end %>
+<br>
+<%= render 'reviews/form', item: @item, review: @review %>
+</div>
+</div>
 <!---Reviews Section------>
 
  <%# <%= image_tag(@item.picture) unless @item.picture.nil? %>
