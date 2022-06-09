@@ -49,8 +49,8 @@
   <% if @item.reviews.blank? %>
     Be the first to leave a review for <%= @item.name %>
   <% else %>
-    <% @item.reviews.each do |review| %>
-      <p><%= review.description %></p>
+    <% @item.reviews.order(id: :desc).each do |review| %>
+      <p id="review-<%= review.id %>"><%= review.description %></p>
       <i><small>by sugar-neighbour <strong><%=review.user.name %></strong></small></i>
       <hr>
     <% end %>

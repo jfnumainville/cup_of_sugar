@@ -18,7 +18,7 @@ class ReviewsController < ApplicationController
         if !@review.save
             flash[:notice] = @review.errors.full_messages.to_sentence
         else
-            redirect_to item_path(params[:item_id])
+            redirect_to item_path(params[:item_id], anchor: "review-#{@review.id}")
         end
     end
 
