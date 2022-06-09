@@ -6,6 +6,7 @@
   display: flex;
   flex-direction: column;
   padding: 16px;
+  gap: 16px;
 }
 .card-grid {
   display: grid;
@@ -14,9 +15,9 @@
 }
 
 
-.card-product-myitems > img {
+.card-product-myitems img {
   width: 100%;
-  min-height:170px;
+  height: 170px;
   object-fit: cover;
   border-radius: 16px;
 }
@@ -40,16 +41,19 @@
 .card-product-myitems .card-product-infos {
   background-color: $white;
   border-radius: 8px;
-  margin: 16px auto 0;
-  padding: 4px;
+  margin: 10 auto;
+  padding: 8px;
   height: 30%;
   width: 100%;
 }
 
 .update-delete {
+  background-color: $white;
   display:flex;
-  padding: 24px 0 0 0;
   justify-content: space-around;
-  font-size: 24px;
+  font-size: 12px;
+  padding: 4px;
   align-items: center;
+  width: 100%;
+  border-radius: 8px;
 }

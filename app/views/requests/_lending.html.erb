@@ -1,36 +1,36 @@
  <div class="card-grid lending">
   <% @my_lendings.each do |r| %>
-      <div class="card-product-borrowing-lending">
-          <%= cl_image_tag r.item.picture.key %>
-        <div class="card-product-infos">
-          <h2><%=r.item.name%> </h2>
-          <p><%=r.item.description%></p>
-        </div>
-        <div class="request-infos">
-          <div>
-            <h2>Info</h2>
-            <p> Lending to <%=r.user.name %> </p>
-            <p>from <%=r.start_date %></p>
-            <p>to <%= r.end_date%></p>
-          </div>
-          <div class="status">
-          <% if r.status == 'approved' %>
-            <p><i class="far fa-check-circle"></i> <em>approved</em></p>
-            <% elsif r.status == 'pending' %>
-            <p><i class="fas fa-spinner"> <em>pending</em> </i></p>
-            <% else %>
-            <p><i class="far fa-x"><em>declined</em></i></p>
-            <% end %>
-          </div>
-        </div>
-        <div class = "approve-reject">
-          <%= link_to request_path(r), method: :patch, data: {confirm: "Accept this booking?"} do %>
-            <i class="far fa-check-circle"></i>
-          <% end %>
-            <%= link_to request_path(r), method: :delete, data: {confirm: "Delete this item?"} do %>
-              <i class="far fa-trash-alt"> </i>
-          <% end %>
-        </div>
+    <div class="card-product-borrowing-lending">
+
+      <div class="card-product-infos">
+        <%= cl_image_tag r.item.picture.key, class: "avatar"%>
+        <h2><%=r.item.name%> </h2>
       </div>
+
+      <div class="request-infos">
+        <h2>Lending to <%=r.user.name %> </h2>
+        <p>from <%=r.start_date %></p>
+        <p>to <%= r.end_date%></p>
+      </div>
+
+      <div class="request-infos status">
+        <% if r.status == 'approved' %>
+        <p class="approved"><i class="far fa-check-circle"></i> <em>approved</em></p>
+        <% elsif r.status == 'pending' %>
+        <p class ="pending"><i class="fas fa-spinner"> <em>pending</em> </i></p>
+        <% else %>
+        <p class ="declined"><i class="far fa-x"><em>declined</em></i></p>
+        <% end %>
+      </div>
+
+      <div class = "request-infos">
+        <%= link_to request_path(r), method: :patch, data: {confirm: "Accept this booking?"} do %>
+          <i class="far fa-check-circle"></i>
+        <% end %>
+          <%= link_to request_path(r), method: :delete, data: {confirm: "Delete this item?"} do %>
+            <i class="far fa-trash-alt"> </i>
+        <% end %>
+      </div>
+    </div>
   <% end %>
 </div>
