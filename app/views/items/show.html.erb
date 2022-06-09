@@ -40,3 +40,27 @@
     </div>
   </div>
 </div>
+
+<div class="container my-5">
+<h2>
+  <%# <%= pluralize @item.reviews.size, "review" %>
+  <strong>Reviews:</strong>
+</h2>
+
+<div data-controller="insert-in-list">
+  <div data-insert-in-list-target="items">
+<div id="reviews">
+  <% if @item.reviews.blank? %>
+    Be the first to leave a review for <%= @item.name %>
+  <% else %>
+    <% @item.reviews.order(id: :desc).each do |review| %>
+      <%= render 'review', review: review , remote: true %>
+    <% end %>
+  <% end %>
+    </div>
+</div>
+<br>
+<%= render 'reviews/form', item: @item, review: @review %>
+</div>
+</div>
+
