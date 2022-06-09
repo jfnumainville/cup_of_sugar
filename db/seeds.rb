@@ -64,6 +64,14 @@ file = URI.open('https://res.cloudinary.com/degm2tmrv/image/upload/v1654364889/d
 admin4.picture.attach(io: file, filename: 'party_equipment.jpg', content_type: 'image/jpg')
 admin4.save!
 
+p user5 = User.create!(name: 'Krystina',
+                      email: 'krystina@gmail.com',
+                      password: 'password',
+                      address: '23 Rue Bernard, Montréal, QC H2T 2J6')
+file = URI.open('https://res.cloudinary.com/degm2tmrv/image/upload/v1654702069/development/cup%20of%20sugar/Krystina_zeafz3.jpg')
+user5.picture.attach(io: file, filename: 'party_equipment.jpg', content_type: 'image/jpg')
+user5.save!
+
 user_ids_list = User.all.pluck(:id)
 
 puts "Creating items..."
@@ -105,7 +113,7 @@ projector4.save!
 p lugage5 = Item.create!(name: "Luggage big and very resistant",
                       description: "unbreackable, 4 wheels",
                       category: "Holidays",
-                      user_id: User.first.id)
+                      user_id: User.last.id)
 file = URI.open('https://res.cloudinary.com/degm2tmrv/image/upload/v1654364890/development/cup%20of%20sugar/luggage_thkn3t.jpg')
 lugage5.picture.attach(io: file, filename: 'party_equipment.jpg', content_type: 'image/jpg')
 lugage5.save!

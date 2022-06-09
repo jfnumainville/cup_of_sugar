@@ -8,3 +8,13 @@ h1 {
   text-align: center;
   padding: 16px;
 }
+
+
+.home {
+  display: flex;
+  flex-direction: column;
+  // background-color: $jf-pink;
+  width: 100%;
+  gap: 16px;
+  padding: 0 8px;
+}

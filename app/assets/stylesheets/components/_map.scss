@@ -4,7 +4,7 @@
 
 
 .mapboxgl-popup {
-   width: 500px;
+   width: 600px;
    height: 25px;
 }
 
@@ -30,11 +30,22 @@
   }
 
 
-.mapboxgl-ctrl-attrib-inner .mapboxgl-ctrl-logo .mapboxgl-ctrl-bottom-right {
-  visibility:hidden;
-  }
-
 .avatar-name-map {
   display:flex;
   gap: 4px;
+}
+
+.mapboxgl-ctrl.mapboxgl-ctrl-attrib {
+  display:none;
+}
+
+.name-user-map {
+  font-weight: bold;
+  color: $cherry;
+  text-align: start;
+}
+
+.address-map {
+  text-align: start;
+  font-size: 10px;
 }

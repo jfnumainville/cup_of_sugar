@@ -2,8 +2,8 @@
   <%= cl_image_tag user.picture.key, class: "avatar" %>
   <div>
   <% if current_user != user %>
-    <p><%= user.name %></p>
-    <p><%= user.address %></p>
+    <p class="name-user-map"><%= user.name %></p>
+    <p class= "address-map"><%= user.address %></p>
   </div>
 </div>
   <% end %>
