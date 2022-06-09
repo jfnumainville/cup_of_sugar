@@ -1,0 +1,11 @@
+.carousel-control-prev-icon {
+  background-image: asset-url("arrow_blue_left.jpg");
+}
+
+.carousel-control-next-icon {
+  background-image: asset-url("arrow_blue_right.jpg");
+}
+
+.carousel-inner {
+    display: flex;
+  }

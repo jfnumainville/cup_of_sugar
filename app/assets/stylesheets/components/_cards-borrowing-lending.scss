@@ -1,11 +1,11 @@
 .card-product-borrowing-lending {
   width: 200px;
-  height: 600px;
+  height: 300px;
   background-color: $light-gray;
   border-radius: 8px;
   display: flex;
   flex-direction: column;
-  padding: 16px;
+  padding: 8px;
 }
 .card-grid {
   display: grid;
@@ -22,8 +22,7 @@
 }
 
 .card-product-borrowing-lending h2 {
-  font-size: 16px;
-  font-weight: bold;
+  font-size: 14px;
   margin: 0;
   color: $cherry;
 
@@ -39,9 +38,11 @@
 
 .card-product-borrowing-lending .card-product-infos {
   background-color: $white;
+  display: flex;
+  justify-content: space-between;
   border-radius: 8px;
-  margin: 16px auto 0;
-  padding: 4px;
+  margin: 8px auto 0;
+  padding: 8px;
   height: 30%;
   width: 100%;
 }
@@ -58,20 +59,21 @@
 .status {
   display:flex;
   height: 100px;
-  justify-content: center;
-  align-items:center;
+  justify-content: space-between;
 }
 
-.status p {
+
+.status .approved {
   color:green;
-  font-size: 24px;;
+  font-size: 16px;;
 }
 
+.status .pending {
+  color: $gold;
+  font-size: 16px;;
+}
 
-.approve-reject {
-  display:flex;
-  padding: 24px 0 0 0;
-  justify-content: space-around;
-  font-size: 24px;
-  align-items: center;
+.status .declined {
+  color: $cherry;
+  font-size: 16px;;
 }
