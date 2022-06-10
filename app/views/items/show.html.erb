@@ -39,6 +39,21 @@
       <% end %>
     </div>
   </div>
+    <div class="other-items">
+      <h4> Other items of <%= @owner.name %> </h4>
+      <div class="card-grid-show mt-5">
+      <% @other_items_by_owner.each do |item| %>
+        <%=  link_to item_path(item) do%>
+          <div class="card-product">
+            <%= image_tag(item.picture) %>
+            <div class="card-product-infos">
+              <h2><%= item.name %></h2>
+              <p><%= item.description %></p>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
 </div>
 
 <div class="container my-5">
