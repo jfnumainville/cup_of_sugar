@@ -1,33 +1,27 @@
-<div class="card-grid my-items">
-<% @my_items.each do |my_item| %>
+<div class="card-product-myitems" data-controller="edit-item" data-edit-item-target="card" >
+  <%= cl_image_tag my_item.picture.key %>
 
-  <div class="card-product-myitems" data-controller="edit-item" data-edit-item-target="card" >
-    <%= cl_image_tag my_item.picture.key %>
-
-    <div class="card-product-infos" data-edit-item-target="infos">
-      <h2><%=my_item.name %> </h2>
-      <p><%=my_item.description %></p>
-    </div>
-
-    <div class="update-delete" >
-      <i class="far fa-edit" data-action="click->edit-item#displayForm"></i>
-      <%= link_to item_path(my_item), method: :delete, data: {confirm: "Delete this item?"}  do %>
-      <i class="far fa-trash-alt"> </i>
-      <% end %>
-    </div>
-
-    <%= simple_form_for my_item, html: { class: "d-none", data: { edit_item_target: "form", action: "submit->edit-item#update"  } } do |f| %>
-      <div class="form-update bg-warning p-2">
-      <%= f.input :name %>
-      <%= f.input :description %>
-      <%= f.submit "Update", class: "button-gold" %>
-        </div>
-    <% end %>
-
+  <div class="card-product-infos" data-edit-item-target="infos">
+    <h2><%=my_item.name %> </h2>
+    <p><%=my_item.description %></p>
   </div>
-<% end %>
-</div>
 
+  <div class="update-delete" >
+    <i class="far fa-edit" data-action="click->edit-item#displayForm"></i>
+    <%= link_to item_path(my_item), method: :delete, data: {confirm: "Delete this item?"}  do %>
+    <i class="far fa-trash-alt"> </i>
+    <% end %>
+  </div>
+
+  <%= simple_form_for my_item, html: { class: "d-none", data: { edit_item_target: "form", action: "submit->edit-item#update"  } } do |f| %>
+    <div class="form-update bg-warning p-2">
+    <%= f.input :name %>
+    <%= f.input :description %>
+    <%= f.submit "Update", class: "button-gold" %>
+      </div>
+  <% end %>
+
+</div>
 
 <div id="deleteModal" class="modal">
   <div class="modal-dialog modal-confirm">
