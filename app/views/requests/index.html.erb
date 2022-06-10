@@ -1,24 +1,51 @@
-<div class="container">
-  <div class="d-flex align-items-start">
-    <nav class="nav flex-column nav-pills" id="nav-tab" role="tablist">
-      <button class="<%= params[:active_tab]== "borrowing" || params[:active_tab].nil? ?  "nav-link active" : "nav-link"%>" id="nav-profile" data-bs-toggle="tab" data-bs-target="#borrowing" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">I am borrowing</button>
-      <button class="<%= params[:active_tab]== "lending"?  "nav-link active" : "nav-link"%>" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#lending" type="button" role="tab" aria-controls="nav-home" aria-selected="true">I am lending</button>
-      <button class="<%= params[:active_tab]== "items"?  "nav-link active" : "nav-link" %>" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#items" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">My items</button>
-    </nav>
+<div class="container-full-width">
+  <div class="container-large">
 
-    <div class="tab-content bg-info p-4">
-      <div class="<%= params[:active_tab]== "borrowing" || params[:active_tab].nil? ?  "tab-pane fade in show active" : "tab-pane fade" %>" id="borrowing" role="tabpanel">
-        <%= render partial: "borrowing" %>
+    <div class="d-flex align-items-start">
+
+      <nav class="nav flex-column nav-pills p-4" id="nav-tab" role="tablist">
+        <button class="<%= params[:active_tab]== "borrowing" || params[:active_tab].nil? ?  "nav-link active" : "nav-link"%>" id="nav-profile" data-bs-toggle="tab" data-bs-target="#borrowing" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">I am borrowing</button>
+        <button class="<%= params[:active_tab]== "lending"?  "nav-link active" : "nav-link"%>" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#lending" type="button" role="tab" aria-controls="nav-home" aria-selected="true">I am lending</button>
+        <button class="<%= params[:active_tab]== "items"?  "nav-link active" : "nav-link" %>" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#items" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">My items</button>
+      </nav>
+
+      <div class="tab-content bg-success p-4 m-4">
+        <div class="<%= params[:active_tab]== "borrowing" || params[:active_tab].nil? ?  "tab-pane fade in show active" : "tab-pane fade" %>" id="borrowing" role="tabpanel">
+
+          <%= render partial: "borrowing" %>
+        </div>
+
+        <div class="<%= params[:active_tab]== "lending" ?  "tab-pane fade in show active" : "tab-pane fade" %>" id="lending" role="tabpanel">
+          <%= render partial: "lending" %>
+        </div>
+
+        <div class="<%= params[:active_tab]== "items"?  "tab-pane fade in show active" : "tab-pane fade" %>" id="items" role="tabpanel">
+          <div class="card-grid my-items">
+            <% @my_items.each do |cheese| %>
+              <%= render partial:"items/item_infos", locals: {my_item: cheese} %>
+            <% end %>
+          </div>
+        </div>
+
       </div>
 
-      <div class="<%= params[:active_tab]== "lending" ?  "tab-pane fade in show active" : "tab-pane fade" %>" id="lending" role="tabpanel">
-        <%= render partial: "lending" %>
-      </div>
+    </div>
+  </div>
+</div>
 
-      <div class="<%= params[:active_tab]== "items"?  "tab-pane fade in show active" : "tab-pane fade" %>" id="items" role="tabpanel">
-        <%= render partial: "items/item_infos", locals: {my_item: @my_items}  %>
-      </div>
 
+<div id="deleteModal" class="modal">
+  <div class="modal-dialog modal-confirm">
+    <div class="modal-content">
+      <div class="modal-header justify-content-center">
+        <div class="icon-box">
+          <%= image_tag("coffee.png", width:50) %>
+        </div>
+      </div>
+      <div class="modal-body text-center">
+        <h4> Thank you, <%= current_user.name %></h4>
+        <p> Your reservation has been send </p>
+      </div>
     </div>
   </div>
 </div>
