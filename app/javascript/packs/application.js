@@ -10,6 +10,9 @@ import "channels"
 import "controllers"
 import "bootstrap"
 import { initSweetalert } from '../plugins/init_sweetalert';
+import { initStarRating } from '../plugins/init_star_rating';
+
+initStarRating();
 
 Rails.start()
 Turbolinks.start()
@@ -59,7 +62,7 @@ initSweetalert('#sweet-alert-update', {
 
 initSweetalert('#sweet-alert-reservation', {
   title: "Thank you !",
-  text: "Your reservation has been send",
+  text: "Your reservation has been sent",
   icon: "success"
 }, (value) => {
   if (value) {
