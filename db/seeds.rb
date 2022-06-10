@@ -68,7 +68,7 @@ admin4.save!
 p user5 = User.create!(name: 'Krystina',
                       email: 'krystina@gmail.com',
                       password: 'password',
-                      address: '23 Rue Bernard, Montréal, QC H2T 2J6')
+                      address: '4107 Boulevard Saint-Laurent, Montreal QC')
 file = URI.open('https://res.cloudinary.com/degm2tmrv/image/upload/v1654702069/development/cup%20of%20sugar/Krystina_zeafz3.jpg')
 user5.picture.attach(io: file, filename: 'party_equipment.jpg', content_type: 'image/jpg')
 user5.save!
@@ -172,6 +172,9 @@ item_ids_list = Item.all.pluck(:id)
 puts "Creating requests..."
 
 p request = Request.create!(user_id: User.third.id, item_id: Item.first.id, start_date: Date.parse("2022-06-18"), end_date: Date.parse("2022-06-24"), status: 1)
+request.save!
+
+p request = Request.create!(user_id: User.first.id, item_id: Item.fourth.id, start_date: Date.parse("2022-06-25"), end_date: Date.parse("2022-06-27"), status: 1)
 request.save!
 
 p request = Request.create!(user_id: User.first.id, item_id: Item.fourth.id, start_date: Date.parse("2022-06-25"), end_date: Date.parse("2022-06-27"), status: 1)
