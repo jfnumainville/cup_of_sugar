@@ -8,7 +8,9 @@ class ReviewsController < ApplicationController
         @reviews = Review.all
     end
 
-    def new; end
+    def new
+      @review = Review.new
+    end
 
     def create
         @item = Item.find(params[:item_id])
@@ -43,7 +45,7 @@ class ReviewsController < ApplicationController
     def review_params
         params
             .require(:review)
-            .permit(:description)
+            .permit(:description, :rating)
             .merge(item_id: params[:item_id])
     end
 end
