@@ -68,4 +68,22 @@ class ItemsController < ApplicationController
   #     notifications_to_mark_as_read.update_all(read_at: Time.zone.now)
   #   end
   # end
+
+
+  def category_selector(keyword)
+    keywords_by_category = {Sports:["racket", "surf", "shoes"], Tools:["drill", "saw", "screwdriver"]}
+    categories_for_word = []
+
+    keywords_by_category.each do |k,values|
+      values.each do |v|
+          if (keyword.downcase.include? v)
+            categories_for_word << k.to_s
+            break
+          end
+      end
+    end
+    return categories_for_word
+  end
+
+
 end
