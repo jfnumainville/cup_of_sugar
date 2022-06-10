@@ -13,10 +13,30 @@
           <div>
             <h3> <%= @item.user.name %> </h3>
             <div class="rating">
-              <i class="fab fa-gratipay cherry"></i>
-              <i class="fab fa-gratipay cherry"></i>
-              <i class="fab fa-gratipay cherry"></i>
-              <i class="fab fa-gratipay light-gray"></i>
+            <% @rating = @item.average_rating %>
+            <% case @rating %>
+            <% when (0..1.9) %>
+              <i class="fab fa-gratipay cherry"></i> <strong><%= @rating %>/5</strong>
+            <% when (2..2.9) %>
+              <span> <i class="fab fa-gratipay cherry"></i> </span>
+              <span> <i class="fab fa-gratipay cherry"></i> <strong><%= @rating %>/5</span></strong>
+            <% when (3..3.9) %>
+              <span> <i class="fab fa-gratipay cherry"></i> </span>
+              <span> <i class="fab fa-gratipay cherry"></i> </span>
+              <span> <i class="fab fa-gratipay cherry"></i> <strong><%= @rating %>/5</span></strong>
+            <% when (4..4.9) %>
+              <span> <i class="fab fa-gratipay cherry"></i> </span>
+              <span> <i class="fab fa-gratipay cherry"></i> </span>
+              <span> <i class="fab fa-gratipay cherry"></i> </span>
+              <span> <i class="fab fa-gratipay cherry"></i> <strong><%= @rating %>/5</span></strong>
+            <% when (5) %>
+              <span> <i class="fab fa-gratipay cherry"></i> </span>
+              <span> <i class="fab fa-gratipay cherry"></i> </span>
+              <span> <i class="fab fa-gratipay cherry"></i> </span>
+              <span> <i class="fab fa-gratipay cherry"></i> </span>
+              <span> <i class="fab fa-gratipay cherry"></i> <strong><%= @rating %>/5</span></strong>
+            <% end %>
+
             </div>
           </div>
         </div>

@@ -16,7 +16,8 @@ class Item < ApplicationRecord
     if self.reviews.size.zero?
       return "Be the first to leave a review!"
     else
-      return self.reviews.inject(0.0) { |sum, review| sum + review.rating }/self.reviews.size
+      @avg = self.reviews.inject(0.0) { |sum, review| sum + review.rating }/self.reviews.size
+      return @avg.round(1)
     end
   end
 
