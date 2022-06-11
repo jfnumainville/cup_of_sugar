@@ -12,8 +12,8 @@ export default class extends Controller {
   submit(e){
       if (e.key === "Enter"){
           console.log ("This is working");
-        //e.preventDefault()
-          //this.formTarget.submit()
+        e.preventDefault()
+        this.formTarget.submit()
       }
   }
 }
