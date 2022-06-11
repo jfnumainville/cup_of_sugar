@@ -5,11 +5,11 @@ export default class extends Controller {
   static targets = ["name", "buttons"]
 
   connect() {
-    console.log("Listening for item names and returning categories suggestions")#
+    console.log("Listening for item names and returning categories suggestions")
   }
 
   retrieve(e) {
-     if (this.nameTarget.value.length >= 5){
+     if (this.nameTarget.value.length >= 4){
        let url = `http://localhost:3000/categories/?query=${this.nameTarget.value}`
 
       fetch(url)
@@ -23,9 +23,6 @@ export default class extends Controller {
         this.#insertCategories(categories)
       })
 
-
-
-      console.log(this.nameTarget.value)
     }
   }
 
