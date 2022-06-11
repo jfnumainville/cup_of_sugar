@@ -23,7 +23,7 @@ class RequestNotification < Noticed::Base
     @user = User.find(@request.user_id)
     "#{@user.name} requested your #{@item.name.truncate(15)}"
   end
-  #
+
   def url
     # item_path(Item.find(params[:request][:item_id]))
     # Notification.mark_as_read!
