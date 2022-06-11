@@ -1,4 +1,5 @@
-<div class="container">
+<div class="container-full-show">
+
   <div class="card-item">
     <%= cl_image_tag @item.picture.key%>
     <div class="item-info">
@@ -60,7 +61,8 @@
       <% end %>
     </div>
   </div>
-    <div class="other-items">
+
+  <div class="other-items">
       <h4> Other items from <%= @owner.name %> </h4>
       <div class="card-grid-show mt-5">
       <% @other_items_by_owner.each do |item| %>

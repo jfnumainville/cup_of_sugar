@@ -8,7 +8,7 @@
 
   <div class="update-delete" >
     <i class="far fa-edit" data-action="click->edit-item#displayForm"></i>
-    <%= link_to item_path(my_item), method: :delete, data: {confirm: "Delete this item?"}  do %>
+    <%= link_to item_path(my_item), method: :delete, data: { toggle:"modal", target:"#deleteModal"}  do %>
     <i class="far fa-trash-alt"> </i>
     <% end %>
   </div>
@@ -17,7 +17,7 @@
     <div class="form-update bg-warning p-2">
     <%= f.input :name %>
     <%= f.input :description %>
-    <%= f.submit "Update", class: "button-gold" %>
+    <%= f.submit "Update", class: "button-gold", data: { toggle:"modal", target:"#updateModal"} %>
       </div>
   <% end %>
 
@@ -32,8 +32,24 @@
         </div>
       </div>
       <div class="modal-body text-center">
-        <h4> Thank you, <%= current_user.name %></h4>
-        <p> Your reservation has been send </p>
+        <h4> Be careful, <%= current_user.name %></h4>
+        <p> Are you sure you want to delete your item, <%=my_item.name %>? </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="updateModal" class="modal">
+  <div class="modal-dialog modal-confirm">
+    <div class="modal-content">
+      <div class="modal-header justify-content-center">
+        <div class="icon-box">
+          <%= image_tag("coffee.png", width:50) %>
+        </div>
+      </div>
+      <div class="modal-body text-center">
+        <h4> Thank you <%= current_user.name %></h4>
+        <p> Your item, <%=my_item.name %> has been updated </p>
       </div>
     </div>
   </div>
