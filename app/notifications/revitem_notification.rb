@@ -21,9 +21,10 @@ class RevitemNotification < Noticed::Base
     if !params[:request].nil?
       @item = Item.find(params[:request][:item_id])
       "Leave a review on #{@item.name.truncate(15)}"
+    end
   end
 
   def url
-    link_to "reviews/form"
+    item_path(Item.find(params[:review][:item_id]))
   end
 end
