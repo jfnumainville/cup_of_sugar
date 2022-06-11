@@ -3,11 +3,13 @@ class Request < ApplicationRecord
   belongs_to :item
 
   has_many :reviews
+  has_many :revitems
 
   validates :start_date, :end_date, presence: true
   validate :dates_cannot_be_in_the_past, :end_date_is_after_start_date, on: :create
 
   after_create_commit :notify_recepient
+#   after_update_commit :notify_recepient
   before_destroy :cleanup_notifications
   has_noticed_notifications model_name: 'Notification'
 

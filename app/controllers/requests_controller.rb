@@ -37,6 +37,8 @@ class RequestsController < ApplicationController
   def update
     @request.status = 1
     @request.save
+    revitem = RevitemNotification.with(request: @request)
+    revitem.deliver_later(User.find(@request.user_id))
     redirect_to requests_path(active_tab: "lending")
   end
 
