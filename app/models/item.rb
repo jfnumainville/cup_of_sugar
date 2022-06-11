@@ -27,8 +27,8 @@ class Item < ApplicationRecord
                   against: { name: 'A', category: 'B', description: 'C' },
                   using: { tsearch: { prefix: true } }
 
-def default_picture
-    file = URI.open('https://res.cloudinary.com/degm2tmrv/image/upload/v1654612192/development/cup%20of%20sugar/coffee_p39sp1.png')
-    self.picture.attach(io: file, filename: 'coffee.png', content_type: 'image/jpg') if self.picture.key.nil?
-end
+  def default_picture
+      file = URI.open('https://res.cloudinary.com/degm2tmrv/image/upload/v1654612192/development/cup%20of%20sugar/coffee_p39sp1.png')
+      self.picture.attach(io: file, filename: 'coffee.png', content_type: 'image/jpg') if self.picture.key.nil?
+  end
 end

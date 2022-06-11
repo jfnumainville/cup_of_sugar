@@ -12,14 +12,30 @@ class ItemsController < ApplicationController
     @request = Request.new
     @owner = @item.user
     @other_items_by_owner = @owner.items - [@item]
-    # mark_notifications_as_read
     @item = Item.find(params[:id])
     @review = Review.new
+    mark_notifications_as_read
   end
 
   def new
     @item = Item.new
-    # @category = Category.new
+
+    @categories = []
+    if params[:query].present?
+      search_words = params[:query].downcase.split
+
+      search_words.each do |word|
+        suggested_categories = Category.where("#{word} = ANY (keywords)")
+          if !suggested_categories.nil?
+            suggested_categories.each do |category|
+                @categories << category
+            end
+          end
+      end
+    else
+      @categories = Category.all
+    end
+
   end
 
   def create
@@ -62,10 +78,10 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
   end
 
-  # def mark_notifications_as_read
-  #   if current_user
-  #     notifications_to_mark_as_read = @item.notifications_as_item.where(recipient: current_user)
-  #     notifications_to_mark_as_read.update_all(read_at: Time.zone.now)
-  #   end
-  # end
+  def mark_notifications_as_read
+    if current_user
+      notifications_to_mark_as_read = @item.notifications_as_item.where(recipient: current_user)
+      notifications_to_mark_as_read.update_all(read_at: Time.zone.now)
+    end
+  end
 end
