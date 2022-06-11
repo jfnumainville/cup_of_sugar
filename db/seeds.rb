@@ -35,43 +35,61 @@ MILE_END_ADDRESSES = [
     '391 Rue de la Congrégation, Montreal QC',
     '5333 Avenue Casgrain, Montreal QC'
 ]
-p admin = User.create!(name: 'Andrii',
+p andrii = User.create!(name: 'Andrii',
                        email: 'andrii@gmail.com',
                        password: 'password',
                        address: '359 Rue Bernard, Montréal, QC H2V 1T6')
 file = URI.open('https://res.cloudinary.com/degm2tmrv/image/upload/v1654368186/development/cup%20of%20sugar/andrii_tbdbeo.jpg')
-admin.picture.attach(io: file, filename: 'party_equipment.jpg', content_type: 'image/jpg')
-admin.save!
-p admin2 = User.create!(name: 'Mark',
+andrii.picture.attach(io: file, filename: 'party_equipment.jpg', content_type: 'image/jpg')
+andrii.save!
+
+p mark = User.create!(name: 'Mark',
                         email: 'mark@gmail.com',
                         password: 'password',
-                        address: '5333 Av. Casgrain, Montréal, QC H2T 1X3')
+                        address: '16 Saint-Viateur, Montreal QC')
 file = URI.open('https://res.cloudinary.com/degm2tmrv/image/upload/v1654368197/development/cup%20of%20sugar/mark_kcvy2q.jpg')
-admin2.picture.attach(io: file, filename: 'party_equipment.jpg', content_type: 'image/jpg')
-admin2.save!
+mark.picture.attach(io: file, filename: 'party_equipment.jpg', content_type: 'image/jpg')
+mark.save!
 
-p admin3 = User.create!(name: 'Suzanne',
+p suzanne = User.create!(name: 'Suzanne',
                         email: 'suzanne@gmail.com',
                         password: 'password',
                         address: '4869 Av du Parc, Montréal, QC H2V 4E7')
 file = URI.open('https://res.cloudinary.com/degm2tmrv/image/upload/v1654364893/development/cup%20of%20sugar/suzanne_x0ghzn.jpg')
-admin3.picture.attach(io: file, filename: 'party_equipment.jpg', content_type: 'image/jpg')
-admin3.save!
-p admin4 = User.create!(name: 'Jean-Francois',
+suzanne.picture.attach(io: file, filename: 'party_equipment.jpg', content_type: 'image/jpg')
+suzanne.save!
+
+p jeanfrancois = User.create!(name: 'Jean-Francois',
                         email: 'jf@gmail.com',
                         password: 'password',
-                        address: '74 Av. Fairmount, Montréal, QC H2T 2M2')
+                        address: '5333 Av. Casgrain, Montréal, QC H2T 1X3')
 file = URI.open('https://res.cloudinary.com/degm2tmrv/image/upload/v1654364889/development/cup%20of%20sugar/jfnumainville_boletg.jpg')
-admin4.picture.attach(io: file, filename: 'party_equipment.jpg', content_type: 'image/jpg')
-admin4.save!
+jeanfrancois.picture.attach(io: file, filename: 'party_equipment.jpg', content_type: 'image/jpg')
+jeanfrancois.save!
 
-p user5 = User.create!(name: 'Krystina',
+p krystina = User.create!(name: 'Krystina',
                       email: 'krystina@gmail.com',
                       password: 'password',
                       address: '4107 Boulevard Saint-Laurent, Montreal QC')
 file = URI.open('https://res.cloudinary.com/degm2tmrv/image/upload/v1654702069/development/cup%20of%20sugar/Krystina_zeafz3.jpg')
-user5.picture.attach(io: file, filename: 'party_equipment.jpg', content_type: 'image/jpg')
-user5.save!
+krystina.picture.attach(io: file, filename: 'party_equipment.jpg', content_type: 'image/jpg')
+krystina.save!
+
+p nicolas = User.create!(name: 'Nicolas',
+  email: 'nicolas@gmail.com',
+  password: 'password',
+  address: '7503 Rue St Denis, Montreal QC')
+file = URI.open('https://res.cloudinary.com/degm2tmrv/image/upload/v1654963235/development/cup%20of%20sugar/nicolas_tz0cmi.jpg')
+nicolas.picture.attach(io: file, filename: 'party_equipment.jpg', content_type: 'image/jpg')
+nicolas.save!
+
+p jeff = User.create!(name: 'jeff',
+  email: 'jeff@gmail.com',
+  password: 'password',
+  address: '3708 Rue St Hubert, Montreal QC')
+file = URI.open('https://res.cloudinary.com/degm2tmrv/image/upload/v1654963221/development/cup%20of%20sugar/jeff_hxj7aq.jpg')
+jeff.picture.attach(io: file, filename: 'party_equipment.jpg', content_type: 'image/jpg')
+jeff.save!
 
 user_ids_list = User.all.pluck(:id)
 
@@ -97,11 +115,10 @@ table_saw2.save!
 p party3 = Item.create!(name: "Party decoration",
                       description: "Disco mirror ball and very long colorful banner",
                       category: "Books",
-                      user_id: User.third.id)
+                      user_id: nicolas.id)
 file = URI.open('https://res.cloudinary.com/degm2tmrv/image/upload/v1654364892/development/cup%20of%20sugar/party_ftrr7y.jpg')
 party3.picture.attach(io: file, filename: 'party_equipment.jpg', content_type: 'image/jpg')
 party3.save!
-
 
 p projector4 = Item.create!(name: "Outdoor screen for projector",
                        description: 'Great for movie night',
@@ -130,7 +147,7 @@ campingchair6.save!
 p ladder7 = Item.create!(name: "Ladder",
             description: "Big ladder, stable. I have used it a lot to paint.",
             category: "Tools",
-            user_id: User.third.id)
+            user_id: jeanfrancois.id)
 file = URI.open('https://res.cloudinary.com/degm2tmrv/image/upload/v1654364889/development/cup%20of%20sugar/ladder_hpjrh5.jpg')
 ladder7.picture.attach(io: file, filename: 'party_equipment.jpg', content_type: 'image/jpg')
 ladder7.save!
@@ -155,7 +172,7 @@ p magazines10 = Item.create!(name: "Magazines Spirou",
   description: "Cartoons in French",
   category: "Books",
   user_id: User.third.id)
-file = URI.open('https://res.cloudinary.com/degm2tmrv/image/upload/v1654364893/development/cup%20of%20sugar/tablesaw_vjvofk.jpg')
+file = URI.open('https://res.cloudinary.com/degm2tmrv/image/upload/v1654364893/development/cup%20of%20sugar/spirou_m6coop.jpg')
 magazines10.picture.attach(io: file, filename: 'party_equipment.jpg', content_type: 'image/jpg')
 magazines10.save
 
