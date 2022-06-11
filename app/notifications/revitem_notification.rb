@@ -18,8 +18,9 @@ class RevitemNotification < Noticed::Base
   # Define helper methods to make rendering easier.
   #
   def message
-    @item = Item.find(params[:request][:item_id])
-    "Leave a review on #{@item.name.truncate(15)}"
+    if !params[:request].nil?
+      @item = Item.find(params[:request][:item_id])
+      "Leave a review on #{@item.name.truncate(15)}"
   end
 
   def url
