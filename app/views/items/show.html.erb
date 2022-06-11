@@ -49,8 +49,9 @@
         <%= render "reserve" %>
       </div>
       <% if current_user != @owner  && !current_user.nil?%>
-        <div class="item-frame">
-          <%= button_to "Chat with #{@owner.name}", chatrooms_path(id: @item.id), :method => :post, form: {target: '_blank'}, :class => "button-gold" %>
+        <div class="item-frame-chat">
+          <div class="icon-chat"><i class="far fa-comment-alt" > </i> </div>
+          <%= button_to "Chat with #{@owner.name}", chatrooms_path(id: @item.id), :method => :post, form: {target: '_blank'}, :class => "button-chat" %>
         </div>
       <% else %>
           <div class="item-frame">
@@ -60,7 +61,7 @@
     </div>
   </div>
     <div class="other-items">
-      <h4> Other items of <%= @owner.name %> </h4>
+      <h4> Other items from <%= @owner.name %> </h4>
       <div class="card-grid-show mt-5">
       <% @other_items_by_owner.each do |item| %>
         <%=  link_to item_path(item) do%>
