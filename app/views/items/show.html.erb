@@ -95,6 +95,10 @@
     </div>
 </div>
 <br>
+<% current_user.requests.each do |r| %>
+ <% if r.item == @item && r.status == "approved" %>
 <%= render 'reviews/form', item: @item, review: @review %>
+<% end %>
+<% end %>
 </div>
 </div>
