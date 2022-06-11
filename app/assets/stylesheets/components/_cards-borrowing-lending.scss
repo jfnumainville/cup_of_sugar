@@ -57,12 +57,16 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+
+  img {
+    width: 16%;
+    height: auto;
+  }
 }
 
 .status {
   display:flex;
   height: 100px;
-  justify-content: space-between;
 }
 
 
