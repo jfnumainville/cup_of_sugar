@@ -1,9 +1,20 @@
+.container-full-show {
+  width: 100%;
+  max-width: 1440px;
+  height: 100vh;
+  overflow: hidden;
+  background-color: $light-gray;
+  padding: 8px;
+  border-radius: 8px;
+  margin: 0 auto;
+}
+
+
 .card-item {
   display:flex;
-  background-color: $light-gray;
+  background-color: $white;
   padding: 16px;
-  width: 90%;
-  height: 560px;
+  margin: 0 auto;
   gap: 24px;
   border-radius: 16px;
 }
@@ -19,6 +30,7 @@
   display:flex;
   flex-direction: column;
   gap: 16px;
+  box-shadow: $box-shadow;
 }
 
 .item-info-top {
@@ -28,6 +40,7 @@
   align-items: center;
   padding: 10px;
   border-radius: 8px;
+  box-shadow: $box-shadow;
 }
 
 .item-frame {
@@ -37,6 +50,7 @@
   align-items: center;
   padding: 10px;
   border-radius: 8px;
+  box-shadow: $box-shadow;
 }
 
 .other-items {
@@ -49,7 +63,7 @@
 
 .card-grid-show {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-gap: 16px;
 }
 
@@ -71,6 +85,7 @@
   display:flex;
   justify-content: space-between;
   gap: 4px;
+  box-shadow: $box-shadow;
 }
 
 .item-info-top p {
@@ -94,6 +109,7 @@
   background-color: $white;
   padding: 10px;
   border-radius: 8px;
+  box-shadow: $box-shadow;
 }
 
 
@@ -156,4 +172,18 @@
 
 .button-chat:hover{
 	color: $light-gray;
+}
+
+.container-small {
+  width: 100%;
+  max-width: 1440px;
+  height: 30vh;
+  overflow: hidden;
+  background-color: $light-gray;
+  // margin: 16px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  margin: 0 auto;
 }

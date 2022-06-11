@@ -1,5 +1,7 @@
 .nav-link {
   border-radius: 8px;
+  font-size: 14px;
+  white-space: pre;
 }
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link{
@@ -8,8 +10,8 @@
 }
 
 .tab-pane {
-  height: 700px;
-  width: 1200px;
+  min-height: 80%;
+  min-width: 80%;
 }
 
 .tab-content {
