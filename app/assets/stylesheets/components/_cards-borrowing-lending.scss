@@ -54,6 +54,9 @@
   padding: 4px;
   height: 30%;
   width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .status {

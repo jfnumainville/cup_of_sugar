@@ -17,6 +17,8 @@
     <div class="form-update bg-warning p-2">
     <%= f.input :name %>
     <%= f.input :description %>
+    <%= f.input :category, :collection => ["Books", "Holidays", "Furnitures", "Garden", "Home decoration", "Kitchen", "Special events", "Sports", "Tools", "Toys"], :label => 'Select a Category'%>
+   <%= f.input :picture, as: :file, :hint => 'Hint: Good quality pictures attract greater attention' %>
     <%= f.submit "Update", class: "button-gold" %>
       </div>
   <% end %>
