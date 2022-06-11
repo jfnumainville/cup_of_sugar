@@ -3,6 +3,7 @@ class Request < ApplicationRecord
   belongs_to :item
 
   has_many :reviews
+  has_many :review_items
 
   validates :start_date, :end_date, presence: true
   validate :dates_cannot_be_in_the_past, :end_date_is_after_start_date, on: :create
