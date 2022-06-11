@@ -26,7 +26,6 @@ class RequestNotification < Noticed::Base
 
   def url
     # item_path(Item.find(params[:request][:item_id]))
-    # Notification.mark_as_read!
     requests_path(active_tab: "lending")
   end
 end
