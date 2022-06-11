@@ -1,5 +1,6 @@
 .container-full-width {
   width: 100%;
+  max-width: 1440px;
   height: 100vh;
   overflow: hidden;
   background-color: $light-gray;
@@ -8,6 +9,7 @@
   align-items: center;
   justify-content: center;
   border-radius: 8px;
+  margin: 0 auto;
 }
 
 
