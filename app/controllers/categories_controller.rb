@@ -12,7 +12,7 @@ class CategoriesController < ApplicationController
           if !(suggested_category == [])
 
             if !(@categories.include? suggested_category)
-            @categories << suggested_category
+            @categories << suggested_category[0]
             end
           end
         end

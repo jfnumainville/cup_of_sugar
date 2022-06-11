@@ -5,7 +5,8 @@
 
 
     <%= simple_form_for (@item), html: {"data-controller": "category-suggestions"} do |f|%>
-      <%= f.input :name, :label => "What item will you lend ?", input_html: {"data-action": "keyup->category-suggestions#retrieve"} %>
+      <%= f.input :name, :label => "What item will you lend ?", input_html: {"data-action": "keyup->category-suggestions#retrieve", "data-category-suggestions-target":"name"} %>
+      <p data-category-suggestions-target="buttons"></p>
       <%= f.input :category, :collection => ["Books", "Holidays", "Furnitures", "Garden", "Home decoration", "Kitchen", "Special events", "Sports", "Tools", "Toys"], :label => 'Select a Category'%>
       <%= f.input :description, :label => 'Description', :hint => 'Hint: write an original description to stand out' %>
       <%= f.input :picture, as: :file, :hint => 'Hint: Good quality pictures attract greater attention' %>
