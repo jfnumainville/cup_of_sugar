@@ -25,6 +25,6 @@ class RevitemNotification < Noticed::Base
   end
 
   def url
-    item_path(Item.find(params[:review][:item_id]))
+    requests_path(active_tab: "borrowing")
   end
 end

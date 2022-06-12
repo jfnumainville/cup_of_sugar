@@ -1,11 +1,6 @@
 <% if current_user %>
   <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
-    role="button" data-bs-toggle="dropdown" aria-expanded="false">
-      <span class="bi bi-bell">
-        <%= @unread.count >= 9 ? "9+" : @unread.count %>
-      </span>
-    </a>
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><span class="bi bi-bell" style="font-size: large"><%= @unread.count >= 9 ? "9+" : @unread.count %></i></span></a>
     <ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="navbarDropdown">
       <% @unread.each do |notification| %>
         <%= render 'layouts/notification', notification: notification %>

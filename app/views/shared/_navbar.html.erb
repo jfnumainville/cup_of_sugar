@@ -7,9 +7,9 @@
       <% end %>
     </div>
     <div class= "nav-menu">
+    <% if  user_signed_in? %>
       <p><%= link_to "Have something to lend?", new_item_path %></p>
       <p><%= link_to "My Dashboard", requests_path %></p>
-      <% if  user_signed_in? %>
       <ul class="navbar-nav">
       <%= render 'layouts/notifications' %>
       </ul>
