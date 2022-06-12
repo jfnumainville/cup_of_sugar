@@ -11,7 +11,7 @@ class Review < ApplicationRecord
   private
 
   def notify_recepient
-    RevitemNotification.with(review: self, item: item).deliver_later(item.user)
+    ReviewNotification.with(review: self, item: item).deliver_later(item.user)
   end
 
   def cleanup_notifications

@@ -31,6 +31,8 @@ class ReviewsController < ApplicationController
                 format.html { render 'items/show' }
                 format.json # normal Rails flow will look for a file called 'create.json'
             end
+            revitem = ReviewNotification.with(review: @review)
+            revitem.deliver_later(User.find(@review.user_id))
         end
     end
 

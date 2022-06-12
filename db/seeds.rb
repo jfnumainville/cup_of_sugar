@@ -170,16 +170,24 @@ puts "Creating requests..."
 p request = Request.create!(user_id: suzanne.id, item_id: Item.first.id, start_date: Date.parse("2022-06-18"), end_date: Date.parse("2022-06-24"), status: 1)
 request.save!
 
-p request = Request.create!(user_id: User.first.id, item_id: Item.fourth.id, start_date: Date.parse("2022-06-25"), end_date: Date.parse("2022-06-27"), status: 1)
+p request = Request.create!(user_id: User.second.id, item_id: Item.fourth.id, start_date: Date.parse("2022-06-25"), end_date: Date.parse("2022-06-27"), status: 1)
 request.save!
 
-p request = Request.create!(user_id: User.first.id, item_id: Item.fourth.id, start_date: Date.parse("2022-06-25"), end_date: Date.parse("2022-06-27"), status: 1)
+p request = Request.create!(user_id: User.third.id, item_id: Item.second.id, start_date: Date.parse("2022-06-25"), end_date: Date.parse("2022-06-27"), status: 1)
+request.save!
+
+p request = Request.create!(user_id: User.fourth.id, item_id: Item.third.id, start_date: Date.parse("2022-06-25"), end_date: Date.parse("2022-06-27"), status: 1)
 request.save!
 
 puts "Creating Reviews..."
 
-p tennis_review_1 = Review.create!(rating: 5,
-                                  description: "My son who is only 3 loved the tennis racket",
-                                  item_id: tennisracket1.id,
-                                  user_id: nicolas.id)
-tennis_review_1.save!
+# p tennis_review_1 = Review.create!(rating: 5,
+#                                   description: "My son who is only 3 loved the tennis racket",
+#                                   item_id: tennisracket1.id,
+#                                   user_id: nicolas.id)
+# tennis_review_1.save!
+10.times do
+    p review = Review.create!(rating: rand(1.0..5.0), description: Faker::Food.description,
+                          item_id: item_ids_list.sample, user_id: user_ids_list.sample)
+    review.save!
+  end
