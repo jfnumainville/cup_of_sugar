@@ -15,7 +15,9 @@
       </ul>
       <%= cl_image_tag current_user.picture.key , class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
       <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-        <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
+      <li class="dropdown-item">
+      <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
+      </li>
       </div>
       <% else %>
       <p><%= link_to "Log in", new_user_session_path %></p>
