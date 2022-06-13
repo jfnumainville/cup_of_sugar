@@ -9,7 +9,7 @@
       <div class="d-none p-3 pop-up" data-category-suggestions-target="section">
       <p data-category-suggestions-target="text"></p>
       </div>
-      <%= f.input :category, :collection => ["Books", "Holidays", "Furnitures", "Garden", "Home decoration", "Kitchen", "Special events", "Sports", "Tools", "Toys"], input_html: { "category-suggestions-target":"dropdown"},:label => 'Select a Category'%>
+      <%= f.input :category, :collection => ["Books", "Holidays", "Furnitures", "Garden", "Home decoration", "Kitchen", "Party","Special events", "Sports", "Tools", "Toys"], input_html: { "data-target":"category-suggestions.dropdown"},:label => 'Select a Category'%>
       <%= f.input :description, :label => 'Description', :hint => 'Hint: write an original description to stand out' %>
       <%= f.input :picture, as: :file, :hint => 'Hint: Good quality pictures attract greater attention' %>
       <%= f.submit "Submit", class:"button-gold", data: { toggle:"modal", target:"#myModal"}%>

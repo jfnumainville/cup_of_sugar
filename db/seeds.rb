@@ -214,8 +214,8 @@ ladder_review_5.save!
 
 puts "Creating Categories"
 
-p baby = Category.create!(name: "Baby", keywords:["toys", "crib", "puzzle", "legos", "playing blocks", "playing cards"])
-baby.save!
+p toys = Category.create!(name: "Toys", keywords:["toys", "nintendo", "playstation" "puzzle", "legos", "playing blocks", "playing cards"])
+toys.save!
 
 p sports = Category.create!(name: "Sports", keywords:["tennis", "racket", "net", "snow shoes", "skis", "bicycle", "skateboard", "ball", "baseball", "soccer", "football", "volleyball"])
 sports.save!
@@ -223,5 +223,5 @@ sports.save!
 p tools = Category.create!(name: "Tools", keywords:["drill", "saw", "hammer", "table saw", "screwdriver", "pliers", ])
 sports.save!
 
-p party = Category.create!(name: "Party", keywords:["disco ball", "decoration", "table", "chair", "ballons", "party", "costumes"])
+p party = Category.create!(name: "Party", keywords:["disco ball", "decoration", "table", "chair", "ballons", "party", "costume", "costumes"])
 sports.save!
