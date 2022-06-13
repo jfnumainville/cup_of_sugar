@@ -4,11 +4,22 @@
 <div class="banner">
   <div class="banner-content">
     <div class="banner-text">
-      <h1>Cup of Sugar</h1>
+      <%# <h1>Cup of Sugar</h1>
       <h2>Why buy or rent when you can borrow <br> from your neightbors?</h2>
+      <h2 class="typed-js" data-controller="typed-js"></h2>
+      <h2>from your neightbors?</h2>
+    </div> %>
+
+<div class="mb-5">
+    <h1 class ="display-1">Cup of Sugar</h1>
     </div>
-    <div class= "m-5">
-      <%= link_to "Start now", new_user_session_path, class: "button-gold p-4"  %>
+    <div class = "inline-typedjs m-5">
+    <h2 class="typed" data-controller="typed-js"></h2>
+    <%# <h2 class = "landing-neib">&nbsp;&nbsp;from your neighbours?</h2> %>
+</div>
+</div>
+    <div class= "mt-5">
+    <%= link_to "Start now", new_user_session_path, class: "button-gold p-4"  %>
     </div>
   </div>
 </div>
