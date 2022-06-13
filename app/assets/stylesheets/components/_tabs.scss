@@ -1,8 +1,9 @@
-.nav-link {
+.nav-pills > .nav-link {
   border-radius: 8px;
   font-size: 14px;
   white-space: pre;
-}
+  margin-right: 8px;
+  }
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link{
   background-color: $jf-pink;
@@ -16,4 +17,8 @@
 
 .tab-content {
   border-radius: 8px;
+  min-height: 560px;
+  width: 1116px;
+  padding: 16px;
+
 }

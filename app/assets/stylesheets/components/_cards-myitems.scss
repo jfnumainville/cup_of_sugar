@@ -1,6 +1,6 @@
 .card-product-myitems {
   width: 200px;
-  height: 350px;
+  height: 400px;
   background-color: $light-gray;
   border-radius: 8px;
   display: flex;
@@ -56,4 +56,16 @@
   align-items: center;
   width: 100%;
   border-radius: 8px;
+}
+
+.form-control {
+  font-size: 14px;
+}
+
+.form-update {
+  background-color: $jf-pink;
+}
+
+.form-select {
+  font-size: 14px;;
 }

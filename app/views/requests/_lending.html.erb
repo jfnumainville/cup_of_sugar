@@ -1,4 +1,4 @@
- <div class="card-grid">
+<div class="card-grid">
   <% @my_lendings.each do |r| %>
     <div class="card-product-borrowing-lending">
 
@@ -7,16 +7,15 @@
         <h2><%=r.item.name%> </h2>
       </div>
 
-      <div class="request-infos">
-        <h2>Lending to <%=r.user.name %> </h2>
-        <p>from <%=r.start_date %></p>
-        <p>to <%= r.end_date%></p>
+      <div class="request-infos-dates">
+        <h2>Lending to <%=r.user.name %> for <%= (r.end_date - r.start_date).to_i %> days</h2>
+        <p>from <%= r.start_date.strftime("%a %b %e") %> to <%= r.end_date.strftime("%a %b %e") %> </p>
       </div>
 
       <div class="request-infos status">
         <% if r.status == 'approved' %>
-         <%= image_tag ("icons8-ok.jpg") %>
-         <p>You approved this request!</p>
+        <%= image_tag ("icons8-ok.jpg") %>
+        <p>You approved this request!</p>
         <% elsif r.status == 'pending' %>
         <%= image_tag ("icons8-sand-timer.jpg") %>
         <p>Please review this request</p>

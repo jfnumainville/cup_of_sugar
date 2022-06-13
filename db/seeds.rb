@@ -167,16 +167,16 @@ item_ids_list = Item.all.pluck(:id)
 
 puts "Creating requests..."
 
-p request = Request.create!(user_id: suzanne.id, item_id: Item.first.id, start_date: Date.parse("2022-06-18"), end_date: Date.parse("2022-06-24"), status: 1)
+p request = Request.create!(user_id: suzanne.id, item_id: party3.id, start_date: Date.parse("2022-06-18"), end_date: Date.parse("2022-06-24"), status: 1)
 request.save!
 
-p request = Request.create!(user_id: User.second.id, item_id: Item.fourth.id, start_date: Date.parse("2022-06-25"), end_date: Date.parse("2022-06-27"), status: 1)
+p request = Request.create!(user_id: suzanne.id, item_id: game8.id, start_date: Date.parse("2022-06-25"), end_date: Date.parse("2022-06-27"), status: 1)
 request.save!
 
-p request = Request.create!(user_id: User.third.id, item_id: Item.second.id, start_date: Date.parse("2022-06-25"), end_date: Date.parse("2022-06-27"), status: 1)
+p request = Request.create!(user_id: mark.id, item_id: projector4.id, start_date: Date.parse("2022-06-25"), end_date: Date.parse("2022-06-27"), status: 1)
 request.save!
 
-p request = Request.create!(user_id: User.fourth.id, item_id: Item.third.id, start_date: Date.parse("2022-06-25"), end_date: Date.parse("2022-06-27"), status: 1)
+p request = Request.create!(user_id: andrii.id, item_id: table_saw2.id, start_date: Date.parse("2022-06-25"), end_date: Date.parse("2022-06-27"), status: 1)
 request.save!
 
 puts "Creating Reviews..."
