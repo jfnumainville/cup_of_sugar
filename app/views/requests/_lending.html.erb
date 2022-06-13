@@ -25,14 +25,51 @@
         <% end %>
       </div>
 
-      <div class = "request-infos">
-        <%= link_to request_path(r), method: :patch, data: {confirm: "Accept this booking?"} do %>
-          <i class="far fa-check-circle"></i>
-        <% end %>
-          <%= link_to request_path(r), method: :delete, data: {confirm: "Delete this item?"} do %>
-            <i class="far fa-trash-alt"> </i>
-        <% end %>
-      </div>
+      <% if r.status == "pending" %>
+          <div class = "request-infos">
+            <%= link_to "Accept the request", request_path(r), method: :patch, data: { toggle:"modal", target:"#acceptRequestModal"} %>
+            <%= link_to "Cancel the request", request_path(r), method: :delete, data: { toggle:"modal", target:"#deleteRequestModal"} %>
+          </div>
+      <% elsif r.status == "approved"  %>
+        <div class = "request-infos">
+          <%= link_to "Cancel the request", request_path(r), method: :delete, data: { toggle:"modal", target:"#deleteRequestModal"} %>
+        </div>
+      <% end %>
     </div>
   <% end %>
+</div>
+
+
+<div id="acceptRequestModal" class="modal">
+  <div class="modal-dialog modal-confirm">
+    <div class="modal-content">
+      <div class="modal-header justify-content-center">
+        <div class="icon-box">
+          <%= image_tag("coffee.png", width:50) %>
+        </div>
+      </div>
+      <div class="modal-body text-center">
+        <h4> Thank you, <%= current_user.name %></h4>
+        <p> Your acceptance has been send ! </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div id="deleteRequestModal" class="modal">
+  <div class="modal-dialog modal-confirm">
+    <div class="modal-content">
+      <div class="modal-header justify-content-center">
+        <div class="icon-box">
+          <%= image_tag("coffee.png", width:50) %>
+        </div>
+      </div>
+      <div class="modal-body text-center">
+        <h4> Be careful, <%= current_user.name %></h4>
+        <p> Are you sure you want to cancel request? </p>
+      </div>
+    </div>
+  </div>
 </div>

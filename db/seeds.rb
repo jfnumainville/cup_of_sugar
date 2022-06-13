@@ -167,22 +167,39 @@ item_ids_list = Item.all.pluck(:id)
 
 puts "Creating requests..."
 
-p request = Request.create!(user_id: suzanne.id, item_id: party3.id, start_date: Date.parse("2022-06-18"), end_date: Date.parse("2022-06-24"), status: 1)
+p request = Request.create!(user_id: suzanne.id,
+                            item_id: party3.id,
+                            start_date: Date.parse("2022-06-18"),
+                            end_date: Date.parse("2022-06-24"),
+                            status: 2)
 request.save!
 
-
-p request = Request.create!(user_id: suzanne.id, item_id: game8.id, start_date: Date.parse("2022-06-25"), end_date: Date.parse("2022-06-27"), status: 1)
+p request = Request.create!(user_id: suzanne.id,
+                            item_id: game8.id,
+                            start_date: Date.parse("2022-06-25"),
+                            end_date: Date.parse("2022-06-27"),
+                            status: 0)
 request.save!
 
-p request = Request.create!(user_id: mark.id, item_id: projector4.id, start_date: Date.parse("2022-06-25"), end_date: Date.parse("2022-06-27"), status: 1)
-
-p request = Request.create!(user_id: mark.id, item_id: tennisracket1.id, start_date: Date.parse("2022-06-25"), end_date: Date.parse("2022-06-27"), status: 1)
+p request = Request.create!(user_id: mark.id,
+                            item_id: projector4.id,
+                            start_date: Date.parse("2022-06-25"),
+                            end_date: Date.parse("2022-06-27"),
+                            status: 1)
 request.save!
 
-p request = Request.create!(user_id: mark.id, item_id: projector4.id, start_date: Date.parse("2022-06-25"), end_date: Date.parse("2022-06-27"), status: 1)
+p request = Request.create!(user_id: mark.id,
+                            item_id: tennisracket1.id,
+                            start_date: Date.parse("2022-06-25"),
+                            end_date: Date.parse("2022-06-27"),
+                            status: 0)
 request.save!
 
-p request = Request.create!(user_id: andrii.id, item_id: table_saw2.id, start_date: Date.parse("2022-06-25"), end_date: Date.parse("2022-06-27"), status: 1)
+p request = Request.create!(user_id: andrii.id,
+                            item_id: table_saw2.id,
+                            start_date: Date.parse("2022-06-25"),
+                            end_date: Date.parse("2022-06-27"),
+                            status: 1)
 request.save!
 
 puts "Creating Reviews..."
@@ -217,6 +234,18 @@ p ladder_review_5= Review.create!(rating: 5,
   item_id: ladder7.id,
   user_id: krystina.id)
 ladder_review_5.save!
+
+p party_review_6= Review.create!(rating: 3,
+  description: "Nicolas wasn't at home for our appointment, after he did not answer my message",
+  item_id: party3.id,
+  user_id: mark.id)
+party_review_6.save!
+
+p lugage_review_7= Review.create!(rating: 3,
+  description: "great lugage, very light and strong.",
+  item_id: lugage5.id,
+  user_id: mark.id)
+  lugage_review_7.save!
 
 puts "Creating Categories"
 
