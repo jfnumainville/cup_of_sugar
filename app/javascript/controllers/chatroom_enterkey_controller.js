@@ -3,7 +3,7 @@ import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
   static targets = ["form"]
-
+F
   connect() {
     console.log("Listening to enter key in chat input form")
   }
@@ -11,9 +11,9 @@ export default class extends Controller {
 
   submit(e){
       if (e.key === "Enter"){
-          console.log ("This is working");
-        //e.preventDefault()
-          //this.formTarget.submit()
+       console.log ("This is working");
+        e.preventDefault()
+        this.formTarget.submit()
       }
   }
 }

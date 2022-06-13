@@ -17,11 +17,14 @@
 
         <div class="request-infos status">
           <% if r.status == 'approved' %>
-          <p class="approved"><i class="far fa-check-circle"></i> <em>approved</em></p>
+          <%= image_tag ("icons8-ok.jpg") %>
+          <p>Your request is approved!</p>
           <% elsif r.status == 'pending' %>
-          <p class ="pending" ><i class="fas fa-spinner"> <em>pending</em> </i></p>
+         <%= image_tag ("icons8-sand-timer.jpg") %>
+         <p>Your request is pending!</p>
           <% else %>
-          <p class ="declined"><i class="far fa-x"><em>declined</em></i></p>
+          <%= image_tag ("icons8-cancel.jpg") %>
+          <p>Your request is declined!</p>
           <% end %>
         </div>
 

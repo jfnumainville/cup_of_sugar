@@ -7,6 +7,7 @@
   justify-content: space-between;
   flex-grow: 1;
 
+
   h1 {
     border-bottom: 1px solid $gray-200;
     margin-bottom: 0;
@@ -17,6 +18,7 @@
     height: 100%;
     overflow: scroll;
     padding: 1rem;
+    overflow-x: hidden;
   }
 
   #new_message {
