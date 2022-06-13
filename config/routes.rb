@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
-  get 'errors/not_found'
-  get 'errors/internal_server_error'
+#   get 'errors/not_found'
+#   get 'errors/internal_server_error'
   root to: 'pages#home'
+
+  get '/404' => "errors#not_found"
+  get '/500' => "errors#internal_server_error"
+
   get '/landing' => 'pages#landing'
 
   devise_for :users do
@@ -23,8 +27,8 @@ Rails.application.routes.draw do
 
   resources :categories, only: :index
 
-  match "/404", to: "errors#not_found", via: :all
-  match "/500", to: "errors#internal_server_error", via: :all
+
+#   get '/patients/:id', to: 'patients#show'
 
   #   patch "cancel_request/:id", to: "request#cancel", as: :cancel_request
   #   patch "approved_request/:id", to: "request#approved", as: :approved_request
