@@ -6,8 +6,8 @@ puts "Destroying previous seeds..."
 Category.destroy_all
 Message.destroy_all
 Chatroom.destroy_all
-# Review.destroy_all
-# Request.destroy_all
+Review.destroy_all
+Request.destroy_all
 puts "Destroying users"
 User.destroy_all
 puts "destroying items"
