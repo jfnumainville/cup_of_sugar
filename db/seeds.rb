@@ -167,13 +167,13 @@ item_ids_list = Item.all.pluck(:id)
 
 puts "Creating requests..."
 
-p request = Request.create!(user_id: suzanne.id, item_id: Item.first.id, start_date: Date.parse("2022-06-18"), end_date: Date.parse("2022-06-24"), status: 1)
+p request = Request.create!(user_id: suzanne.id, item_id: party3.id, start_date: Date.parse("2022-06-18"), end_date: Date.parse("2022-06-24"), status: 1)
 request.save!
 
-p request = Request.create!(user_id: User.second.id, item_id: Item.fourth.id, start_date: Date.parse("2022-06-25"), end_date: Date.parse("2022-06-27"), status: 1)
+p request = Request.create!(user_id: User.second.id, item_id: table_saw2.id, start_date: Date.parse("2022-06-25"), end_date: Date.parse("2022-06-27"), status: 1)
 request.save!
 
-p request = Request.create!(user_id: User.third.id, item_id: Item.second.id, start_date: Date.parse("2022-06-25"), end_date: Date.parse("2022-06-27"), status: 1)
+p request = Request.create!(user_id: User.third.id, item_id: projector4.id, start_date: Date.parse("2022-06-25"), end_date: Date.parse("2022-06-27"), status: 1)
 request.save!
 
 p request = Request.create!(user_id: User.fourth.id, item_id: Item.third.id, start_date: Date.parse("2022-06-25"), end_date: Date.parse("2022-06-27"), status: 1)
@@ -211,3 +211,17 @@ p ladder_review_5= Review.create!(rating: 5,
   item_id: ladder7.id,
   user_id: krystina.id)
 ladder_review_5.save!
+
+puts "Creating Categories"
+
+p toys = Category.create!(name: "Toys", keywords:["toys", "nintendo", "playstation" "puzzle", "legos", "playing blocks", "playing cards"])
+toys.save!
+
+p sports = Category.create!(name: "Sports", keywords:["tennis", "racket", "net", "snow shoes", "skis", "bicycle", "skateboard", "ball", "baseball", "soccer", "football", "volleyball"])
+sports.save!
+
+p tools = Category.create!(name: "Tools", keywords:["drill", "saw", "hammer", "table saw", "screwdriver", "pliers", ])
+sports.save!
+
+p party = Category.create!(name: "Party", keywords:["disco ball", "decoration", "table", "chair", "ballons", "party", "costume", "costumes"])
+sports.save!
