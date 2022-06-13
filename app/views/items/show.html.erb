@@ -5,11 +5,9 @@
 
           <div class="item-frame">
             <h2><%= @item.name %></h2>
+            <p><%= @item.description %></p>
           </div>
-          <div class="item-frame">
-              <p><%= @item.description %></p>
-          </div>
-        <%= cl_image_tag @item.picture.key%>
+         <%= cl_image_tag @item.picture.key%>
       </div>
 
       <div class="item-info">
@@ -22,6 +20,7 @@
             <% @rating = @item.average_rating %>
               <% case @rating %>
               <% when (0..0.9) %>
+              <% raise %>
                 <p>No rating</p>
               <% when (1..1.9) %>
                   <i class="fab fa-gratipay cherry"></i>
@@ -46,11 +45,12 @@
               <% end %>
         </div>
       </div>
+
       <div class="item-frame-calendar">
         <%= render "reserve" %>
       </div>
 
-    <% if current_user != @owner  && !current_user.nil?%>
+      <% if current_user != @owner  && !current_user.nil?%>
             <div class="item-frame-chat">
               <div class="icon-chat"><i class="far fa-comment-alt" > </i> </div>
               <%= button_to "Chat with #{@owner.name}", chatrooms_path(id: @item.id), :method => :post, form: {target: '_blank'}, :class => "button-chat" %>
@@ -60,38 +60,20 @@
               <%= link_to "Go to my items", requests_path(active_tab: "items"), class: "button-gold" %>
             </div>
         <% end %>
-      </div>
-
-    <div class="item-info">
-
-      <div class="item-frame-review">
-        <h2> What others say ... </h2>
-          <div data-controller="insert-in-list">
-            <div data-insert-in-list-target="items">
-              <div id="reviews">
-                <% if @item.reviews.blank? %>
-                  Sorry, no review yet has been written for this item.
-                <% else %>
-                  <% @item.reviews.order(id: :desc).each do |review| %>
-                  <%= render 'review', review: review , remote: true %>
-                  <% end %>
-                <% end %>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
 
-    <div class="other-items">
-    <% if @other_items_by_owner.blank? %>
-      <h2> <%= @owner.name %> does not propose othe items </h2>
-    <% else %>
+  </div>
+
+    <div class="item-frame">
+      <% if @other_items_by_owner.blank? %>
+        <h2> <%= @owner.name %> does not propose othe items </h2>
+      <% else %>
         <h2> Other items from <%= @owner.name %> </h2>
         <div class="card-grid-show">
         <% @other_items_by_owner.each do |item| %>
-          <%=  link_to item_path(item) do%>
+
             <div class="card-product">
+            <%=  link_to item_path(item) do%>
               <%= image_tag(item.picture) %>
               <div class="card-product-infos">
                 <h2><%= item.name %></h2>
@@ -100,7 +82,29 @@
             </div>
           <% end %>
         <% end %>
-    <% end %>
+      <% end %>
     </div>
-  </div>
+
+
+
+
+    <div class="item-frame-review">
+      <h2> What others say ... </h2>
+        <div data-controller="insert-in-list">
+          <div data-insert-in-list-target="items">
+            <div id="reviews">
+              <% if @item.reviews.blank? %>
+                Sorry, no review yet has been written for this item.
+              <% else %>
+                <% @item.reviews.order(id: :desc).each do |review| %>
+                <%= render 'review', review: review , remote: true %>
+                <% end %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
 </div>

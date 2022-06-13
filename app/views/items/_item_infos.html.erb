@@ -25,6 +25,7 @@
 
 </div>
 
+
 <div id="deleteModal" class="modal">
   <div class="modal-dialog modal-confirm">
     <div class="modal-content">
@@ -34,8 +35,8 @@
         </div>
       </div>
       <div class="modal-body text-center">
-        <h4> Be careful, <%= current_user.name %></h4>
-        <p> Are you sure you want to delete your item, <%=my_item.name %>? </p>
+        <h4> <%= current_user.name %></h4>
+        <p> Your item has been deleted </p>
       </div>
     </div>
   </div>
