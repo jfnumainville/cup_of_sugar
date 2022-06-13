@@ -9,10 +9,9 @@
           <h2><%=r.item.name %> </h2>
         </div>
 
-        <div class="request-infos">
-          <h2>Borrowing from <%=r.item.user.name %> </h2>
-          <p>from <%= r.start_date %> </p>
-          <p>to <%= r.end_date%> </p>
+        <div class="request-infos-dates">
+          <h2>Borrowing from <%=r.item.user.name %> for <%= (r.end_date - r.start_date).to_i %> days</h2>
+          <p>from <%= r.start_date.strftime("%a %b %e") %> to <%= r.end_date.strftime("%a %b %e") %> </p>
         </div>
 
         <div class="request-infos status">

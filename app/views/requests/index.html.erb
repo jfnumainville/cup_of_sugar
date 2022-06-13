@@ -3,13 +3,13 @@
 
     <div class="dashboard d-flex align-items-start">
 
-      <nav class="nav flex-column nav-pills p-4" id="nav-tab" role="tablist">
+      <nav class="nav flex-column nav-pills" id="nav-tab" role="tablist">
         <button class="<%= params[:active_tab]== "borrowing" || params[:active_tab].nil? ?  "nav-link active" : "nav-link"%>" id="nav-profile" data-bs-toggle="tab" data-bs-target="#borrowing" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">I am borrowing</button>
         <button class="<%= params[:active_tab]== "lending"?  "nav-link active" : "nav-link"%>" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#lending" type="button" role="tab" aria-controls="nav-home" aria-selected="true">I am lending</button>
         <button class="<%= params[:active_tab]== "items"?  "nav-link active" : "nav-link" %>" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#items" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">My items</button>
       </nav>
 
-      <div class="tab-content bg-success p-4 m-4">
+      <div class="tab-content bg-success">
         <div class="<%= params[:active_tab]== "borrowing" || params[:active_tab].nil? ?  "tab-pane fade in show active" : "tab-pane fade" %>" id="borrowing" role="tabpanel">
           <% if @my_requests.blank? %>
           <h2> <%= link_to "Find an Item to borrow?", root_path %></h2>
@@ -20,7 +20,7 @@
 
         <div class="<%= params[:active_tab]== "lending" ?  "tab-pane fade in show active" : "tab-pane fade" %>" id="lending" role="tabpanel">
           <% if @my_lendings.blank? %>
-            <h2>  No lending for the moment</h2>
+            <%= image_tag("illustration.jpg", height:500, width:500) %>
           <% else %>
             <%= render partial: "lending" %>
           <% end %>

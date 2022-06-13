@@ -74,7 +74,7 @@ user_ids_list = User.all.pluck(:id)
 
 puts "Creating items..."
 
-# TO-DO: Add Cloudinary images
+
 p tennisracket1 = Item.create!(name: "Tennis racket for young children",
                              description: "It is good for very young children who start to play tennis",
                              category: "Sports",
@@ -170,13 +170,19 @@ puts "Creating requests..."
 p request = Request.create!(user_id: suzanne.id, item_id: party3.id, start_date: Date.parse("2022-06-18"), end_date: Date.parse("2022-06-24"), status: 1)
 request.save!
 
-p request = Request.create!(user_id: User.second.id, item_id: table_saw2.id, start_date: Date.parse("2022-06-25"), end_date: Date.parse("2022-06-27"), status: 1)
+
+p request = Request.create!(user_id: suzanne.id, item_id: game8.id, start_date: Date.parse("2022-06-25"), end_date: Date.parse("2022-06-27"), status: 1)
 request.save!
 
-p request = Request.create!(user_id: User.third.id, item_id: projector4.id, start_date: Date.parse("2022-06-25"), end_date: Date.parse("2022-06-27"), status: 1)
+p request = Request.create!(user_id: mark.id, item_id: projector4.id, start_date: Date.parse("2022-06-25"), end_date: Date.parse("2022-06-27"), status: 1)
+
+p request = Request.create!(user_id: mark.id, item_id: tennisracket1.id, start_date: Date.parse("2022-06-25"), end_date: Date.parse("2022-06-27"), status: 1)
 request.save!
 
-p request = Request.create!(user_id: User.fourth.id, item_id: Item.third.id, start_date: Date.parse("2022-06-25"), end_date: Date.parse("2022-06-27"), status: 1)
+p request = Request.create!(user_id: mark.id, item_id: projector4.id, start_date: Date.parse("2022-06-25"), end_date: Date.parse("2022-06-27"), status: 1)
+request.save!
+
+p request = Request.create!(user_id: andrii.id, item_id: table_saw2.id, start_date: Date.parse("2022-06-25"), end_date: Date.parse("2022-06-27"), status: 1)
 request.save!
 
 puts "Creating Reviews..."
