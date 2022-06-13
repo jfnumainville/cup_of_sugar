@@ -10,7 +10,7 @@ class Request < ApplicationRecord
 
   after_create_commit :notify_recepient
 #   after_update_commit :notify_recepient
-  before_destroy :cleanup_notifications
+  # before_destroy :cleanup_notifications
   has_noticed_notifications model_name: 'Notification'
 
 
@@ -45,7 +45,9 @@ class Request < ApplicationRecord
     RequestNotification.with(request: self, item: item).deliver_later(item.user)
   end
 
-  def cleanup_notifications
-    notifications_as_request.destroy_all
-  end
+# Commented the cleanup_notifications as this method was preventing the seed from working
+
+  # def cleanup_notifications
+  #   notifications_as_request.destroy_all
+  # end
 end
