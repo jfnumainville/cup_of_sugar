@@ -5,14 +5,14 @@ class PagesController < ApplicationController
     @all_items = Item.all
     @users = User.all
     params[:query].present? ? @items = Item.search_n_d_a(params[:query]) : @items = @all_items
-    @users_with_items = []
-    @items.each do |item|
-      unless @users_with_items.include?(item.user)
-        @users_with_items << item.user
-      end
-    end
-    @relation_users_with_items = User.where(id: @users_with_items.map(&:id))
-    @markers = @relation_users_with_items.geocoded.map do |user|
+    # @users_with_items = []
+    # @items.each do |item|
+    #   unless @users_with_items.include?(item.user)
+    #     @users_with_items << item.user
+    #   end
+    # end
+    # @relation_users_with_items = User.where(id: @users_with_items.map(&:id))
+    @markers = @users.geocoded.map do |user|
       {
         lat: user.latitude,
         lng: user.longitude,

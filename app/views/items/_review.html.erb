@@ -1,3 +1,6 @@
-<p id="review-<%= review.id %>"><%= review.description %></p>
-      <i><small>by sugar-neighbour <strong><%=review.user.name.upcase %></strong> on <%= review.created_at.strftime("%a %b %e at %l:%M %p") %></small></i>
-      <hr>
+<p id="review-<%= review.id %>">
+<%= review.description %> <i><small>by <strong><%=review.user.name %></strong>
+on <%= review.created_at.strftime("%a %b %e") %></small></i>
+
+</p>
+<hr>

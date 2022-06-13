@@ -62,7 +62,7 @@ file = URI.open('https://res.cloudinary.com/degm2tmrv/image/upload/v1654963235/d
 nicolas.picture.attach(io: file, filename: 'party_equipment.jpg', content_type: 'image/jpg')
 nicolas.save!
 
-p jeff = User.create!(name: 'jeff',
+p jeff = User.create!(name: 'Jeff',
   email: 'jeff@gmail.com',
   password: 'password',
   address: '3708 Rue St Hubert, Montreal QC')
@@ -76,7 +76,7 @@ puts "Creating items..."
 
 # TO-DO: Add Cloudinary images
 p tennisracket1 = Item.create!(name: "Tennis racket for young children",
-                             description: "for begginers",
+                             description: "It is good for very young children who start to play tennis",
                              category: "Sports",
                              user_id: suzanne.id)
 file = URI.open('https://res.cloudinary.com/degm2tmrv/image/upload/v1654364893/development/cup%20of%20sugar/tennis_nhufry.jpg')
@@ -87,13 +87,13 @@ p table_saw2 = Item.create!(name: "Table Saw",
                        description: "Great for your DIY construction projects! Decent condition.",
                        category: "Construction",
                        user_id: suzanne.id)
-file = URI.open('https://res.cloudinary.com/degm2tmrv/image/upload/v1654364893/development/cup%20of%20sugar/tablesaw_vjvofk.jpg')
+file = URI.open('https://res.cloudinary.com/degm2tmrv/image/upload/v1655075717/development/cup%20of%20sugar/tablesaw_ztnjwf.jpg')
 table_saw2.picture.attach(io: file, filename: 'football_fan.jpg', content_type: 'image/jpg')
 table_saw2.save!
 
 p party3 = Item.create!(name: "Party decoration",
                       description: "Disco mirror ball and very long colorful banner",
-                      category: "Books",
+                      category: "Party",
                       user_id: nicolas.id)
 file = URI.open('https://res.cloudinary.com/degm2tmrv/image/upload/v1654364892/development/cup%20of%20sugar/party_ftrr7y.jpg')
 party3.picture.attach(io: file, filename: 'party_equipment.jpg', content_type: 'image/jpg')
@@ -126,7 +126,7 @@ campingchair6.save!
 p ladder7 = Item.create!(name: "Ladder",
             description: "Big ladder, stable. I have used it a lot to paint.",
             category: "Tools",
-            user_id: jeanfrancois.id)
+            user_id: jeff.id)
 file = URI.open('https://res.cloudinary.com/degm2tmrv/image/upload/v1654364889/development/cup%20of%20sugar/ladder_hpjrh5.jpg')
 ladder7.picture.attach(io: file, filename: 'party_equipment.jpg', content_type: 'image/jpg')
 ladder7.save!
@@ -181,13 +181,33 @@ request.save!
 
 puts "Creating Reviews..."
 
-# p tennis_review_1 = Review.create!(rating: 5,
-#                                   description: "My son who is only 3 loved the tennis racket",
-#                                   item_id: tennisracket1.id,
-#                                   user_id: nicolas.id)
-# tennis_review_1.save!
-10.times do
-    p review = Review.create!(rating: rand(1.0..5.0), description: Faker::Food.description,
-                          item_id: item_ids_list.sample, user_id: user_ids_list.sample)
-    review.save!
-  end
+p tennis_review_1 = Review.create!(rating: 5,
+                                  description: "My son who is only 3 loved the tennis racket",
+                                  item_id: tennisracket1.id,
+                                  user_id: nicolas.id)
+tennis_review_1.save!
+
+p table_saw_review_2= Review.create!(rating: 5,
+  description: "So happy I could borrow for 5 days it from my neigboor, I have used to make a table.",
+  item_id: table_saw2.id,
+  user_id: jeff.id)
+table_saw_review_2.save!
+
+p magazines10_review_3= Review.create!(rating: 5,
+  description: "They are very difficult to find. That is so nice of Krystina to let her neighbours read the comics.",
+  item_id: magazines10.id,
+  user_id: suzanne.id)
+magazines10_review_3.save!
+
+
+p party_review_4= Review.create!(rating: 3,
+  description: "some items were broken :(",
+  item_id: party3.id,
+  user_id: suzanne.id)
+party_review_4.save!
+
+p ladder_review_5= Review.create!(rating: 5,
+  description: "Exatcly was I needed, communication was easy. Thank you",
+  item_id: ladder7.id,
+  user_id: krystina.id)
+ladder_review_5.save!
