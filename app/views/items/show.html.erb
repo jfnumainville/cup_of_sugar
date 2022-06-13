@@ -1,110 +1,113 @@
 <div class="container-full-show">
+  <div class="container-large-show">
+    <div class="card-item">
+      <div class="item-info-img">
 
-  <div class="card-item">
-    <%= cl_image_tag @item.picture.key%>
-    <div class="item-info">
-      <div class="item-info-top">
-
-        <div class="item-frame">
-          <h2><%= @item.name %></h2>
-        </div>
-
-        <div class="item-frame-user">
-          <%= cl_image_tag @item.user.picture.key, class: "avatar" %>
-          <div>
-            <h3> <%= @item.user.name %> </h3>
-            <div class="rating">
-            <% @rating = @item.average_rating %>
-            <% case @rating %>
-            <% when (0..1.9) %>
-              <i class="fab fa-gratipay cherry"></i> <strong><%= @rating %>/5</strong>
-            <% when (2..2.9) %>
-              <span> <i class="fab fa-gratipay cherry"></i> </span>
-              <span> <i class="fab fa-gratipay cherry"></i> <strong><%= @rating %>/5</span></strong>
-            <% when (3..3.9) %>
-              <span> <i class="fab fa-gratipay cherry"></i> </span>
-              <span> <i class="fab fa-gratipay cherry"></i> </span>
-              <span> <i class="fab fa-gratipay cherry"></i> <strong><%= @rating %>/5</span></strong>
-            <% when (4..4.9) %>
-              <span> <i class="fab fa-gratipay cherry"></i> </span>
-              <span> <i class="fab fa-gratipay cherry"></i> </span>
-              <span> <i class="fab fa-gratipay cherry"></i> </span>
-              <span> <i class="fab fa-gratipay cherry"></i> <strong><%= @rating %>/5</span></strong>
-            <% when (5) %>
-              <span> <i class="fab fa-gratipay cherry"></i> </span>
-              <span> <i class="fab fa-gratipay cherry"></i> </span>
-              <span> <i class="fab fa-gratipay cherry"></i> </span>
-              <span> <i class="fab fa-gratipay cherry"></i> </span>
-              <span> <i class="fab fa-gratipay cherry"></i> <strong><%= @rating %>/5</span></strong>
-            <% end %>
-
-            </div>
+          <div class="item-frame">
+            <h2><%= @item.name %></h2>
           </div>
-        </div>
-
+          <div class="item-frame">
+              <p><%= @item.description %></p>
+          </div>
+        <%= cl_image_tag @item.picture.key%>
       </div>
-      <div class="item-frame">
-        <p><%= @item.description %></p>
+
+      <div class="item-info">
+        <div class="item-frame-user">
+          <div>
+            <%= cl_image_tag @item.user.picture.key, class: "avatar" %>
+            <h3> <%= @item.user.name %> </h3>
+          </div>
+          <div class="rating">
+            <% @rating = @item.average_rating %>
+              <% case @rating %>
+              <% when (0..0.9) %>
+                <p>No rating</p>
+              <% when (1..1.9) %>
+                  <i class="fab fa-gratipay cherry"></i>
+              <% when (2..2.9) %>
+                <span> <i class="fab fa-gratipay cherry"></i> </span>
+                <span> <i class="fab fa-gratipay cherry"></i>
+              <% when (3..3.9) %>
+                <span> <i class="fab fa-gratipay cherry"></i> </span>
+                <span> <i class="fab fa-gratipay cherry"></i> </span>
+                <span> <i class="fab fa-gratipay cherry"></i>
+              <% when (4..4.9) %>
+                <span> <i class="fab fa-gratipay cherry"></i> </span>
+                <span> <i class="fab fa-gratipay cherry"></i> </span>
+                <span> <i class="fab fa-gratipay cherry"></i> </span>
+                <span> <i class="fab fa-gratipay cherry"></i>
+              <% when (5) %>
+                <span> <i class="fab fa-gratipay cherry"></i> </span>
+                <span> <i class="fab fa-gratipay cherry"></i> </span>
+                <span> <i class="fab fa-gratipay cherry"></i> </span>
+                <span> <i class="fab fa-gratipay cherry"></i> </span>
+                <span> <i class="fab fa-gratipay cherry"></i>
+              <% end %>
+        </div>
       </div>
       <div class="item-frame-calendar">
         <%= render "reserve" %>
       </div>
-      <% if current_user != @owner  && !current_user.nil?%>
-        <div class="item-frame-chat">
-          <div class="icon-chat"><i class="far fa-comment-alt" > </i> </div>
-          <%= button_to "Chat with #{@owner.name}", chatrooms_path(id: @item.id), :method => :post, form: {target: '_blank'}, :class => "button-chat" %>
-        </div>
-      <% else %>
-          <div class="item-frame">
-            <%= link_to "Go to my items", requests_path(active_tab: "items"), class: "button-gold" %>
-          </div>
-      <% end %>
-    </div>
-    <div class="item-frame">
-      reviews
-    </div>
-  </div>
 
-  <div class="other-items">
-      <h4> Other items from <%= @owner.name %> </h4>
-      <div class="card-grid-show mt-5">
-      <% @other_items_by_owner.each do |item| %>
-        <%=  link_to item_path(item) do%>
-          <div class="card-product">
-            <%= image_tag(item.picture) %>
-            <div class="card-product-infos">
-              <h2><%= item.name %></h2>
-              <p><%= item.description %></p>
+    <% if current_user != @owner  && !current_user.nil?%>
+            <div class="item-frame-chat">
+              <div class="icon-chat"><i class="far fa-comment-alt" > </i> </div>
+              <%= button_to "Chat with #{@owner.name}", chatrooms_path(id: @item.id), :method => :post, form: {target: '_blank'}, :class => "button-chat" %>
+            </div>
+        <% else %>
+            <div class="item-frame">
+              <%= link_to "Go to my items", requests_path(active_tab: "items"), class: "button-gold" %>
+            </div>
+        <% end %>
+      </div>
+
+    <div class="item-info">
+
+      <div class="item-frame-review">
+        <h2> What others say ... </h2>
+          <div data-controller="insert-in-list">
+            <div data-insert-in-list-target="items">
+              <div id="reviews">
+                <% if @item.reviews.blank? %>
+                  Sorry, no review yet has been written for this item.
+                <% else %>
+                  <% @item.reviews.order(id: :desc).each do |review| %>
+                  <%= render 'review', review: review , remote: true %>
+                  <% end %>
+                <% end %>
+              </div>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="other-items">
+    <% if @other_items_by_owner.blank? %>
+      <h2> <%= @owner.name %> does not propose othe items </h2>
+    <% else %>
+        <h2> Other items from <%= @owner.name %> </h2>
+        <div class="card-grid-show">
+        <% @other_items_by_owner.each do |item| %>
+          <%=  link_to item_path(item) do%>
+            <div class="card-product">
+              <%= image_tag(item.picture) %>
+              <div class="card-product-infos">
+                <h2><%= item.name %></h2>
+                <p><%= truncate(item.description, length: 50) { link_to " more", item_path(item), class:"truncate" } %></p>
+              </div>
+            </div>
+          <% end %>
         <% end %>
-      <% end %>
-    </div>
-</div>
-
-<div class="container my-5">
-<h2>
-  <%# <%= pluralize @item.reviews.size, "review" %>
-  <strong>Reviews:</strong>
-</h2>
-
-<div data-controller="insert-in-list">
-  <div data-insert-in-list-target="items">
-<div id="reviews">
-  <% if @item.reviews.blank? %>
-    Be the first to leave a review for <%= @item.name %>
-  <% else %>
-    <% @item.reviews.order(id: :desc).each do |review| %>
-      <%= render 'review', review: review , remote: true %>
     <% end %>
-  <% end %>
     </div>
+  </div>
 </div>
-<br>
-<% current_user.requests.each do |r| %>
- <% if r.item == @item && r.status == "approved" %>
-<%= render 'reviews/form', item: @item, review: @review %>
-<% end %>
-<% end %>
-</div>
-</div>
+
+<%# <% current_user.requests.each do |r| %>
+ <%# <% if r.item == @item && r.status == "approved" %>
+<%# <%= render 'reviews/form', item: @item, review: @review %>
+<%# <% end %>
+<%# <% end %>
+  <%# <%= pluralize @item.reviews.size, "review" %>

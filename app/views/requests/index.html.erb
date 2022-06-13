@@ -19,7 +19,11 @@
         </div>
 
         <div class="<%= params[:active_tab]== "lending" ?  "tab-pane fade in show active" : "tab-pane fade" %>" id="lending" role="tabpanel">
-          <%= render partial: "lending" %>
+          <% if @my_lendings.blank? %>
+            <h2>  No lending for the moment</h2>
+          <% else %>
+            <%= render partial: "lending" %>
+          <% end %>
         </div>
 
         <div class="<%= params[:active_tab]== "items"?  "tab-pane fade in show active" : "tab-pane fade" %>" id="items" role="tabpanel">
