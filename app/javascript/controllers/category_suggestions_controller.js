@@ -11,7 +11,7 @@ export default class extends Controller {
 
   retrieve(e) {
      if (this.nameTarget.value.length >= 4){
-       let url = `http://http://cupofsugar.org/categories/?query=${this.nameTarget.value}`
+        let url = `http://www.cupofsugar.org/categories/?query=${this.nameTarget.value}`
 
       fetch(url)
       .then( response => response.json())
