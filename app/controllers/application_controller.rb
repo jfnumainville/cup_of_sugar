@@ -9,4 +9,8 @@ class ApplicationController < ActionController::Base
     @unread = notifications.unread
     @read = notifications.read
   end
+
+  def default_url_options
+    { host: ENV["DOMAIN"] || "localhost:3000" }
+  end
 end
