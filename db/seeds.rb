@@ -232,13 +232,15 @@ p party_review_4= Review.create!(rating: 3,
   user_id: suzanne.id)
 party_review_4.save!
 
-p ladder_review_5= Review.create!(rating: 5,
-  description: "Exatcly was I needed, communication was easy. Thank you",
+p ladder_review_5= Review.create!(
+  rating: 5,
+  description: "Exactly was I needed, communication was easy. Thank you",
   item_id: ladder7.id,
   user_id: krystina.id)
 ladder_review_5.save!
 
-p party_review_6= Review.create!(rating: 3,
+p party_review_6= Review.create!(
+  rating: 3,
   description: "Nicolas wasn't at home for our appointment, after he did not answer my message",
   item_id: party3.id,
   user_id: mark.id)

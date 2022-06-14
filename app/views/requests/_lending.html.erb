@@ -8,7 +8,7 @@
       </div>
 
       <div class="request-infos-dates">
-        <h2>Lending to <%=r.user.name %> for <%= (r.end_date - r.start_date).to_i %> days</h2>
+        <h2>Lending to <%=r.user.name %> <br>for <%= (r.end_date - r.start_date).to_i %> days</h2>
         <p>from <%= r.start_date.strftime("%a %b %e") %> to <%= r.end_date.strftime("%a %b %e") %> </p>
       </div>
 
@@ -27,12 +27,12 @@
 
       <% if r.status == "pending" %>
           <div class = "request-infos">
-            <%= link_to "Accept the request", request_path(r), method: :patch, data: { toggle:"modal", target:"#acceptRequestModal"} %>
-            <%= link_to "Cancel the request", request_path(r), method: :delete, data: { toggle:"modal", target:"#deleteRequestModal"} %>
+            <%= link_to "Accept", request_path(r), method: :patch, data: { toggle:"modal", target:"#acceptRequestModal"} %>
+            <%= link_to "Cancel", request_path(r), method: :delete, data: { toggle:"modal", target:"#deleteRequestModal"} %>
           </div>
       <% elsif r.status == "approved"  %>
         <div class = "request-infos">
-          <%= link_to "Cancel the request", request_path(r), method: :delete, data: { toggle:"modal", target:"#deleteRequestModal"} %>
+          <%= link_to "Cancel", request_path(r), method: :delete, data: { toggle:"modal", target:"#deleteRequestModal"} %>
         </div>
       <% end %>
     </div>
