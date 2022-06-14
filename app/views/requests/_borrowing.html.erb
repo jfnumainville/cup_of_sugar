@@ -10,7 +10,7 @@
         </div>
 
         <div class="request-infos-dates">
-          <h2>Borrowing from <%=r.item.user.name %> for <%= (r.end_date - r.start_date).to_i %> days</h2>
+          <h2>Borrowing from <%=r.item.user.name %> <br>for <%= (r.end_date - r.start_date).to_i %> days</h2>
           <p>from <%= r.start_date.strftime("%a %b %e") %> to <%= r.end_date.strftime("%a %b %e") %> </p>
         </div>
 
@@ -28,7 +28,7 @@
         </div>
 
         <div class = "request-infos">
-          <%= link_to "Cancel your request", request_path(r), method: :delete, data: {confirm: "Delete this item?"} %>
+          <%= link_to "Cancel", request_path(r), method: :delete, data: {confirm: "Delete this item?"} %>
         </div>
 
 

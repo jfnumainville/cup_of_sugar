@@ -6,6 +6,7 @@
   display: flex;
   flex-direction: column;
   padding: 8px;
+  box-shadow: $box-shadow;
 }
 .card-grid {
   display: grid;
@@ -25,7 +26,6 @@
   font-size: 14px;
   margin: 0;
   color: $cherry;
-
 }
 
 .card-product-borrowing-lending p {
@@ -39,7 +39,7 @@
 .card-product-borrowing-lending .card-product-infos {
   background-color: $white;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   border-radius: 8px;
   margin: 8px auto 0;
   padding: 8px;
@@ -92,4 +92,13 @@
   padding: 4px;
   height: 30%;
   width: 100%;
+}
+
+
+.request-infos-dates h2 {
+  font-size: 14px;
+  margin: 0;
+  color: $cherry;
+  text-align: center;
+
 }
