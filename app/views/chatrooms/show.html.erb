@@ -2,7 +2,6 @@
 data-chatroom-subscription-current-user-id-value="<%= current_user.id %>">
 
   <h1>#<%= @chatroom.name %></h1>
-
   <div class="messages" data-chatroom-subscription-target="messages">
 
     <% @chatroom.messages.each do |message| %>
@@ -16,7 +15,7 @@ data-chatroom-subscription-current-user-id-value="<%= current_user.id %>">
   <div class="chat-input" data-controller="chatroom-enterkey" >
     <%= simple_form_for [@chatroom, @message], remote: true, html: {class: "d-flex"},data: {target: "chatroom-enterkey.form", action: "keypress->chatroom-enterkey#submit"} do |f| %>
       <%= f.input :content, label: false, placeholder: "Message #{@chatroom.name}", wrapper_html: {class: "flex-grow-1"}%>
-      <%= f.submit "Send", class: "button-gold ml-3" %>
+      <%= f.submit "Send", class: "button-gold ml-3 mb-3" %>
     <% end %>
   </div>
 </div>

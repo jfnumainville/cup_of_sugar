@@ -1,4 +1,6 @@
   // To style the wrapping div
+
+
   .message-row {
     margin-bottom: 10px;
     padding: 8px;
@@ -14,9 +16,10 @@
   }
 
   .sender-style {
-    background-color: $light-cherry;
+   background-color: #FDCDC5;
+   opacity: 0.8;
   }
 
   .receiver-style {
-    background-color: $jf-pink;
+    background-color: $light-gray
   }
