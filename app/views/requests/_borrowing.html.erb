@@ -28,11 +28,28 @@
         </div>
 
         <div class = "request-infos">
-          <%= link_to "Cancel", request_path(r), method: :delete, data: {confirm: "Delete this item?"} %>
+          <%= link_to "Cancel", request_path(r), method: :delete, data: { toggle:"modal", target:"#deleteBorrowingModal"}  %>
         </div>
 
 
     </div>
 
   <% end %>
+</div>
+
+
+<div id="deleteBorrowingModal" class="modal fade">
+  <div class="modal-dialog modal-confirm">
+    <div class="modal-content">
+      <div class="modal-header justify-content-center">
+        <div class="icon-box">
+          <%= image_tag("coffee.png", width:50) %>
+        </div>
+      </div>
+      <div class="modal-body text-center">
+        <h4> <%= current_user.name %></h4>
+        <p> Your request has been cancelled </p>
+      </div>
+    </div>
+  </div>
 </div>

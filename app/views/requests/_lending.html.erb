@@ -40,7 +40,7 @@
 </div>
 
 
-<div id="acceptRequestModal" class="modal">
+<div id="acceptRequestModal" class="modal fade">
   <div class="modal-dialog modal-confirm">
     <div class="modal-content">
       <div class="modal-header justify-content-center">
@@ -67,8 +67,8 @@
         </div>
       </div>
       <div class="modal-body text-center">
-        <h4> Be careful, <%= current_user.name %></h4>
-        <p> Are you sure you want to cancel request? </p>
+        <h4> <%= current_user.name %></h4>
+        <p> Your request has been cancelled </p>
       </div>
     </div>
   </div>
