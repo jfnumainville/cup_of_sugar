@@ -189,16 +189,16 @@
 
 .icon-chat {
   font-size: 24px;
-  color: $cherry;
+  color: $white;
 }
 
 
 .item-frame-chat {
-  background-color: $white;
-  padding: 10px;
+  background-color: $cherry;
+  padding: 0 24px;
   border-radius: 8px;
   display:flex;
-  gap: 8px;
+  align-items: center;
   justify-content: center;
 }
 
@@ -206,7 +206,7 @@
 .button-chat {
   color: $white;
   background-color: $cherry;
-  padding: 8px 24px;
+  padding: 0 24px;
   border-radius: 50px;
   text-align: center;
   border: none;
