@@ -4,67 +4,104 @@
       <div class="item-info-img">
 
           <div class="item-frame">
-            <h2><%= @item.name %></h2>
+            <div class="d-flex">
+              <h2><%= @item.name %></h2>
+              <div class="rating">
+                <% @rating = @item.average_rating %>
+                  <% case @rating %>
+                    <% when (1..1.9) %>
+                      <i class="fab fa-gratipay cherry"></i>
+                      <span> <i class="fab fa-gratipay light-gray"></i>
+                      <span> <i class="fab fa-gratipay light-gray"></i>
+                      <span> <i class="fab fa-gratipay light-gray"></i>
+                      <span> <i class="fab fa-gratipay light-gray"></i>
+                    <% when (2..2.9) %> light-gray
+                      <span> <i class="fab fa-gratipay cherry"></i> </span>
+                      <span> <i class="fab fa-gratipay cherry"></i> </span>
+                      <span> <i class="fab fa-gratipay light-gray"></i></span>
+                      <span> <i class="fab fa-gratipay light-gray"></i></span>
+                      <span> <i class="fab fa-gratipay light-gray"></i></span>
+                    <% when (3..3.9) %>
+                      <span> <i class="fab fa-gratipay cherry"></i> </span>
+                      <span> <i class="fab fa-gratipay cherry"></i> </span>
+                      <span> <i class="fab fa-gratipay cherry"></i> </span>
+                      <span> <i class="fab fa-gratipay light-gray"></i></span>
+                      <span> <i class="fab fa-gratipay light-gray"></i></span>
+                    <% when (4..4.9) %>
+                      <span> <i class="fab fa-gratipay cherry"></i> </span>
+                      <span> <i class="fab fa-gratipay cherry"></i> </span>
+                      <span> <i class="fab fa-gratipay cherry"></i> </span>
+                      <span> <i class="fab fa-gratipay cherry"></i></span>
+                      <span> <i class="fab fa-gratipay light-gray"></i></span>
+                    <% when (5) %>
+                      <span> <i class="fab fa-gratipay cherry"></i> </span>
+                      <span> <i class="fab fa-gratipay cherry"></i> </span>
+                      <span> <i class="fab fa-gratipay cherry"></i> </span>
+                      <span> <i class="fab fa-gratipay cherry"></i> </span>
+                      <span> <i class="fab fa-gratipay cherry"></i> </span>
+                    <% else %>
+                      <span> <i class="fab fa-gratipay light-gray"></i></span>
+                      <span> <i class="fab fa-gratipay light-gray"></i></span>
+                      <span> <i class="fab fa-gratipay light-gray"></i></span>
+                      <span> <i class="fab fa-gratipay light-gray"></i></span>
+                      <span> <i class="fab fa-gratipay light-gray"></i></span>
+                  <% end %>
+              </div>
+            </div>
             <p><%= @item.description %></p>
           </div>
          <%= cl_image_tag @item.picture.key%>
       </div>
 
       <div class="item-info">
-        <div class="item-frame-user">
-          <div>
-            <%= cl_image_tag @item.user.picture.key, class: "avatar" %>
-            <h3> <%= @item.user.name %> </h3>
+
+          <div class="item-frame-user">
+            <div>
+              <%= cl_image_tag @item.user.picture.key, class: "avatar" %>
+              <h3> <%= @item.user.name %> </h3>
+            </div>
+
+            <% if current_user != @owner  && !current_user.nil?%>
+              <div class="item-frame-chat">
+                <div class="icon-chat">
+                  <i class="far fa-comment-alt" > </i>
+                </div>
+                  <%= button_to "Chat with #{@owner.name}", chatrooms_path(id: @item.id), :method => :post, form: {target: '_blank'}, :class => "button-chat" %>
+              </div>
+            <% else %>
+              <div class="item-frame">
+                <%= link_to "Go to my items", requests_path(active_tab: "items"), class: "button-gold" %>
+              </div>
+            <% end %>
           </div>
-          <div class="rating">
-            <% @rating = @item.average_rating %>
-              <% case @rating %>
-              <% when (0..0.9) %>
-              <% raise %>
-                <p>No rating</p>
-              <% when (1..1.9) %>
-                  <i class="fab fa-gratipay cherry"></i>
-              <% when (2..2.9) %>
-                <span> <i class="fab fa-gratipay cherry"></i> </span>
-                <span> <i class="fab fa-gratipay cherry"></i>
-              <% when (3..3.9) %>
-                <span> <i class="fab fa-gratipay cherry"></i> </span>
-                <span> <i class="fab fa-gratipay cherry"></i> </span>
-                <span> <i class="fab fa-gratipay cherry"></i>
-              <% when (4..4.9) %>
-                <span> <i class="fab fa-gratipay cherry"></i> </span>
-                <span> <i class="fab fa-gratipay cherry"></i> </span>
-                <span> <i class="fab fa-gratipay cherry"></i> </span>
-                <span> <i class="fab fa-gratipay cherry"></i>
-              <% when (5) %>
-                <span> <i class="fab fa-gratipay cherry"></i> </span>
-                <span> <i class="fab fa-gratipay cherry"></i> </span>
-                <span> <i class="fab fa-gratipay cherry"></i> </span>
-                <span> <i class="fab fa-gratipay cherry"></i> </span>
-                <span> <i class="fab fa-gratipay cherry"></i>
+
+
+        <div class="item-frame-calendar">
+          <%= render "reserve" %>
+        </div>
+
+
+    </div>
+    <div class="item-frame-review">
+      <h2> What others say ... </h2>
+      <div data-controller="insert-in-list">
+        <div data-insert-in-list-target="items">
+          <div id="reviews">
+            <% if @item.reviews.blank? %>
+                <p>Sorry, no review yet has been written for this item.</p>
+            <% else %>
+              <% @item.reviews.order(id: :desc).each do |review| %>
+              <%= render 'review', review: review , remote: true %>
               <% end %>
+            <% end %>
+          </div>
         </div>
       </div>
-
-      <div class="item-frame-calendar">
-        <%= render "reserve" %>
-      </div>
-
-      <% if current_user != @owner  && !current_user.nil?%>
-            <div class="item-frame-chat">
-              <div class="icon-chat"><i class="far fa-comment-alt" > </i> </div>
-              <%= button_to "Chat with #{@owner.name}", chatrooms_path(id: @item.id), :method => :post, form: {target: '_blank'}, :class => "button-chat" %>
-            </div>
-        <% else %>
-            <div class="item-frame">
-              <%= link_to "Go to my items", requests_path(active_tab: "items"), class: "button-gold" %>
-            </div>
-        <% end %>
     </div>
 
   </div>
 
-    <div class="item-frame">
+  <div class="other-items">
       <% if @other_items_by_owner.blank? %>
         <h2> <%= @owner.name %> does not propose othe items </h2>
       <% else %>
@@ -84,27 +121,6 @@
         <% end %>
       <% end %>
     </div>
-
-
-
-
-    <div class="item-frame-review">
-      <h2> What others say ... </h2>
-        <div data-controller="insert-in-list">
-          <div data-insert-in-list-target="items">
-            <div id="reviews">
-              <% if @item.reviews.blank? %>
-                Sorry, no review yet has been written for this item.
-              <% else %>
-                <% @item.reviews.order(id: :desc).each do |review| %>
-                <%= render 'review', review: review , remote: true %>
-                <% end %>
-              <% end %>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
+  </div>
 
 </div>

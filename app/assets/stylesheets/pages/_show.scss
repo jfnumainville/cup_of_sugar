@@ -56,33 +56,27 @@
 
 .item-info {
   box-shadow: $box-shadow;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 
 
-.item-frame {
+.other-items {
   background-color: $jf-pink;
   padding: 10px;
   border-radius: 8px;
   box-shadow: $box-shadow;
-}
-
-.other-items {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  border-radius: 16px;
-  width:100%;
-  max-width: 1360px;
-  margin: 0 auto;
 
 }
 
 .other-items h2 {
   font-size: 16px;
   font-weight: bold;
-  margin: 0;
+  margin: 4px;
   color: $cherry;
+
 }
 
 .card-grid-show {
@@ -105,13 +99,13 @@
 .item-frame h2{
   font-size: 16px;
   font-weight: bold;
-  margin: 0;
+  margin: 4px;
   color: $cherry;
 }
 
 .item-frame p{
   font-size: 14px;
-  margin: 0;
+  margin: 4px;
   color: $gray;
 }
 
@@ -136,14 +130,14 @@
 .item-frame-user h3{
   text-align: center;
   font-size: 14px;
-  margin: 0;
+  margin: 4px;
   color: $cherry;
 }
 
 .item-frame-review h2{
   font-size: 16px;
   font-weight: bold;
-  margin: 0;
+  margin: 4px;
   color: $cherry;
   margin-bottom: 8px;
 }
@@ -166,7 +160,7 @@
 .item-frame-calendar h2{
   font-size: 16px;
   font-weight: bold;
-  margin: 0;
+  margin: 4px;
   color: $cherry;
 }
 
@@ -205,6 +199,7 @@
   border-radius: 8px;
   display:flex;
   gap: 8px;
+  justify-content: center;
 }
 
 

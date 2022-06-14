@@ -24,13 +24,15 @@
     <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
   </head>
   <body class=<%= yield(:body_class)%> >
-    <head>
-    <%= render 'shared/navbar' %>
-    </head>
-    <%= render 'shared/flashes' %>
-    <%= yield %>
+    <header>
+      <%= render 'shared/navbar' %>
+    </header>
+    <main>
+      <%= render 'shared/flashes' %>
+      <%= yield %>
+    </main>
   </body>
   <footer>
-  <%= render 'shared/footer' %>
+    <%= render 'shared/footer' %>
   </footer>
 </html>
