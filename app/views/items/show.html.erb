@@ -94,11 +94,15 @@
               <%= render 'review', review: review , remote: true %>
               <% end %>
             <% end %>
-          </div>
+            <div class="reviews_form" style="margin-top: 176px">
+            <% if @item.requests.exists? && @item.requests.last.status == "approved" && current_user != @owner  && !current_user.nil? && @item.requests.last.end_date != DateTime.now %>
+              <%= render 'reviews/form', item: @item, review: @review %>
+              <% end %>
+              </div>
+           </div>
         </div>
       </div>
     </div>
-
   </div>
 
   <div class="other-items">
@@ -111,7 +115,7 @@
 
             <div class="card-product">
             <%=  link_to item_path(item) do%>
-              <%= image_tag(item.picture) %>
+              <%= cl_image_tag item.picture.key %>
               <div class="card-product-infos">
                 <h2><%= item.name %></h2>
                 <p><%= truncate(item.description, length: 50) { link_to " more", item_path(item), class:"truncate" } %></p>
