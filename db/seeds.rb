@@ -146,7 +146,7 @@ p game9 = Item.create!(name: "Monopoly edition India",
   description: "Fun game, for long evening",
   category: "Toys",
   user_id: mark.id)
-file = URI.open('https://res.cloudinary.com/degm2tmrv/image/upload/v1654364891/development/cup%20of%20sugar/monopolyindia_plzeis.jpg')
+file = URI.open('https://res.cloudinary.com/degm2tmrv/image/upload/v1655305318/development/8jjrl9mg040lidz4p24xz1nmuq45.jpg')
 game9.picture.attach(io: file, filename: 'party_equipment.jpg', content_type: 'image/jpg')
 game9.save
 

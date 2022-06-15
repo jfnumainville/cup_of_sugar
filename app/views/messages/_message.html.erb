@@ -1,4 +1,5 @@
 <div id="message-<%= message.id %>">
+<%= cl_image_tag message.user.picture.key, class: "avatar" %>
   <small>
     <strong><%= message.user.name %></strong>
     <i><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i>
