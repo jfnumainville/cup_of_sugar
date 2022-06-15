@@ -18,18 +18,27 @@
 
 }
 .footer-links {
+  flex-grow: 1;
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
-.footer-links a {
-
+.footer-links a:first-child {
   opacity: 0.85;
   text-decoration: none;
   font-size: 24px;
   padding: 0px 10px;
 }
+.footer-links a:last-child {
+  opacity: 0.85;
+  text-decoration: none;
+  transition: transform .7s ease-in-out;
+  padding: 0px 10px;
+}
+
 .footer-links a:hover {
   opacity: 1;
+  transform: rotateY(360deg);
 }
 .footer .fa-heart {
   color: #D23333;
