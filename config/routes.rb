@@ -26,10 +26,4 @@ Rails.application.routes.draw do
   end
 
   resources :categories, only: :index
-
-
-#   get '/patients/:id', to: 'patients#show'
-
-  #   patch "cancel_request/:id", to: "request#cancel", as: :cancel_request
-  #   patch "approved_request/:id", to: "request#approved", as: :approved_request
 end

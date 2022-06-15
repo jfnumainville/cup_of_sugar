@@ -184,6 +184,13 @@ p request = Request.create!(user_id: suzanne.id,
                             status: 0)
 request.save!
 
+p request = Request.create!(user_id: andrii.id,
+                            item_id: table_saw2.id,
+                            start_date: Date.parse("2022-06-21"),
+                            end_date: Date.parse("2022-06-27"),
+                            status: 0)
+request.save!
+
 p request = Request.create!(user_id: mark.id,
                             item_id: projector4.id,
                             start_date: Date.parse("2022-06-25"),
@@ -199,10 +206,45 @@ p request = Request.create!(user_id: mark.id,
 request.save!
 
 p request = Request.create!(user_id: andrii.id,
-                            item_id: table_saw2.id,
-                            start_date: Date.parse("2022-06-25"),
-                            end_date: Date.parse("2022-06-27"),
+                            item_id: smoke_machine11.id,
+                            start_date: Date.parse("2022-06-23"),
+                            end_date: Date.parse("2022-06-25"),
+                            status: 2)
+request.save!
+
+p request = Request.create!(user_id: andrii.id,
+                            item_id: magazines10.id,
+                            start_date: Date.parse("2022-06-24"),
+                            end_date: Date.parse("2022-06-29"),
                             status: 1)
+request.save!
+
+p request = Request.create!(user_id: andrii.id,
+                            item_id: game9.id,
+                            start_date: Date.parse("2022-06-28"),
+                            end_date: Date.parse("2022-06-29"),
+                            status: 1)
+request.save!
+
+p request = Request.create!(user_id: andrii.id,
+                            item_id: ladder7.id,
+                            start_date: Date.parse("2022-06-23"),
+                            end_date: Date.parse("2022-06-27"),
+                            status: 2)
+request.save!
+
+p request = Request.create!(user_id: andrii.id,
+                            item_id: campingchair6.id,
+                            start_date: Date.parse("2022-06-24"),
+                            end_date: Date.parse("2022-06-27"),
+                            status: 0)
+request.save!
+
+p request = Request.create!(user_id: jeff.id,
+                            item_id: lugage5.id,
+                            start_date: Date.parse("2022-06-24"),
+                            end_date: Date.parse("2022-06-27"),
+                            status: 0)
 request.save!
 
 puts "Creating Reviews..."
