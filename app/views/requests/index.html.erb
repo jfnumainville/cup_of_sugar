@@ -27,7 +27,7 @@
         </div>
 
         <div class="<%= params[:active_tab]== "items"?  "tab-pane fade in show active" : "tab-pane fade" %>" id="items" role="tabpanel">
-          <div class="card-grid my-items">
+          <div class="card-grid-myitems">
           <% if @my_items.blank? %>
           <h2><%= link_to "Add an item?", new_item_path %></h2>
           <% else %>
