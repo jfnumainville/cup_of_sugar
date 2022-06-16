@@ -39,9 +39,10 @@
 .button-categories-gold:hover{
 	background-color: rgba(255, 215, 0, 0.65);
   color: $gray;
+  border-radius: 1px solid;
 
 }
-.button-categories-gold-clicked {
+.button-categories-gold:active {
   color: $gray;
   background-color: $gold;
   border-radius: 50px;
@@ -51,4 +52,5 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  transition-duration: 4s;
 }
