@@ -8,11 +8,15 @@
         </div>
 
         <div class="card-product-image">
-          <%= cl_image_tag r.item.picture.key %>
+          <%= link_to item_path(r.item) do %>
+            <%= cl_image_tag r.item.picture.key %>
+          <% end %>
         </div>
 
         <div class="request-infos-dates">
-          <h2>Borrowing from <%=r.item.user.name %> <br>for <%= (r.end_date - r.start_date).to_i %> days</h2>
+          <h2>Borrowing from <%=r.item.user.name %>
+            <br>
+            <span class="grey">for <%= (r.end_date - r.start_date).to_i %> days</span></h2>
           <p>from <%= r.start_date.strftime("%a %b %e") %> to <%= r.end_date.strftime("%a %b %e") %> </p>
         </div>
 
@@ -32,10 +36,7 @@
         <div class = "request-infos">
           <%= link_to "Cancel", request_path(r), method: :delete, data: { toggle:"modal", target:"#deleteBorrowingModal"}  %>
         </div>
-
-
     </div>
-
   <% end %>
 </div>
 

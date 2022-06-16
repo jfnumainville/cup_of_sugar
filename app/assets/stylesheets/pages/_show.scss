@@ -49,8 +49,7 @@
   min-width: 300px;
   object-fit: cover;
   border-radius: 8px;
-  min-height: 300px;
-  max-height:600px;
+  height: 200px;
 }
 
 .item-info {
@@ -214,4 +213,13 @@
 
 .button-chat:hover{
 	color: $light-gray;
+}
+
+.truncate-gray {
+  font-size: 10px;
+  color: $gray;
+}
+
+.truncate-gray:hover {
+  text-decoration: underline;
 }
