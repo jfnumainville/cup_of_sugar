@@ -90,7 +90,7 @@
 
           <div id="reviews">
             <% if @item.reviews.blank? %>
-                <p>Sorry, no review yet has been written for this item.</p>
+                <p>Sorry, this item hasn't been reviewed.</p>
             <% else %>
               <% @item.reviews.order(id: :desc).each do |review| %>
               <%= render 'review', review: review , remote: true %>
@@ -111,7 +111,7 @@
 
   <div class="other-items">
       <% if @other_items_by_owner.blank? %>
-        <h2> <%= @owner.name %> does not propose othe items </h2>
+        <h2> <%= @owner.name %> does't have other items to offer. </h2>
       <% else %>
         <h2> Other items from <%= @owner.name %> </h2>
         <div class="card-grid-show">
