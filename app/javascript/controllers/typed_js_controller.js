@@ -7,8 +7,7 @@ export default class extends Controller {
         strings: ['<h1 class = "display-landing">Why <strong><i>BUY</i> or <i>RENT</i></strong><br> when you can <strong><i>BORROW</i></strong>&nbsp; from your neighbours?</h1>'],
         typeSpeed: 70,
         backSpeed: 90,
-        loop: true,
-        loopCount: 2,
+        loop: false,
         showCursor: false
     });
   }
