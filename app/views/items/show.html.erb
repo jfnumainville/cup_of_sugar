@@ -85,7 +85,7 @@
     <div class="item-frame-review ">
       <h2> What others say ... </h2>
 
-      <div data-controller="insert-in-list">
+      <div class="scroll" data-controller="insert-in-list">
         <div data-insert-in-list-target="items">
 
           <div id="reviews">
@@ -113,6 +113,7 @@
       <% if @other_items_by_owner.blank? %>
         <h2> <%= @owner.name %> does not propose othe items </h2>
       <% else %>
+
         <h2> Other items from <%= @owner.name %> </h2>
         <div class="card-grid-show">
         <% @other_items_by_owner.each do |item| %>
