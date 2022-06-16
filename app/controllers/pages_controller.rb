@@ -1,12 +1,16 @@
 class PagesController < ApplicationController
-  
+
   skip_before_action :authenticate_user!, only: [:home, :landing]
 
   def home
     @users = User.all
     @items = params[:query].present? ? Item.search_n_d_a(params[:query]) : Item.all
 
-    @users = @items.map {|item| item.user }.uniq
+    users_with_items = @items.map {|item| item.user }
+        if !current_user.nil?
+            users_with_items << current_user
+        end
+    @users = users_with_items.uniq
     # @users_with_items = []
     # @items.each do |item|
     #   unless @users_with_items.include?(item.user)
