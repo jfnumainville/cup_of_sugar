@@ -82,10 +82,12 @@
 
 
     </div>
-    <div class="item-frame-review">
+    <div class="item-frame-review ">
       <h2> What others say ... </h2>
+
       <div data-controller="insert-in-list">
         <div data-insert-in-list-target="items">
+
           <div id="reviews">
             <% if @item.reviews.blank? %>
                 <p>Sorry, no review yet has been written for this item.</p>
@@ -94,13 +96,15 @@
               <%= render 'review', review: review , remote: true %>
               <% end %>
             <% end %>
-            <div class="reviews_form" style="margin-top: 176px">
-            <% if @item.requests.exists? && @item.requests.last.status == "approved" && current_user != @owner  && !current_user.nil? && @item.requests.last.end_date != DateTime.now %>
-              <%= render 'reviews/form', item: @item, review: @review %>
-              <% end %>
-              </div>
-           </div>
+          </div>
+
         </div>
+      </div>
+
+      <div class="reviews_form">
+        <% if @item.requests.exists? && @item.requests.last.status == "approved" && current_user != @owner  && !current_user.nil? && @item.requests.last.end_date != DateTime.now %>
+          <%= render 'reviews/form', item: @item, review: @review %>
+        <% end %>
       </div>
     </div>
   </div>
@@ -112,16 +116,15 @@
         <h2> Other items from <%= @owner.name %> </h2>
         <div class="card-grid-show">
         <% @other_items_by_owner.each do |item| %>
-
             <div class="card-product">
             <%=  link_to item_path(item) do%>
               <%= cl_image_tag item.picture.key %>
+            <% end %>
               <div class="card-product-infos">
                 <h2><%= item.name %></h2>
                 <p><%= truncate(item.description, length: 50) { link_to " more", item_path(item), class:"truncate" } %></p>
               </div>
             </div>
-          <% end %>
         <% end %>
       <% end %>
     </div>

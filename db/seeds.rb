@@ -85,14 +85,6 @@ file = URI.open('https://res.cloudinary.com/degm2tmrv/image/upload/v1654364893/d
 tennisracket1.picture.attach(io: file, filename: 'party_equipment.jpg', content_type: 'image/jpg')
 tennisracket1.save!
 
-p projector4 = Item.create!(name: "Outdoor screen for projector",
-                       description: 'Great for movie night',
-                       category: "Special event",
-                       user_id: andrii.id)
-file = URI.open('https://res.cloudinary.com/degm2tmrv/image/upload/v1654364892/development/cup%20of%20sugar/outdoorscreen_kgngaw.jpg')
-projector4.picture.attach(io: file, filename: 'party_equipment.jpg', content_type: 'image/webp')
-projector4.save!
-
 p lugage5 = Item.create!(name: "Luggage big and very resistant",
                       description: "unbreackable, 4 wheels",
                       category: "Holidays",
