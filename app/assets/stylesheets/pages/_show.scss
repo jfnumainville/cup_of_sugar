@@ -141,6 +141,7 @@
 }
 
 .item-frame-review {
+
   background-color: $white;
   padding: 20px;
   border-radius: 8px;
@@ -226,4 +227,8 @@
 
 .truncate-gray:hover {
   text-decoration: underline;
+}
+
+.scroll {
+  overflow: scroll;
 }
