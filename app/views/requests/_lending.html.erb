@@ -1,14 +1,22 @@
 <div class="card-grid">
-  <% @my_lendings.each do |r| %>
-    <div class="card-product-borrowing-lending">
 
-      <div class="card-product-infos">
-        <%= cl_image_tag r.item.picture.key, class: "avatar"%>
+  <% @my_lendings.each do |r| %>
+
+    <div class="card-product-borrowing-lending">
+      <div class="card-product-infos-borrowing-lending">
         <h2><%=r.item.name%> </h2>
       </div>
 
+      <div class="card-product-image">
+        <%= link_to item_path(r.item) do %>
+          <%= cl_image_tag r.item.picture.key %>
+        <% end %>
+      </div>
+
       <div class="request-infos-dates">
-        <h2>Lending to <%=r.user.name %> <br>for <%= (r.end_date - r.start_date).to_i %> days</h2>
+        <h2>Lending to <%=r.user.name %>
+          <br>
+          <span class="grey">for <%= (r.end_date - r.start_date).to_i %> days </span></daysspan></h2>
         <p>from <%= r.start_date.strftime("%a %b %e") %> to <%= r.end_date.strftime("%a %b %e") %> </p>
       </div>
 

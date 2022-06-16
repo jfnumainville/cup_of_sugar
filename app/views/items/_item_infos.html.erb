@@ -1,9 +1,13 @@
-  <div class="card-product-myitems" data-controller="edit-item" data-edit-item-target="card" >
-  <%= cl_image_tag my_item.picture.key %>
+<div class="card-product-myitems" data-controller="edit-item" data-edit-item-target="card" >
 
   <div class="card-product-infos" data-edit-item-target="infos">
     <h2><%=my_item.name %> </h2>
     <p><%= truncate(my_item.description, length: 200) { link_to " more", item_path(my_item), class:"truncate" } %></p>
+  </div>
+  <div class="card-product-image">
+    <%= link_to item_path(my_item) do %>
+      <%= cl_image_tag my_item.picture.key %>
+    <% end %>
   </div>
 
   <div class="update-delete" >

@@ -90,7 +90,7 @@ p table_saw2 = Item.create!(name: "Table Saw",
                        description: "Great for your DIY construction projects! Decent condition.",
                        category: "Construction",
                        user_id: suzanne.id)
-file = URI.open('https://res.cloudinary.com/degm2tmrv/image/upload/v1655075717/development/cup%20of%20sugar/tablesaw_ztnjwf.jpg')
+file = URI.open('https://res.cloudinary.com/degm2tmrv/image/upload/v1655393985/development/cup%20of%20sugar/tablesaw2_dai3re.jpg')
 table_saw2.picture.attach(io: file, filename: 'football_fan.jpg', content_type: 'image/jpg')
 table_saw2.save!
 
