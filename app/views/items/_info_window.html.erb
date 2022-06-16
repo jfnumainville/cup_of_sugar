@@ -2,11 +2,13 @@
   <%= cl_image_tag user.picture.key, class: "avatar" %>
   <div>
   <% if current_user != user %>
-    <p class="name-user-map"><%= user.name %></p>
-    <p class= "address-map"><%= user.address %></p>
+    <p class="name-user-map px-2"><%= user.name %></p>
+    <p class= "address-map p-1"><%= user.address %></p>
   </div>
 </div>
   <% end %>
+  <div class = "border-top border-1 py-1">
 <% user.items.each do |item| %>
-  <p> <%= link_to (item.name), item_path(item)  %>, </p>
+  <p> <%= link_to (item.name), item_path(item)  %> </p>
 <% end %>
+</div>

@@ -23,27 +23,23 @@
   </div>
 
   <div class="home-categories-map">
-    <div class= "categories-search-frame">
-      <div class="categories">
-          <%= link_to "Baby", "#", class: "button-categories-gold", data: { action: 'search-items#update'} %>
-          <%= link_to "Books", "#", class: "button-categories-gold", data: { action: 'search-items#update'} %>
-          <%= link_to "Holidays", "#", class: "button-categories-gold", data: { action: 'search-items#update'} %>
-          <%= link_to "Furnitures", "#", class: "button-categories-gold", data: { action: 'search-items#update'} %>
-          <%= link_to "Garden", "#", class: "button-categories-gold", data: { action: 'search-items#update'} %>
-          <%= link_to "Home decoration", "#", class: "button-categories-gold", data: { action: 'search-items#update'} %>
-          <%= link_to "Kitchen", "#", class: "button-categories-gold", data: { action: 'search-items#update'} %>
-          <%= link_to "Party", "#", class: "button-categories-gold", data: { action: 'search-items#update'} %>
-          <%= link_to "Special events", "#", class: "button-categories-gold", data: { action: 'search-items#update'} %>
-          <%= link_to "Sports", "#", class: "button-categories-gold", data: { action: 'search-items#update'} %>
-          <%= link_to "Tools", "#", class: "button-categories-gold", data: { action: 'search-items#update'} %>
-          <%= link_to "Toys", "#", class: "button-categories-gold", data: { action: 'search-items#update'} %>
-      </div>
+    <%= form_tag root_path, method: :get, data: { search_items_target: 'form' } do %>
+        <div class= "categories-search-frame">
+            <div class="categories">
+                <% @categories = ["Baby", "Books", "Holidays", "Furnitures",
+                                 "Garden", "Home decoration", "Kitchen", "Party",
+                                 "Sports", "Special events", "Tools", "Toys"] %>
+                <% @categories.each do |category| %>
+                    <button name="query" value = " <%= category %>"  type="submit" class="button-categories-gold"><%= category %></button>
+                <% end %>
+            </div>
       <div style="width: 70%; height: 400px;"
         data-controller="mapbox"
         data-mapbox-markers-value="<%= @markers.to_json %>"
         data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
     </div>
+    <% end %>
   </div>
 
   <div class="home-list">

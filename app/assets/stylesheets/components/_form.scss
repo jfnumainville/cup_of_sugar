@@ -3,11 +3,17 @@
 }
 
 .form-update {
-  position:absolute;
+  position: relative;
+  bottom: 200px;
   right: O;
   z-index: 10;
-  width:168px;
+  width: 360px;
   border-radius: 8px;
   font-size: 12px;
+  background-color: $light-cherry;
 
+}
+
+.form-select {
+  font-size: 14px;;
 }

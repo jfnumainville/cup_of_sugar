@@ -1,10 +1,12 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:home]
+  
+  skip_before_action :authenticate_user!, only: [:home, :landing]
 
   def home
-    @all_items = Item.all
     @users = User.all
-    params[:query].present? ? @items = Item.search_n_d_a(params[:query]) : @items = @all_items
+    @items = params[:query].present? ? Item.search_n_d_a(params[:query]) : Item.all
+
+    @users = @items.map {|item| item.user }.uniq
     # @users_with_items = []
     # @items.each do |item|
     #   unless @users_with_items.include?(item.user)
@@ -12,7 +14,8 @@ class PagesController < ApplicationController
     #   end
     # end
     # @relation_users_with_items = User.where(id: @users_with_items.map(&:id))
-    @markers = @users.geocoded.map do |user|
+
+    @markers = @users.map do |user|
       {
         lat: user.latitude,
         lng: user.longitude,

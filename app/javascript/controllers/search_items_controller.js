@@ -20,12 +20,12 @@ export default class extends Controller {
     // adding toggle to select & remove selection
     category.classList.toggle('button-categories-gold-clicked');
     // fetching url through catgory name and outputting index
-    const url = `${this.formTarget.action}?query=${category.innerHTML}`
-    fetch(url, { headers: { "Accept": "text/plain" } })
-      .then(response => response.text())
-      .then((data) => {
-        this.listTarget.outerHTML = data
-      })
+    // const url = `${this.formTarget.action}?query=${category.innerHTML}`
+    // fetch(url, { headers: { "Accept": "text/plain" } })
+    //   .then(response => response.text())
+    //   .then((data) => {
+    //     this.listTarget.outerHTML = data
+    //   })
     // scrolling down to see results when category is selected
     this.listTarget.scrollIntoView();
   }

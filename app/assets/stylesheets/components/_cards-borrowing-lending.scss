@@ -1,58 +1,71 @@
 .card-product-borrowing-lending {
-  width: 200px;
-  height: 400px;
+  width: 300px;
+  height: 600px;
   background-color: $light-gray;
   border-radius: 8px;
   display: flex;
   flex-direction: column;
-  padding: 8px;
+  gap: 16px;
+  padding: 24px 16px;
   box-shadow: $box-shadow;
-}
+
 .card-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
 }
 
+}
 
-.card-product-borrowing-lending > img {
+.card-product-image img {
   width: 100%;
-  min-height:170px;
+  max-height: 200px;
   object-fit: cover;
   border-radius: 16px;
 }
 
+
 .card-product-borrowing-lending h2 {
-  font-size: 14px;
-  margin: 0;
+  font-size: 16px;
+  font-weight: bold;
   color: $cherry;
 }
 
 .card-product-borrowing-lending p {
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.4;
   opacity: .7;
-  margin-bottom: 0;
-  margin-top: 8px;
-}
+  }
 
 .card-product-borrowing-lending .card-product-infos {
   background-color: $white;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   border-radius: 8px;
-  margin: 8px auto 0;
-  padding: 8px;
-  height: 30%;
+  padding: 24px 16px;
+  min-height: 80px;
   width: 100%;
 }
+
+
+.card-product-infos-borrowing-lending {
+  background-color: $white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  padding: 24px 16px;
+  min-height: 64px;
+  width: 100%;
+}
+
+
 
 .request-infos {
   background-color: $white;
   border-radius: 8px;
-  margin: 16px auto 0;
-  padding: 4px;
-  height: 30%;
+  padding: 24px 16px;
+  min-height: 56px;
   width: 100%;
   display: flex;
   justify-content: space-around;
@@ -88,16 +101,14 @@
 .request-infos-dates{
   background-color: $white;
   border-radius: 8px;
-  margin: 16px auto 0;
-  padding: 4px;
-  height: 30%;
+  padding: 24px 16px;
+  min-height: 106px;
   width: 100%;
 }
 
 
 .request-infos-dates h2 {
-  font-size: 14px;
-  margin: 0;
+  font-size: 16px;
   color: $cherry;
   text-align: center;
 

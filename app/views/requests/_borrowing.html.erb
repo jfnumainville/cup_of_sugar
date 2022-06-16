@@ -3,10 +3,12 @@
   <% @my_requests.each do |r| %>
 
     <div class="card-product-borrowing-lending">
-
-        <div class="card-product-infos">
-          <%= cl_image_tag r.item.picture.key, class:"avatar" %>
+          <div class="card-product-infos-borrowing-lending">
           <h2><%=r.item.name %> </h2>
+        </div>
+
+        <div class="card-product-image">
+          <%= cl_image_tag r.item.picture.key %>
         </div>
 
         <div class="request-infos-dates">
