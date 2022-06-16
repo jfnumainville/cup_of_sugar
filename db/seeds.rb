@@ -86,6 +86,31 @@ file = URI.open('https://res.cloudinary.com/degm2tmrv/image/upload/v1654364893/d
 tennisracket1.picture.attach(io: file, filename: 'party_equipment.jpg', content_type: 'image/jpg')
 tennisracket1.save!
 
+
+p table_saw2 = Item.create!(name: "Table Saw",
+                       description: "Great for your DIY construction projects! Decent condition.",
+                       category: "Construction",
+                       user_id: suzanne.id)
+file = URI.open('https://res.cloudinary.com/degm2tmrv/image/upload/v1655393985/development/cup%20of%20sugar/tablesaw2_dai3re.jpg')
+table_saw2.picture.attach(io: file, filename: 'football_fan.jpg', content_type: 'image/jpg')
+table_saw2.save!
+
+p party3 = Item.create!(name: "Party decoration",
+                      description: "Disco mirror ball and very long colorful banner",
+                      category: "Party",
+                      user_id: nicolas.id)
+file = URI.open('https://res.cloudinary.com/degm2tmrv/image/upload/v1654364892/development/cup%20of%20sugar/party_ftrr7y.jpg')
+party3.picture.attach(io: file, filename: 'party_equipment.jpg', content_type: 'image/jpg')
+party3.save!
+
+p projector4 = Item.create!(name: "Outdoor screen for projector",
+                       description: 'Great for movie night',
+                       category: "Special event",
+                       user_id: andrii.id)
+file = URI.open('https://res.cloudinary.com/degm2tmrv/image/upload/v1654364892/development/cup%20of%20sugar/outdoorscreen_kgngaw.jpg')
+projector4.picture.attach(io: file, filename: 'party_equipment.jpg', content_type: 'image/webp')
+projector4.save!
+
 p lugage5 = Item.create!(name: "Luggage big and very resistant",
                       description: "unbreackable, 4 wheels",
                       category: "Holidays",
