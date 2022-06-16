@@ -77,7 +77,6 @@ user_ids_list = User.all.pluck(:id)
 
 puts "Creating items..."
 
-
 p tennisracket1 = Item.create!(name: "Tennis racket for young children",
                              description: "It is good for very young children who start to play tennis",
                              category: "Sports",
@@ -85,23 +84,6 @@ p tennisracket1 = Item.create!(name: "Tennis racket for young children",
 file = URI.open('https://res.cloudinary.com/degm2tmrv/image/upload/v1654364893/development/cup%20of%20sugar/tennis_nhufry.jpg')
 tennisracket1.picture.attach(io: file, filename: 'party_equipment.jpg', content_type: 'image/jpg')
 tennisracket1.save!
-
-
-p table_saw2 = Item.create!(name: "Table Saw",
-                       description: "Great for your DIY construction projects! Decent condition.",
-                       category: "Construction",
-                       user_id: suzanne.id)
-file = URI.open('https://res.cloudinary.com/degm2tmrv/image/upload/v1655393985/development/cup%20of%20sugar/tablesaw2_dai3re.jpg')
-table_saw2.picture.attach(io: file, filename: 'football_fan.jpg', content_type: 'image/jpg')
-table_saw2.save!
-
-p party3 = Item.create!(name: "Party decoration",
-                      description: "Disco mirror ball and very long colorful banner",
-                      category: "Party",
-                      user_id: nicolas.id)
-file = URI.open('https://res.cloudinary.com/degm2tmrv/image/upload/v1654364892/development/cup%20of%20sugar/party_ftrr7y.jpg')
-party3.picture.attach(io: file, filename: 'party_equipment.jpg', content_type: 'image/jpg')
-party3.save!
 
 p projector4 = Item.create!(name: "Outdoor screen for projector",
                        description: 'Great for movie night',
@@ -179,7 +161,7 @@ p table_saw2 = Item.create!(name: "Table Saw",
                        description: "Great for your DIY construction projects! Decent condition.",
                        category: "Tools",
                        user_id: suzanne.id)
-file = URI.open('https://res.cloudinary.com/degm2tmrv/image/upload/v1655075717/development/cup%20of%20sugar/tablesaw_ztnjwf.jpg')
+file = URI.open('https://res.cloudinary.com/degm2tmrv/image/upload/v1655393985/development/cup%20of%20sugar/tablesaw2_dai3re.jpg')
 table_saw2.picture.attach(io: file, filename: 'football_fan.jpg', content_type: 'image/jpg')
 table_saw2.save!
 
@@ -192,31 +174,27 @@ party3.picture.attach(io: file, filename: 'party_equipment.jpg', content_type: '
 party3.save!
 
 
-## New item, picture is called stacked_chairs.jpg
 p chairs = Item.create!(name: "Extra chairs",
                       description: "8 good chairs to use for your next party!",
                       category: "Party",
                       user_id: mark.id)
-file = URI.open('https://res.cloudinary.com/degm2tmrv/image/upload/v1654364892/development/cup%20of%20sugar/party_ftrr7y.jpg')
+file = URI.open('https://res.cloudinary.com/degm2tmrv/image/upload/v1655396551/development/cup%20of%20sugar/stacked_chairs_yilvfq.jpg')
 chairs.picture.attach(io: file, filename: 'party_equipment.jpg', content_type: 'image/jpg')
 chairs.save!
 
-## New item, picture is called fountain.jpg
 p fontain = Item.create!(name: "Chocolate fountain",
                       description: "Your guests will love it!",
                       category: "Party",
                       user_id: jeff.id)
-file = URI.open('https://res.cloudinary.com/degm2tmrv/image/upload/v1654364892/development/cup%20of%20sugar/party_ftrr7y.jpg')
+file = URI.open('https://res.cloudinary.com/degm2tmrv/image/upload/v1655396567/development/cup%20of%20sugar/fountain_z6rlhx.jpg')
 fontain.picture.attach(io: file, filename: 'party_equipment.jpg', content_type: 'image/jpg')
 fontain.save!
 
-
-## New item, picture is called dinnerware.jpg
 p dinnerware = Item.create!(name: "Unbreakable dinnerware",
                       description: "Good condition, cleans easily",
                       category: "Party",
                       user_id: nicolas.id)
-file = URI.open('https://res.cloudinary.com/degm2tmrv/image/upload/v1654364892/development/cup%20of%20sugar/party_ftrr7y.jpg')
+file = URI.open('https://res.cloudinary.com/degm2tmrv/image/upload/v1655396581/development/cup%20of%20sugar/dinnerware_d0tlkp.jpg')
 dinnerware.picture.attach(io: file, filename: 'party_equipment.jpg', content_type: 'image/jpg')
 dinnerware.save!
 
