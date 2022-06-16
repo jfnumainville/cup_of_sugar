@@ -9,15 +9,15 @@
  }
 
 .button-gold:hover{
-	color:
-  $light-gray;
+  background-color: rgba(255, 215, 0, 0.65);
+	color: $gray;
 }
 .button-gold-clicked {
-  color: $white;
-  background-color: $gray;
+  color: $gray;
+  background-color: $gold;
+  border: 2px solid $gray;
   padding: 8px 24px;
   border-radius: 50px;
   text-align: center;
-  border: 2px solid $gray;
   box-shadow: 1px 1px 3px $gray;
 }
