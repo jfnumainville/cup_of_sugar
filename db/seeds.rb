@@ -86,6 +86,7 @@ file = URI.open('https://res.cloudinary.com/degm2tmrv/image/upload/v1654364893/d
 tennisracket1.picture.attach(io: file, filename: 'party_equipment.jpg', content_type: 'image/jpg')
 tennisracket1.save!
 
+
 p table_saw2 = Item.create!(name: "Table Saw",
                        description: "Great for your DIY construction projects! Decent condition.",
                        category: "Construction",
@@ -158,26 +159,78 @@ file = URI.open('https://res.cloudinary.com/degm2tmrv/image/upload/v1654364893/d
 magazines10.picture.attach(io: file, filename: 'party_equipment.jpg', content_type: 'image/jpg')
 magazines10.save
 
+p projector4 = Item.create!(name: "Outdoor screen for projector",
+                       description: 'Great for movie night',
+                       category: "Party",
+                       user_id: andrii.id)
+file = URI.open('https://res.cloudinary.com/degm2tmrv/image/upload/v1654364892/development/cup%20of%20sugar/outdoorscreen_kgngaw.jpg')
+projector4.picture.attach(io: file, filename: 'party_equipment.jpg', content_type: 'image/webp')
+projector4.save!
+
 p smoke_machine11 = Item.create!(name: "Smoke Machine",
   description: "Awesome machine to have on stage at your next show! Excellent condition",
-  category: "Special event",
+  category: "Party",
   user_id: nicolas.id)
 file = URI.open('https://res.cloudinary.com/degm2tmrv/image/upload/v1654364892/development/cup%20of%20sugar/smokemachine_gby9df.jpg')
 smoke_machine11.picture.attach(io: file, filename: 'party_equipment.jpg', content_type: 'image/jpg')
 smoke_machine11.save!
 
-item_ids_list = Item.all.pluck(:id)
+p table_saw2 = Item.create!(name: "Table Saw",
+                       description: "Great for your DIY construction projects! Decent condition.",
+                       category: "Tools",
+                       user_id: suzanne.id)
+file = URI.open('https://res.cloudinary.com/degm2tmrv/image/upload/v1655075717/development/cup%20of%20sugar/tablesaw_ztnjwf.jpg')
+table_saw2.picture.attach(io: file, filename: 'football_fan.jpg', content_type: 'image/jpg')
+table_saw2.save!
+
+p party3 = Item.create!(name: "Party decoration",
+                      description: "Disco mirror ball and very long colorful banner",
+                      category: "Party",
+                      user_id: nicolas.id)
+file = URI.open('https://res.cloudinary.com/degm2tmrv/image/upload/v1654364892/development/cup%20of%20sugar/party_ftrr7y.jpg')
+party3.picture.attach(io: file, filename: 'party_equipment.jpg', content_type: 'image/jpg')
+party3.save!
+
+
+## New item, picture is called stacked_chairs.jpg
+p chairs = Item.create!(name: "Extra chairs",
+                      description: "8 good chairs to use for your next party!",
+                      category: "Party",
+                      user_id: mark.id)
+file = URI.open('https://res.cloudinary.com/degm2tmrv/image/upload/v1654364892/development/cup%20of%20sugar/party_ftrr7y.jpg')
+chairs.picture.attach(io: file, filename: 'party_equipment.jpg', content_type: 'image/jpg')
+chairs.save!
+
+## New item, picture is called fountain.jpg
+p fontain = Item.create!(name: "Chocolate fountain",
+                      description: "Your guests will love it!",
+                      category: "Party",
+                      user_id: jeff.id)
+file = URI.open('https://res.cloudinary.com/degm2tmrv/image/upload/v1654364892/development/cup%20of%20sugar/party_ftrr7y.jpg')
+fontain.picture.attach(io: file, filename: 'party_equipment.jpg', content_type: 'image/jpg')
+fontain.save!
+
+
+## New item, picture is called dinnerware.jpg
+p dinnerware = Item.create!(name: "Unbreakable dinnerware",
+                      description: "Good condition, cleans easily",
+                      category: "Party",
+                      user_id: nicolas.id)
+file = URI.open('https://res.cloudinary.com/degm2tmrv/image/upload/v1654364892/development/cup%20of%20sugar/party_ftrr7y.jpg')
+dinnerware.picture.attach(io: file, filename: 'party_equipment.jpg', content_type: 'image/jpg')
+dinnerware.save!
+
 
 puts "Creating requests..."
 
-p request = Request.create!(user_id: suzanne.id,
+p request = Request.create!(user_id: jeff.id,
                             item_id: party3.id,
                             start_date: Date.parse("2022-06-18"),
                             end_date: Date.parse("2022-06-24"),
                             status: 2)
 request.save!
 
-p request = Request.create!(user_id: suzanne.id,
+p request = Request.create!(user_id: krystina.id,
                             item_id: game8.id,
                             start_date: Date.parse("2022-06-25"),
                             end_date: Date.parse("2022-06-27"),
@@ -185,7 +238,7 @@ p request = Request.create!(user_id: suzanne.id,
 request.save!
 
 p request = Request.create!(user_id: andrii.id,
-                            item_id: table_saw2.id,
+                            item_id: chairs.id,
                             start_date: Date.parse("2022-06-21"),
                             end_date: Date.parse("2022-06-27"),
                             status: 0)
@@ -199,7 +252,7 @@ p request = Request.create!(user_id: mark.id,
 request.save!
 
 p request = Request.create!(user_id: mark.id,
-                            item_id: tennisracket1.id,
+                            item_id: fontain.id,
                             start_date: Date.parse("2022-06-25"),
                             end_date: Date.parse("2022-06-27"),
                             status: 0)
@@ -212,7 +265,7 @@ p request = Request.create!(user_id: andrii.id,
                             status: 2)
 request.save!
 
-p request = Request.create!(user_id: andrii.id,
+p request = Request.create!(user_id: jeff.id,
                             item_id: magazines10.id,
                             start_date: Date.parse("2022-06-24"),
                             end_date: Date.parse("2022-06-29"),
