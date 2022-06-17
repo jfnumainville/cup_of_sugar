@@ -62,6 +62,7 @@ class ItemsController < ApplicationController
 
   def destroy
     @item.destroy
+    sleep 2
     redirect_to requests_path(active_tab: "items")
   end
 
