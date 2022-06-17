@@ -5,6 +5,7 @@
   border-radius: 8px;
   display: flex;
   flex-direction: column;
+  justify-content:space-evenly;
   padding: 16px;
   gap: 16px;
   box-shadow: $box-shadow;
@@ -17,6 +18,15 @@
   grid-gap: 16px;
 }
 
+.card-product-infos-myitems {
+  background-color: $white;
+  border-radius: 8px;
+  padding: 16px;
+  height: 150px;
+  text-align: center;
+}
+
+
 .card-product-myitems img {
   width: 100%;
   min-height: 250px;
@@ -25,7 +35,7 @@
 }
 
 .card-product-myitems h2 {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: bold;
   margin: 0;
   color: $cherry;
@@ -37,7 +47,7 @@
   line-height: 1.4;
   opacity: .7;
   margin-bottom: 0;
-  margin-top: 8px;
+
 }
 
 .card-product-myitems .card-product-infos {
@@ -45,7 +55,7 @@
   border-radius: 8px;
   margin: 10 auto;
   padding: 24px 16px;
-  min-height: 200px;
+  min-height: 150px;
   width: 100%;
 }
 
@@ -63,4 +73,8 @@
 
 .update-delete  .far {
   font-size: 20px;
+}
+
+.cherry {
+  color: $light-cherry;
 }
