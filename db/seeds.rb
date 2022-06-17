@@ -173,14 +173,6 @@ file = URI.open('https://res.cloudinary.com/degm2tmrv/image/upload/v1655393985/d
 table_saw2.picture.attach(io: file, filename: 'football_fan.jpg', content_type: 'image/jpg')
 table_saw2.save!
 
-p party3 = Item.create!(name: "Party decorations",
-                      description: "Disco mirror ball and very long colorful banner",
-                      category: "Party",
-                      user_id: nicolas.id)
-file = URI.open('https://res.cloudinary.com/degm2tmrv/image/upload/v1654364892/development/cup%20of%20sugar/party_ftrr7y.jpg')
-party3.picture.attach(io: file, filename: 'party_equipment.jpg', content_type: 'image/jpg')
-party3.save!
-
 p screw_extractor = Item.create!(name: "Screw extractor kit",
                        description: "A life saver!",
                        category: "Tools",
@@ -220,6 +212,14 @@ p fontain = Item.create!(name: "Chocolate fountain",
 file = URI.open('https://res.cloudinary.com/degm2tmrv/image/upload/v1655396567/development/cup%20of%20sugar/fountain_z6rlhx.jpg')
 fontain.picture.attach(io: file, filename: 'party_equipment.jpg', content_type: 'image/jpg')
 fontain.save!
+
+p party3 = Item.create!(name: "Decorations",
+                      description: "Disco mirror ball and very long colorful banner",
+                      category: "Party",
+                      user_id: nicolas.id)
+file = URI.open('https://res.cloudinary.com/degm2tmrv/image/upload/v1654364892/development/cup%20of%20sugar/party_ftrr7y.jpg')
+party3.picture.attach(io: file, filename: 'party_equipment.jpg', content_type: 'image/jpg')
+party3.save!
 
 p dinnerware = Item.create!(name: "Unbreakable dinnerware",
                       description: "Good condition, cleans easily",
@@ -315,18 +315,21 @@ p tennis_review_1 = Review.create!(rating: 5,
                                   description: "My son who is only 3 loved the tennis racket",
                                   item_id: tennisracket1.id,
                                   user_id: nicolas.id)
+tennis_review_1.created_at = Date.parse("2022-06-09")
 tennis_review_1.save!
 
 p table_saw_review_2= Review.create!(rating: 5,
   description: "So happy I could borrow for 5 days it from my neigboor, I have used to make a table.",
   item_id: table_saw2.id,
   user_id: jeff.id)
-table_saw_review_2.save!
+  table_saw_review_2.created_at = Date.parse("2022-06-05")
+  table_saw_review_2.save!
 
 p magazines10_review_3= Review.create!(rating: 5,
   description: "They are very difficult to find. That is so nice of Krystina to let her neighbours read the comics.",
   item_id: magazines10.id,
   user_id: suzanne.id)
+  magazines10_review_3.created_at = Date.parse("2022-06-12")
 magazines10_review_3.save!
 
 
@@ -334,6 +337,7 @@ p party_review_4= Review.create!(rating: 3,
   description: "some items were broken :(",
   item_id: party3.id,
   user_id: suzanne.id)
+  party_review_4.created_at = Date.parse("2022-06-12")
 party_review_4.save!
 
 p ladder_review_5= Review.create!(
@@ -341,6 +345,7 @@ p ladder_review_5= Review.create!(
   description: "Exactly was I needed, communication was easy. Thank you",
   item_id: ladder7.id,
   user_id: krystina.id)
+  ladder_review_5.created_at = Date.parse("2022-06-15")
 ladder_review_5.save!
 
 p party_review_6= Review.create!(
@@ -348,12 +353,14 @@ p party_review_6= Review.create!(
   description: "Nicolas wasn't at home for our appointment, after he did not answer my message",
   item_id: party3.id,
   user_id: mark.id)
+  party_review_6.created_at = Date.parse("2022-05-17")
 party_review_6.save!
 
 p lugage_review_7= Review.create!(rating: 3,
   description: "great lugage, very light and strong.",
   item_id: lugage5.id,
   user_id: mark.id)
+  lugage_review_7created_at = Date.parse("2022-06-14")
   lugage_review_7.save!
 
 puts "Creating Categories"
