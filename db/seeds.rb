@@ -117,7 +117,7 @@ file = URI.open('https://res.cloudinary.com/degm2tmrv/image/upload/v1654364889/d
 game8.picture.attach(io: file, filename: 'party_equipment.jpg', content_type: 'image/jpg')
 game8.save!
 
-p game9 = Item.create!(name: "Monopoly edition India",
+p game9 = Item.create!(name: "Monopoly India edition",
   description: "Fun game, for long evening",
   category: "Toys",
   user_id: mark.id)
@@ -133,7 +133,7 @@ file = URI.open('https://res.cloudinary.com/degm2tmrv/image/upload/v1654364893/d
 magazines10.picture.attach(io: file, filename: 'party_equipment.jpg', content_type: 'image/jpg')
 magazines10.save
 
-p projector4 = Item.create!(name: "Outdoor screen for projector",
+p projector4 = Item.create!(name: "Outdoor screen projector",
                        description: 'Great for movie night',
                        category: "Party",
                        user_id: andrii.id)
@@ -149,6 +149,34 @@ file = URI.open('https://res.cloudinary.com/degm2tmrv/image/upload/v1654364892/d
 smoke_machine11.picture.attach(io: file, filename: 'party_equipment.jpg', content_type: 'image/jpg')
 smoke_machine11.save!
 
+## New item, file name is sledge_hammer.jpg
+p sledge_hammer = Item.create!(name: "Sledge Hammer",
+                       description: "Great for demolition!",
+                       category: "Tools",
+                       user_id: jeff.id)
+file = URI.open('https://res.cloudinary.com/degm2tmrv/image/upload/v1655393985/development/cup%20of%20sugar/tablesaw2_dai3re.jpg')
+sledge_hammer.picture.attach(io: file, filename: 'football_fan.jpg', content_type: 'image/jpg')
+sledge_hammer.save!
+
+## New item, file name is brad_nailer.jpg
+p brad_nailer = Item.create!(name: "Brad nailer",
+                       description: "Will save you tons of time!",
+                       category: "Tools",
+                       user_id: nicolas.id)
+file = URI.open('https://res.cloudinary.com/degm2tmrv/image/upload/v1655393985/development/cup%20of%20sugar/tablesaw2_dai3re.jpg')
+brad_nailer.picture.attach(io: file, filename: 'football_fan.jpg', content_type: 'image/jpg')
+brad_nailer.save!
+
+## New item, file name is brad_nailer.jpg
+p brad_nailer = Item.create!(name: "Brad nailer",
+                       description: "Will save you tons of time!",
+                       category: "Tools",
+                       user_id: nicolas.id)
+file = URI.open('https://res.cloudinary.com/degm2tmrv/image/upload/v1655393985/development/cup%20of%20sugar/tablesaw2_dai3re.jpg')
+brad_nailer.picture.attach(io: file, filename: 'football_fan.jpg', content_type: 'image/jpg')
+brad_nailer.save!
+
+
 p table_saw2 = Item.create!(name: "Table Saw",
                        description: "Great for your DIY construction projects! Decent condition.",
                        category: "Tools",
@@ -157,7 +185,9 @@ file = URI.open('https://res.cloudinary.com/degm2tmrv/image/upload/v1655393985/d
 table_saw2.picture.attach(io: file, filename: 'football_fan.jpg', content_type: 'image/jpg')
 table_saw2.save!
 
-p party3 = Item.create!(name: "Party decoration",
+
+
+p party3 = Item.create!(name: "Party decorations",
                       description: "Disco mirror ball and very long colorful banner",
                       category: "Party",
                       user_id: nicolas.id)
@@ -165,6 +195,14 @@ file = URI.open('https://res.cloudinary.com/degm2tmrv/image/upload/v1654364892/d
 party3.picture.attach(io: file, filename: 'party_equipment.jpg', content_type: 'image/jpg')
 party3.save!
 
+## New item, file name is screw_extractor.jpg
+p screw_extractor = Item.create!(name: "Screw extractor kit",
+                       description: "A life saver!",
+                       category: "Tools",
+                       user_id: suzanne.id)
+file = URI.open('https://res.cloudinary.com/degm2tmrv/image/upload/v1655393985/development/cup%20of%20sugar/tablesaw2_dai3re.jpg')
+screw_extractor.picture.attach(io: file, filename: 'football_fan.jpg', content_type: 'image/jpg')
+screw_extractor.save!
 
 p chairs = Item.create!(name: "Extra chairs",
                       description: "8 good chairs to use for your next party!",
@@ -173,6 +211,26 @@ p chairs = Item.create!(name: "Extra chairs",
 file = URI.open('https://res.cloudinary.com/degm2tmrv/image/upload/v1655396551/development/cup%20of%20sugar/stacked_chairs_yilvfq.jpg')
 chairs.picture.attach(io: file, filename: 'party_equipment.jpg', content_type: 'image/jpg')
 chairs.save!
+
+## New item, file name is extension_cord.jpg
+p ladder7 = Item.create!(name: "Extension cord",
+            description: "100 feet long",
+            category: "Tools",
+            user_id: jeff.id)
+file = URI.open('https://res.cloudinary.com/degm2tmrv/image/upload/v1654364889/development/cup%20of%20sugar/ladder_hpjrh5.jpg')
+ladder7.picture.attach(io: file, filename: 'party_equipment.jpg', content_type: 'image/jpg')
+ladder7.save!
+
+## New item, file name is dremmel.jpg
+p ladder7 = Item.create!(name: "Dremmel Multi-Max",
+            description: "Really versatile!",
+            category: "Tools",
+            user_id: suzanne.id)
+file = URI.open('https://res.cloudinary.com/degm2tmrv/image/upload/v1654364889/development/cup%20of%20sugar/ladder_hpjrh5.jpg')
+ladder7.picture.attach(io: file, filename: 'party_equipment.jpg', content_type: 'image/jpg')
+ladder7.save!
+
+
 
 p fontain = Item.create!(name: "Chocolate fountain",
                       description: "Your guests will love it!",
