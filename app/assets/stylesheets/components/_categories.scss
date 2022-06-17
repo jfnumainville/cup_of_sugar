@@ -42,7 +42,7 @@
   border-radius: 1px solid;
 
 }
-.button-categories-gold:active {
+.button-categories-gold:focus {
   color: $gray;
   background-color: $gold;
   border-radius: 50px;
@@ -52,5 +52,4 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition-duration: 4s;
 }
