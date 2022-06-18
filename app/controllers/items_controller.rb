@@ -45,7 +45,7 @@ class ItemsController < ApplicationController
     @item.user = current_user
 
     if @item.save
-      sleep 2
+      sleep 1
       redirect_to requests_path(active_tab: "items")
     else
       render :new
@@ -55,7 +55,7 @@ class ItemsController < ApplicationController
   def update
     @item = Item.find(params[:id])
     @item.update(item_params)
-    sleep 2
+    sleep 1
     render partial: "items/item_infos", locals: { my_item: @item }
   end
 
@@ -63,7 +63,7 @@ class ItemsController < ApplicationController
 
   def destroy
     @item.destroy
-    sleep 2
+    sleep 1
     redirect_to requests_path(active_tab: "items")
   end
 
