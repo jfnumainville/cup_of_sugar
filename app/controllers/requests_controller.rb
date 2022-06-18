@@ -40,6 +40,7 @@ class RequestsController < ApplicationController
     @request.save
     revitem = RevitemNotification.with(request: @request)
     revitem.deliver_later(User.find(@request.user_id))
+    sleep 1
     redirect_to requests_path(active_tab: "lending")
   end
 
