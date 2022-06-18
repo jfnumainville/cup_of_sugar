@@ -45,7 +45,7 @@ class ItemsController < ApplicationController
     @item.user = current_user
 
     if @item.save
-      sleep 3
+      sleep 2
       redirect_to requests_path(active_tab: "items")
     else
       render :new
