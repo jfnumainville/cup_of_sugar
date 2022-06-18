@@ -6,6 +6,7 @@ export default class extends Controller {
   displayForm() {
     this.infosTarget.classList.add("d-none");
     this.formTarget.classList.remove("d-none");
+    this.cardTarget.classList.add("d-none");
   }
 
   update(event) {

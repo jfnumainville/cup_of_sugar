@@ -1,40 +1,40 @@
-<div class="card-product-myitems" data-controller="edit-item" data-edit-item-target="card" >
+<div data-controller="edit-item"  >
+  <div data-edit-item-target="card" class="card-product-myitems" >
+    <div class="card-product-infos-myitems" data-edit-item-target="infos">
+      <h2><%=my_item.name %> </h2>
+    </div>
 
-  <div class="card-product-infos-myitems" data-edit-item-target="infos">
-    <h2><%=my_item.name %> </h2>
-  </div>
+    <div class="card-product-infos-myitems">
+      <p><%= truncate(my_item.description, length: 200) { link_to " more", item_path(my_item), class:"truncate" } %></p>
+    </div>
+    <div class="card-product-image">
+      <%= link_to item_path(my_item) do %>
+        <%= cl_image_tag my_item.picture.key %>
+      <% end %>
+    </div>
 
-  <div class="card-product-infos-myitems">
-    <p><%= truncate(my_item.description, length: 200) { link_to " more", item_path(my_item), class:"truncate" } %></p>
-  </div>
-  <div class="card-product-image">
-    <%= link_to item_path(my_item) do %>
-      <%= cl_image_tag my_item.picture.key %>
-    <% end %>
-  </div>
+    <div class = "request-infos">
+      <a data-action="click->edit-item#displayForm">Edit</a>
+    </div>
 
-  <div class = "request-infos">
-    <a class= "cherry" data-action="click->edit-item#displayForm"> Update </a>
-  </div>
-
-  <div class = "request-infos">
-      <%= link_to "Delete", item_path(my_item), method: :delete, data: { toggle:"modal", target:"#deleteModal"} %>
+    <div class = "request-infos">
+        <%= link_to "Delete", item_path(my_item), method: :delete, data: { toggle:"modal", target:"#deleteModal"} %>
+    </div>
   </div>
 
 
   <%= simple_form_for my_item, html: { class: "d-none", data: { edit_item_target: "form", action: "submit->edit-item#update"  } } do |f| %>
-    <div class="form-update p-2">
-
+    <div class="form-update p-4 text-white">
+    <h2>Edit item</h2>
       <%= f.input :name %>
       <%= f.input :description %>
-
-
       <%= f.input :category, :collection => ["Books", "Holidays", "Furnitures", "Garden", "Home decoration", "Kitchen", "Special events", "Sports", "Tools", "Toys"], :label => 'Select a Category'%>
       <%= f.input :picture, as: :file, :hint => 'Hint: Good quality pictures attract greater attention' %>
-
       <%= f.submit "Update", class: "button-gold", data: { toggle:"modal", target:"#updateModal"} %>
     </div>
   <% end %>
+
+
 
 </div>
 
