@@ -166,7 +166,7 @@ brad_nailer.picture.attach(io: file, filename: 'football_fan.jpg', content_type:
 brad_nailer.save!
 
 p table_saw2 = Item.create!(name: "Table Saw",
-                       description: "Great for your DIY construction projects! Decent condition.",
+                       description: "Great for your DIY construction projects! Almost new!",
                        category: "Tools",
                        user_id: suzanne.id)
 file = URI.open('https://res.cloudinary.com/degm2tmrv/image/upload/v1655393985/development/cup%20of%20sugar/tablesaw2_dai3re.jpg')

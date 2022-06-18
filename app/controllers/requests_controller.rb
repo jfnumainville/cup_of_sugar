@@ -38,7 +38,7 @@ class RequestsController < ApplicationController
   def update
     @request.status = 1
     @request.save
-    sleep 2
+    sleep 1
     revitem = RevitemNotification.with(request: @request)
     revitem.deliver_later(User.find(@request.user_id))
     sleep 1
