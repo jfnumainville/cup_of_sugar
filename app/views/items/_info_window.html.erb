@@ -1,14 +1,20 @@
-<div class="avatar-name-map" >
-  <%= cl_image_tag user.picture.key, class: "avatar" %>
-  <div>
-  <% if current_user != user %>
-    <p class="name-user-map px-2"><%= user.name %></p>
-    <p class= "address-map p-1"><%= user.address %></p>
-  </div>
+<div class="avatar-name-map pb-1" >
+    <%= cl_image_tag user.picture.key, class: "avatar" %>
+    <div>
+        <% if current_user != user %>
+            <p class="name-user-map px-2"><%= user.name %></p>
+            <p class= "address-map p-1"><%= user.address %></p>
+        <% else %>
+            <p class="name-user-map px-2">You</p>
+            <p class= "address-map p-1"><%= user.address %></p>
+        <% end %>
+    </div>
 </div>
-  <% end %>
-  <div class = "border-top border-1 py-1">
-<% user.items.each do |item| %>
-  <p> <%= link_to (item.name), item_path(item)  %> </p>
+<% if user.items.count > 0 %>
+    <div class="border-top border-1 mb-1"></div>
 <% end %>
+<div class = "pb-1">
+    <% user.items.each do |item| %>
+        <p><%= link_to (item.name), item_path(item) %></p>
+    <% end %>
 </div>
