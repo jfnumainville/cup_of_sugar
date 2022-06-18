@@ -5,6 +5,7 @@
   border-radius: 8px;
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
   padding: 16px;
   gap: 16px;
   box-shadow: $box-shadow;
@@ -12,7 +13,7 @@
 
 .card-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-gap: 16px;
   justify-items: center;
 }
@@ -24,31 +25,37 @@
   object-fit: cover;
   border-radius: 16px;
 }
+.card-product-infos-show {
+  background-color: $white;
+  border-radius: 8px;
+  padding: 8px;
+  min-height: 110px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 
-.card-product-infos h2 {
+}
+
+.card-product-infos-show h2 {
   text-align: center;
   font-size: 16px;
   font-weight: bold;
   margin: 0;
   color: $cherry;
+  height: 34px;
 
 }
 
-.card-product-infos p  {
+.card-product-infos-show p  {
   font-size: 12px;
   opacity: .8;
   color: $gray;
   padding: 8px 0;
   text-align: center;
+  height: 34px;
 }
 
-.card-product .card-product-infos {
-  background-color: $white;
-  border-radius: 8px;
-  padding: 4px;
-  min-height: 100px;
-  width: 100%;
-}
+
 
 .truncate {
   font-size: 10px;
