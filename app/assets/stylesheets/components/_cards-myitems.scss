@@ -77,4 +77,10 @@
 
 .cherry {
   color: $light-cherry;
+  cursor: pointer;
+  opacity: .7;
+}
+
+.cherry:hover {
+  opacity: 1;
 }
