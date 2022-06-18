@@ -20,7 +20,7 @@ class RevitemNotification < Noticed::Base
   def message
     if !params[:request].nil?
       @item = Item.find(params[:request][:item_id])
-      "Leave a review on #{@item.name.truncate(15)}"
+      "#{@item.name.truncate(15)} request is approved!"
     end
   end
 

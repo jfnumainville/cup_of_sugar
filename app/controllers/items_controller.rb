@@ -55,6 +55,7 @@ class ItemsController < ApplicationController
   def update
     @item = Item.find(params[:id])
     @item.update(item_params)
+    sleep 2
     render partial: "items/item_infos", locals: { my_item: @item }
   end
 
