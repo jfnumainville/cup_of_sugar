@@ -73,6 +73,14 @@ file = URI.open('https://res.cloudinary.com/degm2tmrv/image/upload/v1654963221/d
 jeff.picture.attach(io: file, filename: 'party_equipment.jpg', content_type: 'image/jpg')
 jeff.save!
 
+p guest = User.create!(name: 'Guest',
+  email: 'guest@mail.com',
+  password: 'password',
+  address: '5170 Boulevard Saint-Laurent, Montréal')
+file = URI.open('https://res.cloudinary.com/degm2tmrv/image/upload/v1655762618/development/avatar_default_ij1ek4.jpg')
+guest.picture.attach(io: file, filename: 'party_equipment.jpg', content_type: 'image/jpg')
+guest.save!
+
 user_ids_list = User.all.pluck(:id)
 
 puts "Creating items..."
@@ -234,8 +242,8 @@ puts "Creating requests..."
 
 p request = Request.create!(user_id: jeff.id,
                             item_id: party3.id,
-                            start_date: Date.parse("2022-06-18"),
-                            end_date: Date.parse("2022-06-24"),
+                            start_date: Date.today,
+                            end_date: Date.today + 4,
                             status: 2)
 request.save!
 
